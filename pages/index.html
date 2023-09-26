@@ -10,13 +10,55 @@
 
 <body>
     <header>
-        <nav class="container">
-            <picture><a><img class="logo-principal" src="/img/branding/logo_light_horizontal.svg"></a></picture>
-            <ul>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#"><img src="/img/icons/cart-icon.svg"></a></li>
+        <nav class="container navbar">
+            <picture class="navbar__logo">
+                <a>
+                    <img class="logo-principal" src="/img/branding/logo_light_horizontal.svg" />
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item width-submenu">
+                    <a class="navbar__link width-icon" href="#">
+                        SHOP<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">
+                                Funkos
+                            </a>
+
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">
+                                Remeras
+                            </a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">
+                                Llaveros
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="#">
+                        CONTACTO
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="#">
+                        LOGIN
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="#">
+                        <img src="/img/icons/cart-icon.svg">
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -38,7 +80,8 @@
                 <a href="./pages/shop.html">Ver colección</a>
             </article>
             <picture class="articulo-imagen">
-                <img src="/img/star-wars/baby-yoda-1.webp" alt="Figura coleccionable Funko de Grogu de la serie Mandalorian">
+                <img src="/img/star-wars/baby-yoda-1.webp"
+                    alt="Figura coleccionable Funko de Grogu de la serie Mandalorian">
             </picture>
         </section>
 
@@ -47,7 +90,7 @@
             Carrusel
         </section>
 
-                <section>
+        <section>
             <article>
                 <h3>Star Wars & The Mandalorian</h3>
                 <p>Disfruta de una saga que sigue agregando personajes a su colección.</p>
@@ -66,7 +109,8 @@
                     <article>
                         <a href="">
                             <picture>
-                                <img src="/img/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de un Stormtrooper ">
+                                <img src="/img/star-wars/trooper-1.webp"
+                                    alt="Figura coleccionable Funko de un Stormtrooper ">
                             </picture>
                             <div>
                                 <p>Start Wars</p>
@@ -96,7 +140,8 @@
                     <article>
                         <a href="">
                             <picture>
-                                <img src="/img/harry-potter/luna-1.webp" alt="Figura coleccionable Funko de Luna Lovegood ">
+                                <img src="/img/harry-potter/luna-1.webp"
+                                    alt="Figura coleccionable Funko de Luna Lovegood ">
                             </picture>
                             <div>
                                 <p>Harry Potter</p>
@@ -108,17 +153,17 @@
                     </article>
                 </li>
             </ul>
-            </section>
+        </section>
 
     </main>
 
     <footer>
         <nav class="container">
-                <ul>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul>
+            <ul>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
             <picture>
                 <a href=""><img src="/img/branding/isotype.svg" alt="icono de Funkoshop"></a>
             </picture>
