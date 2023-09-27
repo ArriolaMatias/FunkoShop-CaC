@@ -146,22 +146,14 @@ header{
 
 /*/---------header-----------*/
 
-
-footer {
-    width: 100%;
+/*---------footer-----------*/
+.footer{
     background-color: var(--dark-bg-solid);
+    padding: var(--spacing-68);
 }
 
-footer .copyright {
+.footer__copyright{
+    margin-top: var(--spacing-16);
     text-align: center;
 }
-
-section #hero h2 {
-    font-family: var(--alternative-font);
-    font-size: 24px;
-}
-
-section #hero p {
-    font-family: var(--alternative-font);
-    font-size: 16px;
-}
+/*/---------footer-----------*/
