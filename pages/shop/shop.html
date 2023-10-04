@@ -1,43 +1,303 @@
 <!DOCTYPE html>
 <html lang="es">
-    <link rel="stylesheet" href="/estilos.css">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Shop</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/shop.css">
+    <title>Shop</title>
+</head>
 
-    <body>
-        <header>
-            <nav class="container">
-                <picture><a><img class="logo-principal" src="/img/branding/logo_light_horizontal.svg"></a></picture>
-                <ul>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#"><img src="/img/icons/cart-icon.svg"></a></li>
-                </ul>
-            </nav>
-        </header>
+<body>
+    <header>
+        <nav class="container navbar">
+            <picture class="navbar__logo">
+                <a>
+                    <img class="logo-principal" src="/img/branding/logo_light_horizontal.svg" />
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item width-submenu">
+                    <a class="navbar__link width-icon" href="#">
+                        SHOP<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">
+                                Funkos
+                            </a>
 
-        <main class="container">
-
-        </main>
-
-        <footer>
-                <nav class="container">
-                    <ul>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Login</a></li>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">
+                                Remeras
+                            </a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">
+                                Llaveros
+                            </a>
+                        </li>
                     </ul>
-                <picture>
-                    <a href=""><img src="/img/branding/isotype.svg" alt="icono de Funkoshop"></a>
-                </picture>
-            </nav>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="#">
+                        CONTACTO
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="#">
+                        LOGIN
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="#">
+                        <img src="/img/icons/cart-icon.svg">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-            <p class="copyright">All rights reserved 2023 - Funkoshop &copy;</p>
-        </footer>
-    </body>
+    <main class="container shop">
+        <section class="shop-formulario__section">
+            <form action="" class="shop-formulario">
+                <label class="formulario-title" for="form-item">BUSCAR</label>
+                <input id="form-item" type="text" placeholder="item o categoria" class="formulario-input input">
+                <label class="formulario-title" for="form-ordenar">ORDENAR POR</label>
+                <select name="" id="" class="formulario-input input">
+                    <option value="" disabled selected>Mayor a menor</option>
+                    <option value="opcion2">Opción 1</option>
+                    <option value="opcion3">Opción 2</option>
+                </select>
+                <div class="container-precio">
+                    <p class="formulario-title">PRECIO</p>
+                    <div class="container-precio__container">
+                        <label for="form-precio-min">MIN
+
+                            <input id="form-precio-min" type="number" placeholder="0" class="formulario-input">
+                        </label>
+                        <span>-</span>
+                        <label for="form-precio-max">MAX
+                            <input id="form-precio-max" type="number" placeholder="0" class="formulario-input">
+                        </label>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <p class="formulario-title">FILTRAR</p>
+                    <div class="div-container-filtrar">
+                        <label for="">
+                            <input type="checkbox" name="" id="" >
+                            NUEVOS</label>
+                        <label for="">
+                            <input type="checkbox" name="" id="" >
+                            OFERTAS</label>
+                        <label for="">
+                            <input type="checkbox" name="" id="" >
+                            EDICIÓN ESPECIAL</label>
+                        <label for="">
+                            <input type="checkbox" name="" id="" >
+                            FAVORITOS</label>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+        <section class="card-items">
+            <article class="card-item">
+                <a class="card-item__link">
+                    <picture class="card-item__cover">
+                        <span class="card-item__tag">Nuevo</span>
+                        <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp" alt="Funko Pop" />
+                        <img class="card-item__img--back" src="../../img/star-wars/trooper-box.webp"
+                            alt="Funko Pop box" />
+                    </picture>
+                    <div class="card-item__content">
+
+                        <p class="card-item__licence a">STAR WARS</p>
+                        <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                        <p class="card-item__price">$ 17899,99</p>
+                        <p class="card-item__promo">3 COUTAS SIN INTERÉS</p>
+                    </div>
+
+                </a>
+            </article>
+            <article class="card-item">
+                <a class="card-item__link">
+                    <picture class="card-item__cover">
+                        <span class="card-item__tag">Nuevo</span>
+                        <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp" alt="Funko Pop" />
+                        <img class="card-item__img--back" src="../../img/star-wars/trooper-box.webp"
+                            alt="Funko Pop box" />
+                    </picture>
+                    <div class="card-item__content">
+
+                        <p class="card-item__licence a">STAR WARS</p>
+                        <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                        <p class="card-item__price">$ 17899,99</p>
+                        <p class="card-item__promo">3 COUTAS SIN INTERÉS</p>
+                    </div>
+
+                </a>
+            </article>
+            <article class="card-item">
+                <a class="card-item__link">
+                    <picture class="card-item__cover">
+                        <span class="card-item__tag">Nuevo</span>
+                        <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp" alt="Funko Pop" />
+                        <img class="card-item__img--back" src="../../img/star-wars/trooper-box.webp"
+                            alt="Funko Pop box" />
+                    </picture>
+                    <div class="card-item__content">
+
+                        <p class="card-item__licence a">STAR WARS</p>
+                        <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                        <p class="card-item__price">$ 17899,99</p>
+                        <p class="card-item__promo">3 COUTAS SIN INTERÉS</p>
+                    </div>
+
+                </a>
+            </article>
+            <article class="card-item">
+                <a class="card-item__link">
+                    <picture class="card-item__cover">
+                        <span class="card-item__tag">Nuevo</span>
+                        <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp" alt="Funko Pop" />
+                        <img class="card-item__img--back" src="../../img/star-wars/trooper-box.webp"
+                            alt="Funko Pop box" />
+                    </picture>
+                    <div class="card-item__content">
+
+                        <p class="card-item__licence a">STAR WARS</p>
+                        <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                        <p class="card-item__price">$ 17899,99</p>
+                        <p class="card-item__promo">3 COUTAS SIN INTERÉS</p>
+                    </div>
+
+                </a>
+            </article>
+            <article class="card-item">
+                <a class="card-item__link">
+                    <picture class="card-item__cover">
+                        <span class="card-item__tag">Nuevo</span>
+                        <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp" alt="Funko Pop" />
+                        <img class="card-item__img--back" src="../../img/star-wars/trooper-box.webp"
+                            alt="Funko Pop box" />
+                    </picture>
+                    <div class="card-item__content">
+
+                        <p class="card-item__licence a">STAR WARS</p>
+                        <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                        <p class="card-item__price">$ 17899,99</p>
+                        <p class="card-item__promo">3 COUTAS SIN INTERÉS</p>
+                    </div>
+
+                </a>
+            </article>
+            <article class="card-item">
+                <a class="card-item__link">
+                    <picture class="card-item__cover">
+                        <span class="card-item__tag">Nuevo</span>
+                        <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp" alt="Funko Pop" />
+                        <img class="card-item__img--back" src="../../img/star-wars/trooper-box.webp"
+                            alt="Funko Pop box" />
+                    </picture>
+                    <div class="card-item__content">
+
+                        <p class="card-item__licence a">STAR WARS</p>
+                        <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                        <p class="card-item__price">$ 17899,99</p>
+                        <p class="card-item__promo">3 COUTAS SIN INTERÉS</p>
+                    </div>
+
+                </a>
+            </article>
+            <article class="card-item">
+                <a class="card-item__link">
+                    <picture class="card-item__cover">
+                        <span class="card-item__tag">Nuevo</span>
+                        <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp" alt="Funko Pop" />
+                        <img class="card-item__img--back" src="../../img/star-wars/trooper-box.webp"
+                            alt="Funko Pop box" />
+                    </picture>
+                    <div class="card-item__content">
+
+                        <p class="card-item__licence a">STAR WARS</p>
+                        <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                        <p class="card-item__price">$ 17899,99</p>
+                        <p class="card-item__promo">3 COUTAS SIN INTERÉS</p>
+                    </div>
+
+                </a>
+            </article>
+            <article class="card-item">
+                <a class="card-item__link">
+                    <picture class="card-item__cover">
+                        <span class="card-item__tag">Nuevo</span>
+                        <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp" alt="Funko Pop" />
+                        <img class="card-item__img--back" src="../../img/star-wars/trooper-box.webp"
+                            alt="Funko Pop box" />
+                    </picture>
+                    <div class="card-item__content">
+
+                        <p class="card-item__licence a">STAR WARS</p>
+                        <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                        <p class="card-item__price">$ 17899,99</p>
+                        <p class="card-item__promo">3 COUTAS SIN INTERÉS</p>
+                    </div>
+
+                </a>
+            </article>
+            <article class="card-item">
+                <a class="card-item__link">
+                    <picture class="card-item__cover">
+                        <span class="card-item__tag">Nuevo</span>
+                        <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp" alt="Funko Pop" />
+                        <img class="card-item__img--back" src="../../img/star-wars/trooper-box.webp"
+                            alt="Funko Pop box" />
+                    </picture>
+                    <div class="card-item__content">
+
+                        <p class="card-item__licence a">STAR WARS</p>
+                        <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                        <p class="card-item__price">$ 17899,99</p>
+                        <p class="card-item__promo">3 COUTAS SIN INTERÉS</p>
+                    </div>
+
+                </a>
+            </article>
+
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="#">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="#">
+                        CONTACTO
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="#">LOGIN</a>
+                </li>
+            </ul>
+            <picture>
+                <a href=""><img src="/img/branding/isotype.svg" alt="icono de Funkoshop"></a>
+            </picture>
+        </nav>
+
+        <p class="footer__copyright">All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+</body>
+
 </html>
