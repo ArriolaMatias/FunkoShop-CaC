@@ -181,7 +181,7 @@ header{
 
 .register__form-div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .register__form-submit {
@@ -223,3 +223,5 @@ header{
 .register__form-terms {
     font-size: var(--font-medium);
 }
+
+
