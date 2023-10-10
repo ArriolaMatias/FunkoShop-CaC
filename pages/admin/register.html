@@ -35,14 +35,14 @@
             </nav>
         </header>
 
-        <main class="container register">
-            <section>
+        <main class="container">
+            <section class="register">   
                 <div>
                     <h2 class="register__title">CREA TU CUENTA</h2>
                     <p class="register__text">Completa el formulario para ser parte del mundo de los Funkos</p>
                 </div>
                 <form class="register__form" method="post" action="">
-                    <section class="register__form-section">
+                    <fieldset>
                         <div class="register__form-div">
                             <label class="register__form-label" for="nombre">Nombre: </label>
                             <input class="register__form-input" id="nombre" type="text" placeholder="John">
@@ -63,16 +63,14 @@
                             <label class="register__form-label" for="reContraseña">Repita Contraseña: </label>
                             <input class="register__form-input" id="reContraseña" type="password" placeholder="⬮⬮⬮⬮⬮⬮⬮⬮⬮">
                         </div>
-                    </section> 
-                    <div class="register__form-submit">
-                        <div>
-                            <input class="register__form-button" type="submit" value="Registrar">
-                        </div>
-                        <div>
-                            <input class="register__form-checkbox" id="aceptar" type="checkbox"></a>
-                            <label class="register__form-terms" for="aceptar">Acepto <a href="">Términos y Condiciones</label>
-                        </div>
-                    </div>
+                    </fieldset>
+                    <fieldset>
+                            <div>
+                                <input class="register__form-button" type="submit" value="Registrar">
+                                <input class="register__form-checkbox" id="aceptar" type="checkbox"></a>
+                                <label class="register__form-terms" for="aceptar">Acepto <a href="">Términos y Condiciones</a></label>
+                            </div>
+                    </fieldset>
                 </form>
             </section>
         </main>

@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap");
+
 :root {
     /* Palette */
 
@@ -34,6 +36,7 @@
     --font-medium: 1.8em;
     --font-small: 1.6em;
     --font-xsmall: 1.4em;
+    --font-xxsmall: 1.2em;
 
     /*Spacing--->Utiliza rem*/
     --spacing-128: 12.8rem;
@@ -77,11 +80,22 @@ ul, ol {
     list-style-type: none;
 }
 
+p {
+    font-size: 1.8em;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+img{
+    width: 100%;
+}
+.width-icon{
+    display: flex;
+    align-items: center;
+}
+/*---------header-----------*/
 header{
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-36);
@@ -99,6 +113,10 @@ header{
     align-items: center;
     gap: var(--spacing-20);
 }
+.navbar__item{
+    
+}
+
 .navbar__link{
     display: inline-block;
     font-size: var(--font-medium);
@@ -114,6 +132,7 @@ header{
     width: 300px;
     position: absolute;
     background-color: var(--dark-bg-solid);
+    z-index: 3;
 }
 .submenu__link{
     display: block;
@@ -144,16 +163,19 @@ header{
 
 /* Register */
 
-.register {
-    margin-top: var(--spacing-28);
-    margin-bottom: var(--spacing-28);
-}
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+  }
 
 .register__title {
     font-size: var(--font-jumbo);
     font-family: var(--alternative-font);
     font-weight: 700;
     text-align: center;
+    margin-top: var(--spacing-36);
     margin-bottom: var(--spacing-36);
 }
 
@@ -162,34 +184,22 @@ header{
     font-family: var(--alternative-font);
     font-weight: 500;
     text-align: center;
-    margin-bottom: var(--spacing-28);
+    margin-bottom: var(--spacing-36);
 }
 
 .register__form {
     font-family: var(--base-font);
     font-weight: 400;
-}
-
-.register__form-section {
-    width: 33.3%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-28);
-    margin-bottom: var(--spacing-28);
+    align-items: center;
 }
 
 .register__form-div {
     display: flex;
     justify-content: space-between;
-}
-
-.register__form-submit {
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-36);
+    gap: var(--spacing-16);
+    margin-bottom: var(--spacing-36);
 }
 
 .register__form-label {
@@ -197,6 +207,7 @@ header{
 }
 
 .register__form-input {
+    font-size: var(--font-small);
     border: 0;
     border-bottom: 2px solid var(--primary-solid);
 }
@@ -208,10 +219,12 @@ header{
 .register__form-button {
     width: 103px;
     height: 39px;
-    font-size: var(--font-xsmall);
+    font-size: var(--font-xxsmall);
     color: var(--light-font-solid);
     background-color: var(--primary-solid);
     border: 0;
+    margin-right: var(--spacing-16);
+    margin-bottom: var(--spacing-36);
 }
 
 .register__form-checkbox {
