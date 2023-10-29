@@ -69,17 +69,20 @@
             <picture class="product-img">
                 <img src="../../img/star-wars/baby-yoda-1.webp" alt="">
             </picture>
-            <div class="product-detail">
-                <p class="coleccion"> Star Wars </p>
-                <h3> BABY YODA BLUEBALL </h3>
-                <p class="descripcion"> Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición
+            <div class="item__info">
+                <p class="item__licence"> Star Wars </p>
+                <h3 class="item__name"> BABY YODA BLUEBALL </h3>
+                <p class="item__description"> Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición
                     limitada. </p>
-                <p class="precio"> $ 1799,99 </p>
-                <form action="">
-                    <input type="number" id="cantidad" name="cantidad" min="0">
-                    <input type="submit" value="Agregar al carrito">
-                </form>
-                <a class="cuotas" href=""> Ver métodos de pago - 3 CUOTAS SIN INTERÉS </a>
+                <p class="item__price"> $ 1799,99 </p>
+                <div class="item__cart">
+                    <button id="substract" class="item_quantity" type="button"> - </button>
+                    <input type="text" class="item__input" name="quantity" id="quantity" placeholder="0">
+                    <button id="add" class="item_quantity" type="button"> + </button>
+
+                    <button class="item__submit btn btn--primary btn--medium" type="submit"> Agregar al carrito </button>
+                </div>
+                <a class="item__promo" href=""> Ver métodos de pago - 3 CUOTAS SIN INTERÉS </a>
             </div>
         </article>
 
@@ -190,6 +193,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="../../js/slide.js"></script>
+    <script src="/js/item.js"> </script>
 </body>
 
 </html>
