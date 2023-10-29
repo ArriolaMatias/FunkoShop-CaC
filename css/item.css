@@ -208,6 +208,11 @@ header{
     font-size: var(--font-large);
 }
 
+.item__cart{
+    display: flex;
+    gap: var(--spacing-8);
+}
+
 .item__info .item__promo{
     font-family: var(--base-font);
     font-size: var(--font-small);
@@ -217,13 +222,20 @@ header{
 .item__info .item__submit{
     background-color: var(--primary-solid);
     color: var(--light-font-solid);
-    padding: var(--spacing-12);
+    padding: var(--spacing-12) var(--spacing-8);
     font-size: var(--font-medium);
 }
 
 .item__info .item__input{
-    height: 35px;
-    width: 105px;
+    width: var(--font-display);
+    text-align: center;
+    font-size: var(--font-medium);
+}
+
+.item__quantity{
+    background-color: var(--dark-bg-solid);
+    color: var(--light-bg-solid);
+    width: var(--font-large);
 }
 
 /* TARJETAS DE PRODUCTOS RELACIONADOS */
