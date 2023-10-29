@@ -173,7 +173,7 @@ header{
     width: 800px;
 }
 
-.product-detail{
+.item__info{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -183,45 +183,45 @@ header{
     padding-right: 120px;
 }
 
-.product-detail h3 {
+.item__info .item__name {
     font-family: var(--base-font);
     font-size: var(--font-jumbo);
     text-transform: uppercase;
 }
 
-.product-detail .coleccion{
+.item__info .item__licence{
     font-family: var(--base-font);
     font-size: 16px;
     color: #333333;
     font-weight: 500;
 }
 
-.product-detail .precio{
+.item__info .item__price{
     font-family: var(--base-font);
     font-weight: 400;
     font-size: var(--font-jumbo);
 }
 
-.product-detail .descripcion{
+.item__info .item__description{
     font-family: var(--base-font);
     font-weight: 400;
     font-size: var(--font-large);
 }
 
-.product-detail .cuotas{
+.item__info .item__promo{
     font-family: var(--base-font);
     font-size: var(--font-small);
     color: var(--secondary-solid);
 }
 
-.product-detail input[type=submit]{
+.item__info .item__submit{
     background-color: var(--primary-solid);
     color: var(--light-font-solid);
     padding: var(--spacing-12);
     font-size: var(--font-medium);
 }
 
-.product-detail input[type=number]{
+.item__info .item__input{
     height: 35px;
     width: 105px;
 }
