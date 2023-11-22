@@ -34,6 +34,7 @@
     --font-medium: 1.8em;
     --font-small: 1.6em;
     --font-xsmall: 1.4em;
+    --font-xxsmall: 1.2em;
 
     /*Spacing--->Utiliza rem*/
     --spacing-128: 12.8rem;
@@ -77,11 +78,22 @@ ul, ol {
     list-style-type: none;
 }
 
+p {
+    font-size: 1.8em;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+img{
+    width: 100%;
+}
+.width-icon{
+    display: flex;
+    align-items: center;
+}
+/*---------header-----------*/
 header{
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-36);
@@ -99,6 +111,10 @@ header{
     align-items: center;
     gap: var(--spacing-20);
 }
+.navbar__item{
+    
+}
+
 .navbar__link{
     display: inline-block;
     font-size: var(--font-medium);
@@ -114,6 +130,7 @@ header{
     width: 300px;
     position: absolute;
     background-color: var(--dark-bg-solid);
+    z-index: 3;
 }
 .submenu__link{
     display: block;
@@ -142,27 +159,85 @@ header{
 }
 /*/---------footer-----------*/
 
-/*---------Login form-------- */
+/* Login y Register */
 
-.divIngresolog {
-    text-align: center; /* Centra el contenido horizontalmente */
-    margin-top: 100px; /* Ajusta la distancia desde la parte superior según tus preferencias */
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+  }
+
+.account__title {
+    font-size: var(--font-jumbo);
+    font-family: var(--alternative-font);
+    font-weight: 700;
+    text-align: center;
+    margin-top: var(--spacing-36);
+    margin-bottom: var(--spacing-36);
 }
 
-.Login_form {
-    display: inline-block; /* Para que el formulario se ajuste al contenido */
-    text-align: left; /* Alinea el contenido del formulario a la izquierda */
+.account__text {
+    font-size: var(--font-xlarge);
+    font-family: var(--alternative-font);
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: var(--spacing-36);
 }
 
-.Login_form label,
-.Login_form input,
-.Login_form .Login_form-checkboxRemember,
-.Login_form .Login_form-labelCheckbox,
-.Login_form .Login_form-inputSubmitButton {
-    display: block; /* Coloca cada etiqueta y campo de entrada en una línea separada */
-    margin-bottom: 10px; /* Espacio entre cada etiqueta y campo de entrada */
+.account__form {
+    font-family: var(--base-font);
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--spacing-36);
 }
 
-.divIngresolog p {
-    margin: 0; /* Elimina el margen predeterminado de los elementos <p> */
+.account__form-div {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-16);
+    margin-bottom: var(--spacing-36);
+}
+
+.account__form-label {
+    font-size: var(--font-large);
+}
+
+.account__form-input {
+    font-size: var(--font-small);
+    border: 0;
+    border-bottom: 2px solid var(--primary-solid);
+}
+
+::placeholder {
+    color: #B9B9B9;
+}
+
+.account__form-button {
+    width: 103px;
+    height: 39px;
+    font-size: var(--font-xxsmall);
+    color: var(--light-font-solid);
+    background-color: var(--primary-solid);
+    border: 0;
+    margin-right: var(--spacing-16);
+}
+
+.account__form-checkbox {
+    margin-right: var(--spacing-8);
+    outline: 2px solid var(--dark-solid);
+    border-radius: 3px;
+}
+
+.account__form-terms, .account__form-remember {
+    font-size: var(--font-medium);
+}
+
+.account__form-forgot {
+    font-size: var(--font-xsmall);
+    color: var(--secondary-solid);
+    text-align: center;
+    margin-top: var(--spacing-24);
 }
