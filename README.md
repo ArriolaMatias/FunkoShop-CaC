@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/ArriolaMatias/FunkoShop-CaC">
-    <img src="img/branding/logo_light_horizontal.svg" alt="Logo" width="80" height="80">
+    <img src="img/branding/logo_light_horizontal.svg" alt="Logo" width="372" height="66">
   </a>
 
   <h3 align="center">Funkoshop Store</h3>
