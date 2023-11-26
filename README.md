@@ -33,7 +33,7 @@
 
 ## Built With
 
-
+![Used Technologies](https://skillicons.dev/icons?i=html,css,js,figma,nodejs,express)
 
 ## Getting Started
 
