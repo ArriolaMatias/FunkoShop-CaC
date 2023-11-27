@@ -29,7 +29,7 @@
 
 ## About The Project
 
-![Main-screenshot](/Screenshots/screenshot_home.png)
+![Main-screenshot](public/img/screenshots/screenshot_home.png)
 
 [ Project Description ]
 
@@ -92,6 +92,7 @@ space. You may also link to more resources.
 ## Authors
 
 * **Victoria Demkoff** - [Victoria Demkoff](https://github.com/vickydemkoff)
+* **Matías Arriola** - [Matías Arriola](https://github.com/ArriolaMatias)
 * **Hernán Cifalá** - [Hernán Cifalá](https://github.com/Hernan-Cifala)
 * **Lucas Colque** - [Lucas Colque](https://github.com/lucasColque)
 * **Damian Setimmo** - [Damian Setimmo](https://github.com/damisettimo)

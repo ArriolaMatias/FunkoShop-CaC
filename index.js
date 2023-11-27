@@ -1,10 +1,10 @@
 const express = require ('express');
 const color = require ('colors');
 
-const mainRoutes = require ('./src/main.Routes.js');
-const shopRoutes = require ('./src/shop.Routes.js');
-const adminRoutes = require ('./src/admin.Routes.js');
-const authRoutes = require('./src/auth.Routes.js');
+const mainRoutes = require ('./src/routes/main.Routes.js');
+const shopRoutes = require ('./src/routes/shop.Routes.js');
+const adminRoutes = require ('./src/routes/admin.Routes.js');
+const authRoutes = require('./src/routes/auth.Routes.js');
 
 const app = express();
 const port = 3000;
