@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/ArriolaMatias/FunkoShop-CaC">
-    <img src="img/branding/logo_light_horizontal.svg" alt="Logo" width="372" height="66">
+    <img src="public/img/branding/logo_light_horizontal.svg" alt="Logo" width="372" height="66">
   </a>
 
   <h3 align="center">Funkoshop Store</h3>
@@ -17,19 +17,21 @@
 
 ## Table Of Contents
 
-* [About the Project](#about-the-project)
-* [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Authors](#authors)
+- [Table Of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Node](#node)
+- [Install](#install)
+- [Usage](#usage)
+- [Authors](#authors)
 
 ## About The Project
 
-![Screen Shot](images/screenshot.png)
+![Main-screenshot](/Screenshots/screenshot_home.png)
 
-[ Descripción general del proyecto ]
+[ Project Description ]
 
 ## Built With
 
@@ -70,13 +72,12 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 ```
     $ npm install npm -g
 ```
-### Installation
 
 ## Install
 ```
-    git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
-    cd PROJECT_TITLE
-    npm install
+    $ git clone https://github.com/ArriolaMatias/FunkoShop-CaC
+    $ cd FunkoShop-CaC
+    $ npm install
 ```
 
 ## Usage
@@ -84,8 +85,9 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this 
 space. You may also link to more resources.
 
-npm start
-
+```
+    $ npm start
+```
 
 ## Authors
 
