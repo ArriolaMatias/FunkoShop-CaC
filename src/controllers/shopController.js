@@ -13,8 +13,18 @@ const shopControllers = {
     })},
     
     add_item: (req, res) => { res.send("Ruta para agregar el producto actual al carrito")},
-    cart: (req, res) => { res.send("Ruta para ver el carrito")},
-    cart_to_checkout: (req, res) => { res.send("Ruta para ir a la pagina de pagos")},
+    cart: (req, res) => {     
+        res.render('default-template.ejs', 
+        { 
+            title: 'Carrito | Funkoshop',
+            content: 'Ruta para la vista de Carrito'
+    })},
+    cart_to_checkout: (req, res) => {     
+        res.render('default-template.ejs', 
+        { 
+            title: 'Checkout | Funkoshop',
+            content: 'Ruta para la vista de pagos'
+    })},
 }
 
 module.exports = shopControllers;

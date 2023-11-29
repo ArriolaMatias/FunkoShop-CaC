@@ -4,9 +4,24 @@ const mainControllers = {
         { 
             title: 'Home | Funkoshop'
     })},
-    contact: (req, res) => { res.send("Ruta para la vista de Contacto")},
-    about: (req, res) => { res.send("Ruta para la vista de About")},
-    faqs: (req, res) => { res.send("Ruta para la vista de Preguntas Frecuentes")}
+    contact: (req, res) => {     
+        res.render('default-template.ejs', 
+        { 
+            title: 'Contacto | Funkoshop',
+            content: 'Ruta para la vista de contacto'
+    })},
+    about: (req, res) => {     
+        res.render('default-template.ejs', 
+        { 
+            title: 'About | Funkoshop',
+            content: 'Ruta para la vista de about'
+    })},
+    faqs: (req, res) => {     
+        res.render('default-template.ejs', 
+        { 
+            title: 'FAQS | Funkoshop',
+            content: 'Ruta para la vista de preguntas frecuentes'
+    })},
 };
 
 module.exports = mainControllers;
