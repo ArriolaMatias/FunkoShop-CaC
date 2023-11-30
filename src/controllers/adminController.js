@@ -1,10 +1,28 @@
+const Utilities = require('../utilities/json-utilities.js');
 const adminControllers = {
-    admin: (req, res) => { res.send("Ruta para la vista de admin")},
-    create: (req, res) => { res.send("Ruta para la vista de create")},
+    admin: (req, res) => { 
+        res.render("admin/admin",{
+            title: "Panel de administración | FunkoShop",
+            listaFunkos: Utilities.getFunkos()
+        })
+    },
+    create: (req, res) => { 
+        let ObjFunko = Utilities.getFunkoById(req.params.id);
+        res.render("admin/create", {
+            title: "Agregar producto | FunkoShop",
+            funko: ObjFunko
+        })
+    },
     create_post: (req, res) => { res.send("Ruta para la vista de admin por post")},
-    edit: (req, res) => { res.send("Ruta para la vista de edit")},
+    edit: (req, res) => { 
+        let ObjFunko = Utilities.getFunkoById(req.params.id);
+        res.render("admin/edit", {
+            title: `Editando producto: ${ObjFunko.product_name} | FunkoShop`,
+            content: `Vista para editar el objeto: ${ObjFunko.product_name}`
+        })
+    },
     edit_post: (req, res) => { res.send("Ruta para la vista de edit por post")},
-    delete: (req, res) => { res.send("Ruta para la vista de delete")}
+    delete: (req, res) => { res.send("Ruta para la vista de eliminar")},
 };
 
 module.exports = adminControllers;
