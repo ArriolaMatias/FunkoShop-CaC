@@ -17,6 +17,7 @@
 
 ![Contributors](https://img.shields.io/github/contributors/ArriolaMatias/FunkoShop-CaC?color=green) 
 
+<a href="/README-ES.md"> Spanish </a>
 ## Table Of Contents
 
 - [Table Of Contents](#table-of-contents)
