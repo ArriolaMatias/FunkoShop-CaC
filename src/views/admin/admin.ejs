@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<link rel="stylesheet" href="../../css/admin.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cargo el titulo del sitio de forma dinámica -->
+    <title> <%= title %> </title> 
+</head>
+<body>
+    <%- include('../partial/header') %>
+        <main class="container admin">
+            <aside>
+                <div class="admin__search">
+                    <a><iconify-icon class="admin__search-icon" icon="ic:round-search"></iconify-icon></a>
+                    <input class="admin__search-bar" type="search" placeholder="código, nombre o categoría">
+                </div>
+            </aside>
+            <section>
+                <div class="admin__top">
+                    <hi class="admin__title">LISTADO DE PRODUCTOS</hi>
+                    <div class="admin__add">
+                        <h3 class="admin__add-text">AGREGAR</h3>
+                        <a href="/admin/create"> <iconify-icon class="admin__add-icon" icon="mdi:plus-box"> </iconify-icon></a>
+                    </div>
+                </div>
+                <table class="admin__table">
+                    <thead class="admin__table-head">
+                        <tr>
+                            <th>ID</th>
+                            <th>Código</th>
+                            <th>Nombre del Producto</th>
+                            <th>Categoría</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="admin__table-body">
+                        <% listaFunkos.forEach(funko => { %>
+                            <tr>
+                                <td> <%= funko.product_id %> </td>
+                                <td> <%= funko.product_sku %> </td>
+                                <td> <%= funko.product_name %> </td>
+                                <td> <%= funko.licence_name %> </td>
+                                <td class="admin__table-icons">
+                                    <a href="/admin/edit/<%- funko.product_id %>"> <iconify-icon class="admin__table-edit" icon="material-symbols:edit-rounded"></iconify-icon> </a>
+                                    <a href="/admin/delete/<%- funko.product_id %>"> <iconify-icon class="admin__table-delete" icon="material-symbols:delete-rounded"></iconify-icon> </a>
+                                </td>
+                            </tr>
+                        <% }) %>
+
+                    </tbody>
+                </table>
+            </section> 
+        </main>
+
+        <%- include('../partial/footer') %>
+
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    </body>
+</html>

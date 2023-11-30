@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/register.css">
+    <!-- Cargo el titulo del sitio de forma dinámica -->
+    <title> <%= title %> </title> 
+</head>
+<body>
+    <%- include('../partial/header'); -%>
+    <main class="container">
+        
+        <section class="login">   
+            <div>
+                <h2 class="account__title">INGRESAR A MI CUENTA</h2>
+            </div>
+            <form class="account__form" method="post" action="">
+                <fieldset>
+                    <div class="account__form-div">
+                        <label class="account__form-label" for="email">Email: </label>
+                        <input class="account__form-input" id="email" type="email" placeholder="johndoe@correo.com">
+                    </div>
+                    <div class="account__form-div">
+                        <label class="account__form-label" for="contraseña">Contraseña: </label>
+                        <input class="account__form-input" id="contraseña" type="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF">
+                    </div>
+                </fieldset>
+                <fieldset>
+                        <div>
+                            <input class="account__form-button" type="submit" value="Ingresar">
+                            <input class="account__form-checkbox" id="aceptar" type="checkbox"></a>
+                            <label class="account__form-terms" for="aceptar">Recordarme</label>
+                            <p class="account__form-forgot">Olvidé mi contraseña</p>
+                        </div>
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+<%- include('../partial/footer') %>
+
+</body>
+</html>

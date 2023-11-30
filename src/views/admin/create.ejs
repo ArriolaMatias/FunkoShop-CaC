@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+    <link rel="stylesheet" href="../../css/create.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cargo el titulo del sitio de forma dinámica -->
+    <title> <%= title %> </title> 
+</head>
+<body>
+    <!-- Incluyo el Header como vista parcial -->
+    <%- include('../partial/header'); -%>
+    
+    <!-- Agrego el contenido de la web -->
+    <main class="container admin">
+        <section>
+            <div class="admin__top">
+                <hi class="admin__title">CREAR NUEVO ITEM</hi>
+            </div>
+            <form action="/crear-item" method="post">
+              <div class="form-group">
+                <label for="categoria">Categoría</label>
+                <select name="categoria" id="categoria">
+                  <option value="">Seleccionar</option>
+                  <option value="1">Videojuegos</option>
+                  <option value="2">Películas</option>
+                  <option value="3">Series</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="licencia">Licencia</label>
+                <select name="licencia" id="licencia">
+                  <option value="">Seleccionar</option>
+                  <option value="1">Pago</option>
+                  <option value="2">Gratis</option>
+                </select>
+              </div>
+              <div class="register__form-div">
+                <label class="register__form-label" for="nombre">Nombre del producto</label>
+                <input class="register__form-input" type="text" name="nombre" id="nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="descripcion">Descripción del producto</label>
+                <textarea name="descripcion" id="descripcion" required></textarea>
+              </div>
+              <div class="register__form-div">
+                <label class="register__form-label" for="sku">SKU</label>
+                <input class="register__form-input" type="text" name="sku" id="sku" required>
+              </div>
+              <div class="register__form-div">
+                <label class="register__form-label" for="precio">Precio</label>
+                <input class="register__form-input" type="number" name="precio" id="precio" required>
+              </div>
+              <div class="register__form-div">
+                <label class="register__form-label" for="stock">Stock</label>
+                <input class="register__form-input" type="number" name="stock" id="stock" required>
+              </div>
+              <div class="register__form-div">
+                <label class="register__form-label" for="descuento">Descuento</label>
+                <input class="register__form-input" type="number" name="descuento" id="descuento" required>
+              </div>
+              <div class="register__form-div">
+                <label class="register__form-label" for="cuotas">Cuotas</label>
+                <input type="number" name="cuotas" id="cuotas" required>
+              </div>
+              <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input type="file" name="imagen" id="imagen" required>
+              </div>
+              <button type="submit">Agregar Producto</button>
+              <button type="reset">Limpiar</button>
+            </form>
+            
+        </section> 
+    </main>
+
+    <!-- Incluyo el footer como vista parcial -->
+    <%- include('../partial/footer'); -%>
+</body>
+</html>
