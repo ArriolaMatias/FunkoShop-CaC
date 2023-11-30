@@ -13,7 +13,7 @@
   </p>
 </p>
 
-![Contributors](https://img.shields.io/github/contributors/ArriolaMatias/FunkoShop-CaC?color=dark-green) 
+![Contributors](https://img.shields.io/github/contributors/ArriolaMatias/FunkoShop-CaC?color=green) 
 
 ## Table Of Contents
 
