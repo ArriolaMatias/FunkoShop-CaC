@@ -3,6 +3,7 @@
   <a href="https://github.com/ArriolaMatias/FunkoShop-CaC">
     <img src="public/img/branding/logo_light_horizontal.svg" alt="Logo" width="372" height="66">
   </a>
+  
   ---
 
   <h3 align="center">Funkoshop Store</h3>
