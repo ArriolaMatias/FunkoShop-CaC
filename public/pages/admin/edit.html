@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/edit.css">
+    <title>Edit</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="container navbar">
+            <picture class="navbar__logo">
+                <a>
+                    <img class="logo-principal" src="../../img/branding/logo_light_horizontal.svg" />
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../shop/shop.html">
+                        VER TIENDA
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./admin.html">
+                        ADMIN
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../index.html">
+                        SALIR
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container edit">
+        <h1 class="edit__title">EDITAR ITEM</h1>
+        <form class="edit__form">
+            <div class="edit__form-fila">
+
+                <label class="edit__form-label" for="categoria">Categoría:</label>
+                <select class="edit__form-select" id="categoria" name="categoria">
+                    <option value="figuras">Figuras</option>
+                    <!-- Más opciones -->
+                </select>
+
+                <label class="edit__form-label" for="licencia">Licencia:</label>
+                <select class="edit__form-select" id="licencia" name="licencia">
+                    <option value="licencia1">Naruto Shippuden</option>
+                    <!-- Más opciones -->
+                </select>
+
+            </div>
+            <div class="edit__form-fila">
+
+                <label class="edit__form-label" for="nombre">Nombre del producto:</label>
+                <input class="edit__form-input" type="text" id="nombre" name="nombre"
+                    placeholder="Kakashi Hatake Shippuden Saga">
+
+            </div>
+            <div>
+
+                <textarea class="edit__form-textarea" id="descripcion" name="descripcion"
+                    placeholder="Descripción del producto"></textarea>
+
+            </div>
+            <div class="edit__form-fila">
+
+                <label class="edit__form-label" for="sku">SKU:</label>
+                <input class="edit__form-input" type="text" id="sku" name="sku" placeholder="SSK111AB001">
+
+
+                <label class="edit__form-label" for="precio">Precio:</label>
+                <input class="edit__form-input" type="text" id="precio" name="precio" placeholder="$ 0.000,00">
+
+                <label class="edit__form-label" for="stock">Stock:</label>
+                <input class="edit__form-input" type="text" id="stock" name="stock" placeholder="0">
+
+            </div>
+            <div class="edit__form-fila">
+
+                <label class="edit__form-label" for="descuento">Descuento:</label>
+                <input class="edit__form-input" type="text" id="descuento" name="descuento" placeholder="0%">
+
+                <label class="edit__form-label" for="cuotas">Cuotas:</label>
+                <select class="edit__form-select" id="cuotas" name="cuotas">
+                    <option value="6">6 cuotas sin interés</option>
+                    <!-- Más opciones -->
+                </select>
+
+            </div>
+            <div class="edit__form-fila">
+
+                <label class="edit__form-label" for="imagenes">Imágenes:</label>
+                <input class="edit__form-carga" type="file" id="imagenes" name="imagenes" multiple>
+
+            </div>
+            <div class="edit__form-imagenes">
+
+                <picture class="edit__form-imagen">
+                    <img src="../../img/pokemon/charmander-1.webp" alt="Imagen del frente del producto">
+                    <p class="edit__form-caption">Frente</p>
+                </picture>
+
+                <picture class="edit__form-imagen">
+                    <img src="../../img/pokemon/charmander-box.webp" alt="Imagen del dorso del producto">
+                    <p class="edit__form-caption">Dorso</p>
+                </picture>
+
+            </div>
+
+            <input class="edit__form-submit" type="submit" value="Modificar Producto">
+            
+        </form>
+    </main>
+
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../shop/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./login.html">INGRESAR</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../index.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <a href="../index.html"><img src="../../img/branding/isotype.svg" alt="icono de Funkoshop"></a>
+            </picture>
+        </nav>
+
+        <p class="footer__copyright">All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+
+</body>
+
+</html>
