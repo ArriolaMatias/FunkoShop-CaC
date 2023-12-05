@@ -17,8 +17,8 @@ const adminControllers = {
     edit: (req, res) => { 
         let ObjFunko = Utilities.getFunkoById(req.params.id);
         res.render("admin/edit", {
-            title: `Editando producto: ${ObjFunko.product_name} | FunkoShop`,
-            content: `Vista para editar el objeto: ${ObjFunko.product_name}`
+            title: `Editar producto: ${ObjFunko.product_name} | FunkoShop`,
+            funko: ObjFunko
         })
     },
     edit_post: (req, res) => { res.send("Ruta para la vista de edit por post")},
