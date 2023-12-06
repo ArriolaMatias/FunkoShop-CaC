@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/delete.css">
     <!-- Cargo el titulo del sitio de forma dinámica -->
-    <title>
-        <%= title %>
-    </title>
+    <title> <%= title %> </title>
 </head>
-
 <body>
-    <%- include('../partial/header'); -%>
+    <!-- Incluyo el Header como vista parcial -->
+    <%- include('../partial/header-admin'); -%>
 
-        <main class="container">
+    <!-- Agrego el contenido de la web -->
+    <main class="container">
             <section class="delete">
                 <div>
                     <h2 class="delete__title">ELIMINAR PRODUCTO</h2>
@@ -53,10 +52,9 @@
                     </div>
                 </div>
             </section>
-        </main>
+    </main>
 
-        <%- include('../partial/footer') %>
-
+    <!-- Incluyo el footer como vista parcial -->
+    <%- include('../partial/footer') %>
 </body>
-
 </html>

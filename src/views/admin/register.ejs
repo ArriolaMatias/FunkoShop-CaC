@@ -9,9 +9,11 @@
     <title> <%= title %> </title> 
 </head>
 <body>
-    <%- include('../partial/header'); -%>
+    <!-- Incluyo el Header como vista parcial -->
+    <%- include('../partial/header-admin'); -%>
 
-        <main class="container">
+    <!-- Agrego el contenido de la web -->
+    <main class="container">
             <section class="register">   
                 <div>
                     <h2 class="account__title">CREA TU CUENTA</h2>
@@ -49,9 +51,9 @@
                     </fieldset>
                 </form>
             </section>
-        </main>
+    </main>
 
-        <%- include('../partial/footer') %>
-
-    </body>
+    <!-- Incluyo el footer como vista parcial -->
+    <%- include('../partial/footer') %>
+</body>
 </html>
