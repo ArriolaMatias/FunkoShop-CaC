@@ -22,7 +22,14 @@ const adminControllers = {
         })
     },
     edit_post: (req, res) => { res.send("Ruta para la vista de edit por post")},
-    delete: (req, res) => { res.send("Ruta para la vista de eliminar")},
-};
+    delete: (req, res) => { 
+        let ObjFunko = Utilities.getFunkoById(req.params.id);
+        res.render("admin/delete", {
+            title: `Eliminar producto: ${ObjFunko.product_name} | FunkoShop`,
+            funko: ObjFunko
+        })
+    },
+    delete_confirm: (req, res) => { res.send("Producto eliminado")}
+}
 
 module.exports = adminControllers;

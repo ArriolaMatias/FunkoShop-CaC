@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/delete.css">
+    <!-- Cargo el titulo del sitio de forma dinámica -->
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <%- include('../partial/header'); -%>
+
+        <main class="container">
+            <section class="delete">
+                <div>
+                    <h2 class="delete__title">ELIMINAR PRODUCTO</h2>
+                    <p class="delete__text">¿Está seguro de que desea eliminar este producto?</p>
+                </div>
+                <div class="delete__section">
+                    <div>
+                        <div class="delete__section-row">
+                            <p class="delete__section-field">ID: </p>
+                            <p class="delete__section-text">
+                                <%= funko.product_id %>
+                            </p>
+                        </div>
+                        <div class="delete__section-row">
+                            <p class="delete__section-field">Código: </p>
+                            <p class="delete__section-text">
+                                <%= funko.product_sku %>
+                            </p>
+                        </div>
+                        <div class="delete__section-row">
+                            <p class="delete__section-field">Nombre: </p>
+                            <p class="delete__section-text">
+                                <%= funko.product_name %>
+                            </p>
+                        </div>
+                        <div class="delete__section-row">
+                            <p class="delete__section-field">Categoría: </p>
+                            <p class="delete__section-text">
+                                <%= funko.licence_name %>
+                            </p>
+                        </div>
+                        <div class="delete__section-row">
+                            <button class="delete__button-delete"><a href="/admin/delete/confirm/<%- funko.product_id %>">Eliminar producto</a></button>
+                            <button class="delete__button-cancel"><a href="/admin">Cancelar</a></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <%- include('../partial/footer') %>
+
+</body>
+
+</html>
