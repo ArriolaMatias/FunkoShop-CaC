@@ -17,31 +17,33 @@
             <div class="admin__top">
                 <hi class="admin__title">CREAR NUEVO ITEM</hi>
             </div>
-            <form action="/crear-item" method="post">
+            <form action="/admin/create" method="POST">
               <div class="form-group">
                 <label for="categoria">Categoría</label>
-                <select name="categoria" id="categoria">
-                  <option value="">Seleccionar</option>
-                  <option value="1">Videojuegos</option>
-                  <option value="2">Películas</option>
-                  <option value="3">Series</option>
+                <select name="category_id" id="categoria">
+                  <% categories.map(category =>{%>
+                    <option 
+                    value="<%= category.category_id%>"
+                    ><%= category.category_name%></option>
+                <%})%>
                 </select>
               </div>
               <div class="form-group">
                 <label for="licencia">Licencia</label>
-                <select name="licencia" id="licencia">
-                  <option value="">Seleccionar</option>
-                  <option value="1">Pago</option>
-                  <option value="2">Gratis</option>
+                <select name="licence_id" id="licencia">
+                  <%licences.map(licence =>{%>
+                    <option value="<%= licence.licence_id%>"
+                    ><%= licence.licence_name%></option>
+                <%})%>
                 </select>
               </div>
               <div class="register__form-div">
                 <label class="register__form-label" for="nombre">Nombre del producto</label>
-                <input class="register__form-input" type="text" name="nombre" id="nombre" required>
+                <input class="register__form-input" type="text" name="product_name" id="nombre" required>
               </div>
               <div class="form-group">
                 <label for="descripcion">Descripción del producto</label>
-                <textarea name="descripcion" id="descripcion" required></textarea>
+                <textarea name="product_description" id="descripcion" required></textarea>
               </div>
               <div class="register__form-div">
                 <label class="register__form-label" for="sku">SKU</label>
@@ -49,7 +51,7 @@
               </div>
               <div class="register__form-div">
                 <label class="register__form-label" for="precio">Precio</label>
-                <input class="register__form-input" type="number" name="precio" id="precio" required>
+                <input class="register__form-input" type="number" name="price" id="precio" required>
               </div>
               <div class="register__form-div">
                 <label class="register__form-label" for="stock">Stock</label>
@@ -57,16 +59,24 @@
               </div>
               <div class="register__form-div">
                 <label class="register__form-label" for="descuento">Descuento</label>
-                <input class="register__form-input" type="number" name="descuento" id="descuento" required>
+                <input class="register__form-input" type="number" name="discount" id="descuento" required>
               </div>
               <div class="register__form-div">
                 <label class="register__form-label" for="cuotas">Cuotas</label>
-                <input type="number" name="cuotas" id="cuotas" required>
+                <input type="number" name="dues" id="cuotas" required>
               </div>
-              <div class="form-group">
-                <label for="imagen">Imagen</label>
-                <input type="file" name="imagen" id="imagen" required>
-              </div>
+              <div class="edit__form-fila">
+
+                <label class="edit__form-label" for="imagenes">Imagen Front:</label>
+                <input class="edit__form-carga" type="file" id="imagenes" name="image_front" multiple>
+
+            </div>
+            <div class="edit__form-fila">
+
+                <label class="edit__form-label" for="imagenes">Imagen Back:</label>
+                <input class="edit__form-carga" type="file" id="imagenes" name="image_back" multiple>
+
+            </div>
               <button type="submit">Agregar Producto</button>
               <button type="reset">Limpiar</button>
             </form>

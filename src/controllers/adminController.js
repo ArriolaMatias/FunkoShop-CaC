@@ -1,35 +1,92 @@
-const Utilities = require('../utilities/json-utilities.js');
+const Utilities = require("../utilities/json-utilities.js");
+const {
+    getAllFunkosFromDB,
+    getFunkoFromDB,
+    addFunkoFromDB,
+    deleteFunkoFromDB,
+    updateFunkoFromDB
+} = require("../models/model.js");
+const { getAllLicencesFromDB } = require("../models/licence.js");
+const { getAllCategoriesFromDB } = require("../models/category.js");
 const adminControllers = {
-    admin: (req, res) => { 
-        res.render("admin/admin",{
-            title: "Panel de administración | FunkoShop",
-            listaFunkos: Utilities.getFunkos()
-        })
+    admin: async (req, res) => {
+        try {
+            const response = await getAllFunkosFromDB();
+            res.render("admin/admin", {
+                title: "Panel de administración | FunkoShop",
+                listaFunkos: response,
+            });
+        } catch (error) {
+            //! CODIGO SI HAY ERROR
+        }
     },
-    create: (req, res) => { 
-        let ObjFunko = Utilities.getFunkoById(req.params.id);
-        res.render("admin/create", {
-            title: "Agregar producto | FunkoShop",
-            funko: ObjFunko
-        })
+    create: async (req, res) => {
+        try {
+            const responseLicence = await getAllLicencesFromDB();
+            const responseCategory = await getAllCategoriesFromDB();
+            res.render("admin/create", {
+                title: "Agregar producto | FunkoShop",
+                licences: responseLicence,
+                categories: responseCategory,
+            });
+        } catch (error) { 
+            //!CODIGO DE ERROR
+        }
     },
-    create_post: (req, res) => { res.send("Ruta para la vista de admin por post")},
-    edit: (req, res) => { 
-        let ObjFunko = Utilities.getFunkoById(req.params.id);
-        res.render("admin/edit", {
-            title: `Editar producto: ${ObjFunko.product_name} | FunkoShop`,
-            funko: ObjFunko
-        })
+    create_post: async (req, res) => {
+        try {
+            const funkoData = req.body;
+            await addFunkoFromDB(funkoData);
+            res.redirect("/admin");
+        } catch (error) { }
     },
-    edit_post: (req, res) => { res.send("Ruta para la vista de edit por post")},
-    delete: (req, res) => { 
-        let ObjFunko = Utilities.getFunkoById(req.params.id);
-        res.render("admin/delete", {
-            title: `Eliminar producto: ${ObjFunko.product_name} | FunkoShop`,
-            funko: ObjFunko
-        })
+    edit: async (req, res) => {
+        try {
+            const id = req.params.id;
+            const responseFunko = await getFunkoFromDB(id);
+            const responseLicence = await getAllLicencesFromDB();
+            const responseCategory = await getAllCategoriesFromDB();
+            res.render("admin/edit", {
+                title: `Editar producto: ${responseFunko.product_name} | FunkoShop`,
+                funko: responseFunko,
+                licences: responseLicence,
+                categories: responseCategory,
+            });
+        } catch (error) {
+            //! CODIGO DE ERROR
+        }
     },
-    delete_confirm: (req, res) => { res.send("Producto eliminado")}
-}
+    edit_post: async (req, res) => {
+        try {
+            const id = req.params.id;
+            const funkoData = req.body;
+            await updateFunkoFromDB(funkoData, id);
+            res.redirect("/admin");
+        } catch (error) {
+            //!CODIGO DE ERROR
+        }
+    },
+    delete: async (req, res) => {
+        try {
+            const id = req.params.id;
+            const response = await getFunkoFromDB(id);
+            res.render("admin/delete", {
+                title: `Eliminar producto: ${response.product_name} | FunkoShop`,
+                funko: response,
+            });
+        } catch (error) {
+            //!CODIGO DE ERROR
+        }
+    },
+    delete_confirm: async (req, res) => {
+        try {
+            const id = req.params.id;
+            await deleteFunkoFromDB(id);
+            res.redirect("/admin");
+        } catch (error) { 
+            //!ERROR CODIGO
+        }
+    },
+};
 
 module.exports = adminControllers;

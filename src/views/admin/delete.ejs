@@ -31,7 +31,7 @@
                         <div class="delete__section-row">
                             <p class="delete__section-field">Código: </p>
                             <p class="delete__section-text">
-                                <%= funko.product_sku %>
+                                <%= funko.sku %>
                             </p>
                         </div>
                         <div class="delete__section-row">
@@ -47,7 +47,7 @@
                             </p>
                         </div>
                         <div class="delete__section-row">
-                            <button class="delete__button-delete"><a href="/admin/delete/confirm/<%- funko.product_id %>">Eliminar producto</a></button>
+                            <button class="delete__button-delete"><a href="/admin/delete/confirm/<%= funko.product_id%>">Eliminar producto</a></button>
                             <button class="delete__button-cancel"><a href="/admin">Cancelar</a></button>
                         </div>
                     </div>
