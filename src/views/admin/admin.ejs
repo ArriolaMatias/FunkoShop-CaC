@@ -1,16 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="es">
-<link rel="stylesheet" href="../../css/admin.css">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/admin.css">
     <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title> 
 </head>
 <body>
-    <%- include('../partial/header') %>
-        <main class="container admin">
+    <!-- Incluyo el Header como vista parcial -->
+    <%- include('../partial/header-admin'); -%>
+
+    <!-- Agrego el contenido de la web -->
+    <main class="container admin">
             <aside>
                 <div class="admin__search">
                     <a><iconify-icon class="admin__search-icon" icon="ic:round-search"></iconify-icon></a>
@@ -52,10 +55,11 @@
                     </tbody>
                 </table>
             </section> 
-        </main>
+    </main>
 
-        <%- include('../partial/footer') %>
+    <!-- Incluyo el footer como vista parcial -->
+    <%- include('../partial/footer') %>
 
         <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-    </body>
+</body>
 </html>
