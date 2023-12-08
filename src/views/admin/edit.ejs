@@ -16,7 +16,7 @@
     <main class="container edit">
         <h1 class="edit__title">EDITAR ITEM</h1>
         
-        <form class="edit__form" action="/admin/edit/<%=funko.product_id%>" method="POST">
+        <form class="edit__form" action="/admin/edit/<%=funko.product_id%>" method="POST" enctype="multipart/form-data">
             <div class="edit__form-fila">
                 <label class="edit__form-label" for="categoria">Categoría:</label>
                 <select class="edit__form-select" id="categoria" name="category_id">
