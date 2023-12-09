@@ -30,11 +30,23 @@ const shopControllers = {
     add_item: (req, res) => {
         res.send("Ruta para agregar el producto actual al carrito");
     },
-    cart: (req, res) => {
-        res.render("default-template.ejs", {
-            title: "Carrito | Funkoshop",
-            content: "Ruta para la vista de Carrito",
-        });
+    cart: async (req, res) => {
+        try {
+            const id1 = Math.floor(Math.random() * 14);
+            const id2 = Math.floor(Math.random() * 14);
+            console.log(id1, id2);
+            const cantidad1 =  Math.floor(Math.random() * 10) + 1;
+            const cantidad2 =  Math.floor(Math.random() * 10) + 1;
+            const responseFunko1 = await getFunkoFromDB(id1);
+            const responseFunko2 = await getFunkoFromDB(id2);
+            res.render("./shop/cart.ejs", {
+                title: "Carrito | Funkoshop",
+                funko1: responseFunko1,
+                funko2: responseFunko2,
+                cantidad1: cantidad1,
+                cantidad2: cantidad2,
+            });
+        } catch (error) { }
     },
     cart_to_checkout: (req, res) => {
         res.render("default-template.ejs", {
