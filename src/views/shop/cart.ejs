@@ -14,8 +14,8 @@
     
     <!-- Agrego el contenido de la web -->
     <main class="container cart">
-        <h1 class="cart__title">CARRITO DE COMPRAS</h1>
         <section>
+            <h1 class="cart__title">CARRITO DE COMPRAS</h1>
             <table class="cart__table">
                 <thead class="cart__table-head">
                     <tr class="cart__table-row">
@@ -26,68 +26,142 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="cart__table-row">
-                        <td>
-                            <div class="cart__table-item">
-                                <picture class="cart__table-image">
-                                    <img src="/img<%= funko1.image_front%>" alt="<%= funko1.product_name%>">
-                                </picture>
-                                <div class="cart__item-info">
-                                    <% console.log(funko1) %>
-                                    <h3 class="cart__item-name"> <%= funko1.product_name  %> </h3>
-                                    <p class="cart__item-licence"> <%= funko1.licence_name %> </p>
-                                    <p class="cart__item-price">Precio unitario: $ <%= funko1.price %> </p>
+                    <% if (funko1 !== undefined) { %>
+                        <tr class="cart__table-row" id="row1">
+                            <td>
+                                <div class="cart__table-item">
+                                    <picture class="cart__table-image">
+                                        <img src="/img<%= funko1.image_front %>" alt="<%= funko1.product_name %>">
+                                    </picture>
+                                    <div class="cart__item-info">
+                                        <% console.log(funko1) %>
+                                        <h3 class="cart__item-name"> <%= funko1.product_name  %> </h3>
+                                        <p class="cart__item-licence"> <%= funko1.licence_name %> </p>
+                                        <p class="cart__item-price">Precio unitario: $ <%= funko1.price %> </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="cart__table-quantity">
-                                <input type="text" class="cart__quantity-input" name="quantity" id="quantity1" placeholder="0" value="<%= cantidad1 %>">
-                                <div class="cart__quantity-group">
-                                    <button id="add1" class="cart__quantity-quantity" type="button"> + </button>
-                                    <button id="substract1" class="cart__quantity-quantity" type="button"> - </button>
+                            </td>
+                            <td>
+                                <div class="cart__table-quantity">
+                                    <input type="text" class="cart__quantity-input" name="quantity" id="quantity1" placeholder="0" value="<%= cantidad1 %>">
+                                    <div class="cart__quantity-group">
+                                        <button id="add1" class="cart__quantity-quantity" type="button"> + </button>
+                                        <button id="substract1" class="cart__quantity-quantity" type="button"> - </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <p class="cart__table-price">$<%= Math.round((cantidad1 * funko1.price + Number.EPSILON) * 100) / 100 %></p>
-                        </td>
-                        <td>
-                            <iconify-icon class="cart__table-icon" icon="ph:x-circle"></iconify-icon>
-                        </td>
-                    </tr>
-                    <tr class="cart__table-row">
-                        <td>
-                            <div class="cart__table-item">
-                                <picture class="cart__table-image">
-                                    <img src="/img<%= funko2.image_front %>" alt="<%= funko2.product_name %>">
-                                </picture>
-                                <div class="cart__item-info">
-                                    <% console.log(funko2) %>
-                                    <h3 class="cart__item-name"> <%= funko2.product_name %> </h3>
-                                    <p class="cart__item-licence"> <%= funko2.licence_name %> </p>
-                                    <p class="cart__item-price">Precio unitario: $ <%= funko2.price %> </p>
+                            </td>
+                            <td>
+                                <p class="cart__table-price">$<%= Math.round((cantidad1 * funko1.price + Number.EPSILON) * 100) / 100 %></p>
+                            </td>
+                            <td>
+                                <iconify-icon class="cart__table-icon" icon="ph:x-circle"></iconify-icon>
+                            </td>
+                        </tr>
+                    <% } %>
+                    <% if (funko2 !== undefined) { %>
+                        <tr class="cart__table-row" id="row2">
+                            <td>
+                                <div class="cart__table-item">
+                                    <picture class="cart__table-image">
+                                        <img src="/img<%= funko2.image_front %>" alt="<%= funko2.product_name %>">
+                                    </picture>
+                                    <div class="cart__item-info">
+                                        <% console.log(funko2) %>
+                                        <h3 class="cart__item-name"> <%= funko2.product_name %> </h3>
+                                        <p class="cart__item-licence"> <%= funko2.licence_name %> </p>
+                                        <p class="cart__item-price">Precio unitario: $ <%= funko2.price %> </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="cart__table-quantity">
-                                <input type="text" class="cart__quantity-input" name="quantity" id="quantity2" placeholder="0" value="<%= cantidad2 %>">
-                                <div class="cart__quantity-group">
-                                    <button id="add2" class="cart__quantity-quantity" type="button"> + </button>
-                                    <button id="substract2" class="cart__quantity-quantity" type="button"> - </button>
+                            </td>
+                            <td>
+                                <div class="cart__table-quantity">
+                                    <input type="text" class="cart__quantity-input" name="quantity" id="quantity2" placeholder="0" value="<%= cantidad2 %>">
+                                    <div class="cart__quantity-group">
+                                        <button id="add2" class="cart__quantity-quantity" type="button"> + </button>
+                                        <button id="substract2" class="cart__quantity-quantity" type="button"> - </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <p class="cart__table-price"> $<%= Math.round((cantidad2 * funko2.price + Number.EPSILON) * 100) / 100 %> </p>
-                        </td>
-                        <td>
-                            <iconify-icon class="cart__table-icon" icon="ph:x-circle"></iconify-icon>
-                        </td>
-                    </tr>
+                            </td>
+                            <td>
+                                <p class="cart__table-price"> $<%= Math.round((cantidad2 * funko2.price + Number.EPSILON) * 100) / 100 %> </p>
+                            </td>
+                            <td>
+                                <iconify-icon class="cart__table-icon" icon="ph:x-circle"></iconify-icon>
+                            </td>
+                        </tr>
+                    <% } %>
+                    <% if (funko1 === undefined && funko2 === undefined) { %>
+                        <tr>
+                            <td colspan="4" class="cart__table-row cart__table-empty">
+                                El carrito está vacío.
+                            </td>
+                        </tr>
+                    <% } %>
                 </tbody>
             </table>
+        </section>
+        <section class="cart__summary">
+            <h3 class="cart__title">RESUMEN</h3>
+            <div class="cart__summary-section">
+                <div>
+                    <div class="cart__section-row">
+                        <p class="cart__section-label">CANTIDAD DE ELEMENTOS </p>
+                        <p class="cart__section-text"> 
+                            <% if (funko1 === undefined && funko2 !== undefined) { %>
+                                <%= cantidad2 %>
+                            <% } %>
+                            <% if (funko2 === undefined && funko1 !== undefined) { %>
+                                <%= cantidad1 %>
+                            <% } %>
+                            <% if (funko2 === undefined && funko1 === undefined) { %>
+                                0
+                            <% } %>
+                            <% if (funko2 !== undefined && funko1 !== undefined) { %>
+                                <%= cantidad1 + cantidad2 %>
+                            <% } %>
+                        </p>
+                    </div>
+                    <div class="cart__section-row">
+                        <p class="cart__section-label">SUBTOTAL </p>
+                        <p class="cart__section-text"> 
+                            <% if (funko1 === undefined && funko2 !== undefined) { %>
+                                $ <%= Math.round((cantidad2 * funko2.price + Number.EPSILON) * 100) / 100 %>
+                            <% } %>
+                            <% if (funko2 === undefined && funko1 !== undefined) { %>
+                                $ <%= Math.round((cantidad1 * funko1.price + Number.EPSILON) * 100) / 100 %>
+                            <% } %>
+                            <% if (funko2 === undefined && funko1 === undefined) { %>
+                                $ 0.00
+                            <% } %>
+                            <% if (funko2 !== undefined && funko1 !== undefined) { %>
+                                $ <%= Math.round((cantidad1 * funko1.price + cantidad2 * funko2.price + Number.EPSILON) * 100) / 100 %> 
+                            <% } %>
+                        </p>
+                    </div>
+                    <div class="cart__section-row">
+                        <p class="cart__section-label">ENVIO </p>
+                        <p class="cart__section-text"> $ 0.00 </p>
+                    </div>
+                    <div class="cart__section-row cart__row-last">
+                        <p class="cart__section-label">TOTAL </p>
+                        <p class="cart__section-text"> 
+                            <% if (funko1 === undefined && funko2 !== undefined) { %>
+                                $ <%= Math.round((cantidad2 * funko2.price + Number.EPSILON) * 100) / 100 %>
+                            <% } %>
+                            <% if (funko2 === undefined && funko1 !== undefined) { %>
+                                $ <%= Math.round((cantidad1 * funko1.price + Number.EPSILON) * 100) / 100 %>
+                            <% } %>
+                            <% if (funko2 === undefined && funko1 === undefined) { %>
+                                $ 0.00
+                            <% } %>
+                            <% if (funko2 !== undefined && funko1 !== undefined) { %>
+                                $ <%= Math.round((cantidad1 * funko1.price + cantidad2 * funko2.price + Number.EPSILON) * 100) / 100 %> 
+                            <% } %>
+                        </p>
+                    </div>
+                    <button class="cart__section-button">IR A PAGAR</button>
+                </div>
+            </div>
         </section>
     </main>
     

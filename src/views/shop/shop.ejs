@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-
+<link rel="stylesheet" href="../../../css/shop.css" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../css/shop.css" />
     <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <!-- Incluyo el Header como vista parcial -->
-    <%- include('../partial/header-shop'); -%>
+    <%- include('../partial/header'); -%>
     
     <!-- Agrego el contenido de la web -->
     <main class="container shop">
         <section class="shop-formulario__section">
-            <form action="" class="shop-formulario">
-                <label class="formulario-title" for="form-item">BUSCAR</label>
-                <input id="form-item" type="text" placeholder="item o categoria" class="formulario-input input">
-                <label class="formulario-title" for="form-ordenar">ORDENAR POR</label>
-                <select name="" id="" class="formulario-input input">
-                    <option value="" disabled selected>Mayor a menor</option>
-                    <option value="opcion2">Opción 1</option>
-                    <option value="opcion3">Opción 2</option>
-                </select>
+
+            <form role="search" class="search-form" id="search-form" action="#" method="post">
+                <section class="search-filters" id="search-filters">
+                <h3 class="search-filters-title" id="search-filters-title">Ver filtros</h3>
+                <div class="size-filters filter-group">
+                
+                <div class="container-precio">
+                    <label class="formulario-title" for="form-item">BUSCAR</label>
+                    <input id="form-item" type="text" placeholder="item o categoria" class="formulario-input input">
+                </div>
+                <div class="container-precio">
+                    <label class="formulario-title" for="form-ordenar">ORDENAR POR</label>
+                    <select name="" id="" class="formulario-input input">
+                        <option value="" disabled selected>Mayor a menor</option>
+                        <option value="opcion2">Opción 1</option>
+                        <option value="opcion3">Opción 2</option>
+                    </select>
+                </div>
                 <div class="container-precio">
                     <p class="formulario-title">PRECIO</p>
                     <div class="container-precio__container">
                         <label for="form-precio-min">MIN
-
                             <input id="form-precio-min" type="number" placeholder="0" class="formulario-input">
                         </label>
                         <span>-</span>
@@ -54,13 +62,12 @@
                             FAVORITOS</label>
                     </div>
                 </div>
-
+            </section>
             </form>
         </section>
         <section class="card-items">
 
             <% listaFunkos.forEach(funko => { %>
-
                 <%- include('../partial/card.ejs', {funko: funko}) -%>
             <% }) %>
 
@@ -69,5 +76,7 @@
     
     <!-- Incluyo el footer como vista parcial -->
     <%- include('../partial/footer'); -%>
+
+    
 </body>
 </html>
