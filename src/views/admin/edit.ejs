@@ -14,10 +14,10 @@
     
     <!-- Agrego el contenido de la web -->
     <main class="container edit">
-        <h1 class="edit__title">EDITAR ITEM</h1>
-        
+        <h1 class="edit__title">EDITAR ITEM</h1>  
         <form class="edit__form" action="/admin/edit/<%=funko.product_id%>" method="POST" enctype="multipart/form-data">
             <div class="edit__form-fila">
+
                 <label class="edit__form-label" for="categoria">Categoría:</label>
                 <select class="edit__form-select" id="categoria" name="category_id">
                     <% categories.map(category =>{%>
@@ -59,6 +59,7 @@
 
                 <label class="edit__form-label" for="precio">Precio:</label>
                 <input class="edit__form-input" type="text" id="precio" name="price" placeholder="$ 0.000,00" value="<%= funko.price %>">
+                
                 <label class="edit__form-label" for="stock">Stock:</label>
                 <input class="edit__form-input" type="text" id="stock" name="stock" placeholder="0" value="<%= funko.stock %>">
 
