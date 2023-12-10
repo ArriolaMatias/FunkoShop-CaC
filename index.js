@@ -1,6 +1,7 @@
 const express = require ('express');
 const color = require ('colors');
 const dotenv = require('dotenv');
+const session = require('express-session')
 //Descargue la dependencia dotenv para por utilizarlas
 dotenv.config()
 // const ejs = require('ejs');
@@ -17,6 +18,14 @@ const authRoutes = require('./src/routes/auth.Routes.js');
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+app.use(session({
+    secret:process.env.SECRET_KEY,
+    name: 'cookie session',
+    resave: false,
+    saveUninitialized: false,
+    cookie:{maxAge:60000}
+}));
+
 
 app.use('/', mainRoutes);
 app.use('/shop', shopRoutes);

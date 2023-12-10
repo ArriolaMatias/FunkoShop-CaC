@@ -15,7 +15,6 @@ const shopControllers = {
     },
     item: async (req, res) => {
         try {
-            console.log(req.params);
             const product_id = req.params.id;
             const response = await getFunkoFromDB(product_id);
             const funkos = await getAllFunkosFromDB();

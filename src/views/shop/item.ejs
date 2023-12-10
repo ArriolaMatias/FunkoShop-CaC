@@ -20,11 +20,10 @@
                 <img src="/img<%= funko.image_front %>" alt="<%= funko.product_name%>">
             </picture>
             <div class="item__info">
-                <% console.log(funko) %>
                 <p class="item__licence"> <%= funko.licence_name %> </p>
                 <h3 class="item__name"> <%= funko.product_name  %> </h3>
                 <p class="item__description"> <%= funko.product_description %> </p>
-                <p class="item__price"> <%= funko.product_price %> </p>
+                <p class="item__price"> <%= funko.price %> </p>
                 <div class="item__cart">
                     <button id="substract" class="item__quantity" type="button"> - </button>
                     <input type="text" class="item__input" name="quantity" id="quantity" placeholder="0">
