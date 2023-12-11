@@ -2,7 +2,7 @@ const pool = require('../config/database');
 
 const getAllFunkosFromDB = async()=>{
     try {
-        const [datos] = await pool.query('SELECT product.*, licence.* FROM product JOIN licence ON product.licence_id = licence.licence_id');
+        const [datos] = await pool.query('SELECT product.*, licence.* FROM product JOIN licence ON product.licence_id = licence.licence_id ORDER BY product_id DESC');
         return datos
     } catch (error) {
         console.error('Error querying MySQL:', error);
