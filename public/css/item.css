@@ -214,6 +214,14 @@ header{
     gap: var(--spacing-8);
 }
 
+.item__cart-quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-8);
+    margin-right: var(--spacing-24);
+}
+
 .item__info .item__promo{
     font-family: var(--base-font);
     font-size: var(--font-small);
@@ -238,7 +246,7 @@ header{
 .item__quantity{
     background-color: var(--dark-bg-solid);
     color: var(--light-bg-solid);
-    width: var(--font-large);
+    width: var(--font-medium);
     border: solid 1px var(--dark-bg-solid);
 }
 

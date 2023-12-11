@@ -25,10 +25,12 @@
                 <p class="item__description"> <%= funko.product_description %> </p>
                 <p class="item__price"> $<%= funko.price %> </p>
                 <div class="item__cart">
-                    <button id="substract" class="item__quantity" type="button"> - </button>
                     <input type="text" class="item__input" name="quantity" id="quantity" placeholder="0">
-                    <button id="add" class="item__quantity" type="button"> + </button>
-        
+                    <div class="item__cart-quantity">
+                        <button id="add" class="item__quantity" type="button"> + </button>
+                        <button id="substract" class="item__quantity" type="button"> - </button>
+                    </div>
+
                     <button class="item__submit btn btn--primary btn--medium" type="submit"> Agregar al carrito </button>
                 </div>
                 <a class="item__promo" href=""> <u>Ver métodos de pago</u> - 3 CUOTAS SIN INTERÉS </a>
