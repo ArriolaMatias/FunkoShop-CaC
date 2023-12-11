@@ -200,6 +200,7 @@ header {
     font-size: var(--font-xsmall);
     font-weight: 500;
     color: var(--dark-500);
+    text-transform: uppercase;
 }
 
 .card-item__name {

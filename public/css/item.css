@@ -194,6 +194,7 @@ header{
     font-size: 16px;
     color: #333333;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 .item__info .item__price{

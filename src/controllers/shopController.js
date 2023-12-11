@@ -19,7 +19,7 @@ const shopControllers = {
             const response = await getFunkoFromDB(product_id);
             const funkos = await getAllFunkosFromDB();
             res.render("./shop/item.ejs", {
-                title: "Item cargado dinámicamente | Funkoshop",
+                title: `${response.product_name} | Funkoshop`,
                 funko: response,
                 funkos
             });
