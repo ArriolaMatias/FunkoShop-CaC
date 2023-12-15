@@ -211,6 +211,16 @@ fieldset {
     border-bottom: 2px solid var(--primary-solid);
 }
 
+.account__form-error {
+    font-size: var(--font-small);
+    background-color: rgb(240, 110, 110);
+    color: rgb(77, 5, 5);
+    display: flex;
+    flex-direction: column;
+    margin: -2rem 0rem 2rem 0rem;
+    padding: .3rem;
+}
+
 ::placeholder {
     color: #B9B9B9;
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/register.css">
+    <link rel="stylesheet" href="../../css/login.css">
     <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title> 
 </head>
@@ -14,7 +14,13 @@
     
     <!-- Agrego el contenido de la web -->
     <main class="container">
-        <section class="login">   
+        <section class="login">
+            <div class="account__msg">
+                <% if (msg != undefined) { %>
+                 <p class="msg">  <%= msg %> </p>
+                 <% } %>
+            </div>
+
             <div>
                 <h2 class="account__title">INGRESAR A MI CUENTA</h2>
             </div>

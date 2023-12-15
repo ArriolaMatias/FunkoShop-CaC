@@ -20,14 +20,16 @@ const getUserByEmailFromDB = async(email)=>{
         
     }
 }
-const addUserFromDB = async(userData, email)=>{
+const addUserFromDB = async(userData)=>{
+    const {name, lastname, email, password} = userData;
     try {
-        const [datos] = await pool.query(`INSERT INTO user SET ?`,[userData]);
+        const [datos] = await pool.query(`INSERT INTO user (name, lastname, email, password) VALUES (?,?,?,?)`,
+        [name, lastname, email, password]);
         const {user_id} = await getUserByEmailFromDB(email);
         await pool.query(`INSERT INTO user_has_role (user_user_id, role_role_id) VALUES (?, ?)`,[user_id,2]);
         return datos
     } catch (error) {
-        
+        console.log(error)
     }
 }
 

@@ -1,4 +1,6 @@
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
+const { validationResult } = require('express-validator');
 dotenv.config();
 const {addUserFromDB, getUserByEmailFromDB} = require('../models/users');
 const authControllers = {
@@ -6,7 +8,9 @@ const authControllers = {
         res.render('admin/login.ejs', 
         { 
             title: 'Iniciar Sesión | Funkoshop',
+            msg: req.query.msg
     })},
+
     login_post: async(req, res) => { 
         try {
             const {email, password} = req.body;
@@ -29,19 +33,31 @@ const authControllers = {
     },
     register: (req, res) => { 
         res.render('admin/register.ejs', {
-            title: "Registro | FunkoShop"
+            title: "Registro | FunkoShop",
+            errores: [],
+            valores: req.body
         })
     },
     register_post: async(req, res) => { 
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()){ 
+            res.render('admin/register.ejs', {
+                title: 'Registro | FunkoShop',
+                errores: errors.array(),
+                valores: req.body
+            })
+        }
+        else{
         try {
             const userData = req.body;
-            const {email} = req.body;
-            await addUserFromDB(userData,email);
-            res.redirect('/auth/login')
+            await addUserFromDB(userData);
+            let msg = 'Usuario creado! \n Inicia sesión para continuar';
+            res.redirect(`/auth/login/?msg=${msg}`);
         } catch (error) {
-            
         }
-    },
+    }
+},
     logout: (req, res) => { res.send("Ruta para logout")},
 }
 

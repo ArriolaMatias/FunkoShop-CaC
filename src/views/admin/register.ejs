@@ -19,28 +19,50 @@
                     <h2 class="account__title">CREA TU CUENTA</h2>
                     <p class="account__text">Completa el formulario para ser parte del mundo de los Funkos</p>
                 </div>
-                <form class="account__form" method="post" action="">
+                <form class="account__form" method="post" action="/auth/register">
                     <fieldset>
                         <div class="account__form-div">
                             <label class="account__form-label" for="nombre">Nombre: </label>
-                            <input class="account__form-input" id="nombre" type="text" placeholder="John" name="name">
+                            <input class="account__form-input" id="nombre" type="text" placeholder="John" name="name" value="<%= valores.name %>">
                         </div>
+                        
+                        <% if (errores.find( (element) => element.path === 'name') != null) {%>
+                            <p class="account__form-error"> <%= errores.find( (element) => element.path === 'name').msg %> </p>
+                            <% } %>
+
                         <div class="account__form-div">
                             <label class="account__form-label" for="apellido">Apellido: </label>
-                            <input class="account__form-input" id="apellido" type="text" placeholder="Doe" name="lastname">
+                            <input class="account__form-input" id="apellido" type="text" placeholder="Doe" name="lastname" value="<%= valores.lastname %>">
                         </div>
+                        <% if (errores.find( (element) => element.path === 'lastname') != null) {%>
+                            <p class="account__form-error"> <%= errores.find( (element) => element.path === 'lastname').msg %> </p>
+                            <% } %>
+
                         <div class="account__form-div">
                             <label class="account__form-label" for="email">Email: </label>
-                            <input class="account__form-input" id="email" type="email" placeholder="johndoe@correo.com" name="email">
+                            <input class="account__form-input" id="email" type="email" placeholder="johndoe@correo.com" name="email" value="<%= valores.email %>">
                         </div>
+                        <% if (errores.find( (element) => element.path === 'email') != null) {%>
+                            <p class="account__form-error"> <%= errores.find( (element) => element.path === 'email').msg %> </p>
+                            <% } %>
+                        
                         <div class="account__form-div">
                             <label class="account__form-label" for="contraseña">Contraseña: </label>
                             <input class="account__form-input" id="contraseña" type="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF" name="password">
                         </div>
+                        <% if (errores.find( (element) => element.path === 'password') != null) {%>
+                            <p class="account__form-error"> <%= errores.find( (element) => element.path === 'password').msg %> </p>
+                            <% } %>
+
                         <div class="account__form-div">
                             <label class="account__form-label" for="reContraseña">Repita Contraseña: </label>
-                            <input class="account__form-input" id="reContraseña" type="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF">
+                            <input class="account__form-input" id="reContraseña" type="password" 
+                            placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF" 
+                            name="rePassword" formnovalidate="formnovalidate">
                         </div>
+                        <% if (errores.find( (element) => element.path === 'rePassword') != null) {%>
+                            <p class="account__form-error"> <%= errores.find( (element) => element.path === 'rePassword').msg %> </p>
+                            <% } %>
                     </fieldset>
                     <fieldset>
                             <div>
