@@ -104,9 +104,10 @@
             <h3 class="cart__title">RESUMEN</h3>
             <div class="cart__summary-section">
                 <div>
-                    <div class="cart__section-row">
-                        <p class="cart__section-label">CANTIDAD DE ELEMENTOS </p>
-                        <p class="cart__section-text"> 
+                    <section class="cart__section-table">
+                        <div class="cart__section-row">
+                            <p class="cart__section-label">CANTIDAD DE ELEMENTOS </p>
+                            <p class="cart__section-text"> 
                             <% if (funko1 === undefined && funko2 !== undefined) { %>
                                 <%= cantidad2 %>
                             <% } %>
@@ -119,11 +120,11 @@
                             <% if (funko2 !== undefined && funko1 !== undefined) { %>
                                 <%= cantidad1 + cantidad2 %>
                             <% } %>
-                        </p>
-                    </div>
-                    <div class="cart__section-row">
-                        <p class="cart__section-label">SUBTOTAL </p>
-                        <p class="cart__section-text"> 
+                            </p>
+                        </div>
+                        <div class="cart__section-row">
+                            <p class="cart__section-label">SUBTOTAL </p>
+                            <p class="cart__section-text"> 
                             <% if (funko1 === undefined && funko2 !== undefined) { %>
                                 $ <%= Math.round((cantidad2 * funko2.price + Number.EPSILON) * 100) / 100 %>
                             <% } %>
@@ -136,15 +137,15 @@
                             <% if (funko2 !== undefined && funko1 !== undefined) { %>
                                 $ <%= Math.round((cantidad1 * funko1.price + cantidad2 * funko2.price + Number.EPSILON) * 100) / 100 %> 
                             <% } %>
-                        </p>
-                    </div>
-                    <div class="cart__section-row">
-                        <p class="cart__section-label">ENVIO </p>
-                        <p class="cart__section-text"> $ 0.00 </p>
-                    </div>
-                    <div class="cart__section-row cart__row-last">
-                        <p class="cart__section-label">TOTAL </p>
-                        <p class="cart__section-text"> 
+                            </p>
+                        </div>
+                        <div class="cart__section-row">
+                            <p class="cart__section-label">ENVIO </p>
+                            <p class="cart__section-text"> $ 0.00 </p>
+                        </div>
+                        <div class="cart__section-row cart__row-last">
+                            <p class="cart__section-label">TOTAL </p>
+                            <p class="cart__section-text"> 
                             <% if (funko1 === undefined && funko2 !== undefined) { %>
                                 $ <%= Math.round((cantidad2 * funko2.price + Number.EPSILON) * 100) / 100 %>
                             <% } %>
@@ -157,8 +158,9 @@
                             <% if (funko2 !== undefined && funko1 !== undefined) { %>
                                 $ <%= Math.round((cantidad1 * funko1.price + cantidad2 * funko2.price + Number.EPSILON) * 100) / 100 %> 
                             <% } %>
-                        </p>
-                    </div>
+                            </p>
+                        </div>
+                    </section>
                     <button class="cart__section-button">IR A PAGAR</button>
                 </div>
             </div>
