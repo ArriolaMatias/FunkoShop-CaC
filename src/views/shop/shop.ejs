@@ -16,32 +16,32 @@
     <main class="container shop">
         <section class="shop-formulario__section">
 
-            <form role="search" class="search-form" id="search-form" action="#" method="post">
+            <form role="search" class="search-form" id="search-form" action="/shop" method="get">
                 <section class="search-filters" id="search-filters">
                 <h3 class="search-filters-title" id="search-filters-title">Ver filtros</h3>
                 <div class="size-filters filter-group">
                 
                 <div class="container-precio">
                     <label class="formulario-title" for="form-item">BUSCAR</label>
-                    <input id="form-item" type="text" placeholder="item o categoria" class="formulario-input input">
+                    <input id="form-item" type="text" placeholder="item o categoria" class="formulario-input input" name="nombre">
                 </div>
                 <div class="container-precio">
                     <label class="formulario-title" for="form-ordenar">ORDENAR POR</label>
-                    <select name="" id="" class="formulario-input input">
-                        <option value="" disabled selected>Mayor a menor</option>
-                        <option value="opcion2">Opción 1</option>
-                        <option value="opcion3">Opción 2</option>
+                    <select name="orden" id="" class="formulario-input input">
+                        <option value="" disabled selected> Sin elegir </option>
+                        <option value="DESC"> Mayor precio </option>
+                        <option value="ASC"> Menor precio</option>
                     </select>
                 </div>
                 <div class="container-precio">
                     <p class="formulario-title">PRECIO</p>
                     <div class="container-precio__container">
                         <label for="form-precio-min">MIN
-                            <input id="form-precio-min" type="number" placeholder="0" class="formulario-input">
+                            <input id="form-precio-min" type="number" placeholder="0" class="formulario-input" name="precioMin">
                         </label>
                         <span>-</span>
                         <label for="form-precio-max">MAX
-                            <input id="form-precio-max" type="number" placeholder="0" class="formulario-input">
+                            <input id="form-precio-max" type="number" placeholder="0" class="formulario-input" name="precioMax">
                         </label>
                     </div>
                 </div>
@@ -49,19 +49,23 @@
                     <p class="formulario-title">FILTRAR</p>
                     <div class="div-container-filtrar">
                         <label for="">
-                            <input type="checkbox" name="" id="" >
+                            <input type="checkbox" name="nuevos" id="" >
                             NUEVOS</label>
                         <label for="">
-                            <input type="checkbox" name="" id="" >
+                            <input disabled type="checkbox" name="" id="" >
                             OFERTAS</label>
                         <label for="">
-                            <input type="checkbox" name="" id="" >
+                            <input type="checkbox" name="ultimos" id="" >
+                            ULTIMAS UNIDADES</label>
+                        <label for="">
+                            <input disabled type="checkbox" name="" id="" >
                             EDICIÓN ESPECIAL</label>
                         <label for="">
-                            <input type="checkbox" name="" id="" >
+                            <input disabled type="checkbox" name="" id="" >
                             FAVORITOS</label>
                     </div>
                 </div>
+                <input class="form-button" type="submit" value="Filtrar">
             </section>
             </form>
         </section>

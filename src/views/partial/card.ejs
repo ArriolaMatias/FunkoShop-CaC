@@ -1,7 +1,13 @@
+<!-- Calculo si el item tiene que tener la etiqueta de nuevo o no -->
+<% const fechaCreacion = new Date(funko.create_time) %>
+<% const diferenciaEnDias = (new Date() - fechaCreacion ) / (1000 * 60 * 60 * 24) %>
+
 <article class="card-item">
     <a class="card-item__link" href="/shop/item/<%= funko.product_id %>">
         <picture class="card-item__cover">
-            <span class="card-item__tag">Nuevo</span>
+            <% if (diferenciaEnDias <= 7) { %>
+                <span class="card-item__tag"> Nuevo </span>
+            <% } %>
 
             <img class="card-item__img--front" src="/img<%= funko.image_front %>"
                 alt="Figura coleccionable Funko de <%= funko.product_name %> ">
