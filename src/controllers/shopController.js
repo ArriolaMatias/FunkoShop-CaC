@@ -1,10 +1,13 @@
 const Utilities = require("../utilities/json-utilities.js");
-const { getAllFunkosFromDB, getFunkoFromDB } = require("../models/model.js");
+const { getAllFunkosFromDB, getFunkoFromDB, getFunkosBy } = require("../models/model.js");
 
 const shopControllers = {
     shop: async (req, res) => {
         try {
-            const response = await getAllFunkosFromDB();
+            let response;
+            if (Object.keys(req.query).length === 0) { response = await getAllFunkosFromDB(); }
+            else { response = await getFunkosBy(req.query); }
+            
             res.render("./shop/shop.ejs", {
                 title: "Shop | Funkoshop",
                 listaFunkos: response,
@@ -53,6 +56,13 @@ const shopControllers = {
             content: "Ruta para la vista de pagos",
         });
     },
+    shop_search: (req, res) => {
+        console.log(req.query);
+        res.render("./shop/shop.ejs", {
+            title: "Shop | Funkoshop",
+            listaFunkos: response,
+        });
+    }
 };
 
 module.exports = shopControllers;

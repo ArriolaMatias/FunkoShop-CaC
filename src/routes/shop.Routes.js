@@ -4,6 +4,7 @@ const shopControllers = require('../controllers/shopController.js');
 
 
 router.get('/', shopControllers.shop);
+router.get('/', shopControllers.shop_search);
 router.get('/item/:id', shopControllers.item);
 router.post('/item/:id/add', shopControllers.add_item);
 router.get('/cart', shopControllers.cart);
