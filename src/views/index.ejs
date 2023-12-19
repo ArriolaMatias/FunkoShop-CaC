@@ -55,9 +55,13 @@
                     alt="Figura coleccionable Funko de Patronus de Snape de la película Harry Potter.">
             </picture>
         </section>
+        <section>
+            <div class="container">
+                <h3 class="slider__title">Últimos lanzamientos</h3>
+                <%- include('partial/slider.ejs',{funkos:funkos}); -%>
+            </div>        
+        </section>
     </main>
-
-    <%- include('partial/slider.ejs',{funkos:funkos}); -%>
 
     <!-- Incluyo el footer como vista parcial -->
     <%- include('partial/footer'); -%>

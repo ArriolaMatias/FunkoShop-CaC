@@ -310,6 +310,7 @@ main{
     flex-direction: column;
     gap: var(--spacing-36);
     margin: var(--spacing-68) auto;
+    text-transform: uppercase;
 }
 
 .slider__title {
