@@ -46,8 +46,29 @@
             <li class="navbar__item">
                 <a class="navbar__cart" href="/shop/cart">
                     <img src="/img/icons/cart-icon.svg">
+                    <div class="contador" id="contador"> 
+                        <%= (cart === undefined)? 0 : cart.length %> 
+                    </div>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
+
+<style>
+    .contador {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+    
+    .navbar__cart{
+        position: relative;
+        cursor: pointer;
+    }
+    </style>
