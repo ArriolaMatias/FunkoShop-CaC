@@ -1,5 +1,6 @@
 const Utilities = require("../utilities/json-utilities.js");
 const { getAllFunkosFromDB, getFunkoFromDB, getFunkosBy } = require("../models/model.js");
+const {agregarItem, deleteItem, popItem} = require("../models/cart.js");
 
 const shopControllers = {
     shop: async (req, res) => {
@@ -11,6 +12,7 @@ const shopControllers = {
             res.render("./shop/shop.ejs", {
                 title: "Shop | Funkoshop",
                 listaFunkos: response,
+                cart: req.session.cart
             });
         } catch (error) {
             //!VISTA SI OCURRE UN ERROR
@@ -24,29 +26,27 @@ const shopControllers = {
             res.render("./shop/item.ejs", {
                 title: `${response.product_name} | Funkoshop`,
                 funko: response,
-                funkos
+                funkos,
+                cart: req.session.cart
             });
         } catch (error) { }
     },
 
-    add_item: (req, res) => {
+    add_item: async (req, res) => {
+        await agregarItem(req, res);
         res.send("Ruta para agregar el producto actual al carrito");
     },
+
+    delete_item: async (req, res) => {
+        await popItem(req, res);
+        res.send("Ruta para borrar el producto actual al carrito");
+    },
+
     cart: async (req, res) => {
         try {
-            const id1 = Math.floor(Math.random() * 14);
-            const id2 = Math.floor(Math.random() * 14);
-            console.log(id1, id2);
-            const cantidad1 =  Math.floor(Math.random() * 10) + 1;
-            const cantidad2 =  Math.floor(Math.random() * 10) + 1;
-            const responseFunko1 = await getFunkoFromDB(id1);
-            const responseFunko2 = await getFunkoFromDB(id2);
             res.render("./shop/cart.ejs", {
                 title: "Carrito | Funkoshop",
-                funko1: responseFunko1,
-                funko2: responseFunko2,
-                cantidad1: cantidad1,
-                cantidad2: cantidad2,
+                cart: req.session.cart
             });
         } catch (error) { }
     },
@@ -61,6 +61,7 @@ const shopControllers = {
         res.render("./shop/shop.ejs", {
             title: "Shop | Funkoshop",
             listaFunkos: response,
+            cart: req.session.cart
         });
     }
 };

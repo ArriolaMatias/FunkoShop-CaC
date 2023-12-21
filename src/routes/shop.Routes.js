@@ -5,10 +5,12 @@ const shopControllers = require('../controllers/shopController.js');
 
 router.get('/', shopControllers.shop);
 router.get('/', shopControllers.shop_search);
+router.post('/item/:id/:quantity/add', shopControllers.add_item);
 router.get('/item/:id', shopControllers.item);
-router.post('/item/:id/add', shopControllers.add_item);
 router.get('/cart', shopControllers.cart);
 router.post('/cart', shopControllers.cart_to_checkout);
+router.post('/:id/:quantity/delete', shopControllers.delete_item);
+router.post('/:id/deleteFromCart', shopControllers.delete_item);
 
 module.exports = router;
 
