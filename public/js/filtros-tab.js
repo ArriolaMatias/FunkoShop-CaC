@@ -25,11 +25,11 @@ var Search = {
           Search.filterHeaderPosition
          );
       
-      Search.searchForm
-        .on(
-           "submit",
-          Search.searchSubmit
-         );
+      // Search.searchForm
+      //   .on(
+      //      "submit",
+      //     Search.searchSubmit
+      //    );
       
     },
     
