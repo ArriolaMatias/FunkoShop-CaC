@@ -31,7 +31,7 @@
                         <button id="substract" class="item__quantity" type="button"> - </button>
                     </div>
 
-                    <button class="item__submit btn btn--primary btn--medium" type="submit"> Agregar al carrito </button>
+                    <button class="item__submit btn btn--primary btn--medium" onclick="return agregarItem('<%= funko.product_id %>' )" type="submit"> Agregar al carrito </button>
                 </div>
                 <a class="item__promo" href=""> <u>Ver métodos de pago</u> - 3 CUOTAS SIN INTERÉS </a>
             </div>
@@ -48,4 +48,23 @@
     <%- include('../partial/footer'); -%>
 </body>
 <script src="/js/item.js"> </script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"> </script>
+<script>
+    function agregarItem(funko_id){
+        let id=funko_id; let quantity = $('.item__input').val();
+        let url = `${id}/${quantity}/add`;
+        $.ajax({
+            url: url,
+            type: 'POST',
+            dataType: 'json',
+            success: function (data, textStatus, jqXHR){
+                console.log('Agregado');
+            }, error: function (jqXHR, textStatus, errorThrown){
+                console.log(jqXHR);
+            }
+        });
+        alert('Parece que no hizo nada, pero lo agregó');
+        return false;
+    }
+</script>
 </html>
