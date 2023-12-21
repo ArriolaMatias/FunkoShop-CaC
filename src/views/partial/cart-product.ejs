@@ -1,0 +1,67 @@
+<tr class="cart__table-row" id="row1">
+    <td>
+        <div class="cart__table-item">
+            <picture class="cart__table-image">
+                <img src='/img<%= item.funko.image_front %>' alt="<%= item.funko.product_name %>">
+            </picture>
+            <div class="cart__item-info">
+                <h3 class="cart__item-name"> <%= item.funko.product_name  %> </h3>
+                <p class="cart__item-licence"> <%= item.funko.licence_name %> </p>
+                <p class="cart__item-price">Precio unitario: $</p> <span id="itemPrice" class="cart__item-price"> <%= item.funko.price %> </span>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="cart__table-quantity">
+            <input type="text" class="cart__quantity-input" name="quantity" id="quantity-item-<%= item.id %>" placeholder="0" value="<%= item.quantity %>">
+            <div class="cart__quantity-group">
+                <button id="add-item-<%= item.id %>" class="cart__quantity-quantity" type="button"> + </button>
+                <button id="substract-item-<%= item.id %>" class="cart__quantity-quantity" type="button"> - </button>
+            </div>
+        </div>
+    </td>
+    <td>
+        <p id="totalPrice-item-<%= item.id %>" class="cart__table-price">$<%= Math.round((item.quantity * item.funko.price + Number.EPSILON) * 100) / 100 %></p>
+    </td>
+    <td>
+        <iconify-icon class="cart__table-icon" icon="ph:x-circle" onclick="return popItem('<%= item.funko.product_id %>' )"></iconify-icon>
+    </td>
+</tr>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"> </script>
+<script>
+    function popItem(id){
+        let url = `${id}/deleteFromCart`;
+        $.ajax({
+            url: url,
+            type: 'POST',
+            dataType: 'json',
+            success: function (data, textStatus, jqXHR){
+                console.log('Eliminado');
+            }, error: function (jqXHR, textStatus, errorThrown){
+                console.log(jqXHR);
+            }
+        });
+        alert('Parece que no hizo nada, pero lo borro');
+        return false;
+    }
+</script>
+<script>
+        function eliminarItem(funko_id, item_quantity){
+        let id=funko_id; 
+        let quantity = $('.cart__quantity-input').val();
+        let cantToDelete = parseInt(item_quantity) - parseInt(quantity)
+        let url = `${id}/${cantToDelete}/delete`;
+        $.ajax({
+            url: url,
+            type: 'POST',
+            dataType: 'json',
+            success: function (data, textStatus, jqXHR){
+                console.log('Eliminado');
+            }, error: function (jqXHR, textStatus, errorThrown){
+                console.log(jqXHR);
+            }
+        });
+        return false;
+    }
+</script>
