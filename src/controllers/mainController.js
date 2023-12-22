@@ -15,10 +15,9 @@ const mainControllers = {
         }
     },
     contact: (req, res) => {
-        res.render('default-template.ejs',
+        res.render('contact.ejs',
             {
                 title: 'Contacto | Funkoshop',
-                content: 'Ruta para la vista de contacto',
                 cart: req.session.cart
             })
     },

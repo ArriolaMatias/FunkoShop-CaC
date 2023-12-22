@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/contact.css" />
+    <!-- Cargo el titulo del sitio de forma dinámica -->
+    <link rel="icon"  type="image/png" href="/img/branding/isotype.svg">
+    <title> <%= title %> </title> 
+</head>
+<body>
+    <!-- Incluyo el Header como vista parcial -->
+    <%- include('partial/header-shop'); -%>
+    
+    <!-- Agrego el contenido de la web -->
+    <main class="container contact">
+        <h1 class="contact__title">CONTÁCTANOS</h1>
+        <form class="contact__form" action="" method="" enctype="multipart/form-data">
+            <div class="contact__form-fila">
+
+                <label class="contact__form-label" for="nombre">Nombre: </label>
+                <input class="contact__form-input" type="text" name="nombre" id="nombre" placeholder="John" required>
+
+                <label class="contact__form-label" for="apellido">Apellido: </label>
+                <input class="contact__form-input" type="text" name="apellido" id="apellido" placeholder="Doe" required>
+          
+            </div>
+            <div class="contact__form-fila">
+
+                <label class="contact__form-label" for="email">Email: </label>
+                <input class="contact__form-input" type="email" name="email" id="email"
+                    placeholder="johndoe@correo.com" required>
+          
+            </div>
+            <div class="contact__form-mensaje">
+
+                <label class="contact__form-label" for="mensaje">Mensaje </label>
+                <textarea class="contact__form-textarea" name="mensaje" id="mensaje"
+                    placeholder="Escriba su mensaje aquí..." required></textarea>
+          
+            </div>
+            <div class="contact__form-submit">
+
+                <input class="contact__form-button" type="submit" value="Enviar">
+                <p class="contact__form-text">¡Gracias por su mensaje!</p>
+        
+            </div>
+        </form>
+    </main>
+    
+    <!-- Incluyo el footer como vista parcial -->
+    <%- include('partial/footer'); -%>
+</body>
+</html>
