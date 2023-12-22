@@ -164,6 +164,10 @@ header{
 
 /* CARD DE PRODUCTO PRINCIPAL */
 
+button {
+    cursor: pointer;
+}
+
 .product-item{
     display: flex;
     justify-content: center;

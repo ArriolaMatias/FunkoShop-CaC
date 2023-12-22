@@ -161,6 +161,10 @@ header{
 
 /* Login y Register */
 
+input[type=submit] {
+    cursor: pointer;
+}
+
 fieldset {
     border: 0;
     padding: 0;

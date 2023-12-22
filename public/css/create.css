@@ -163,6 +163,10 @@ header{
 
 /* Create */
 
+input[type=submit], input[type=reset] {
+    cursor: pointer;
+}
+
 .create__title {
     font-family: var(--alternative-font);
     font-weight: 700;

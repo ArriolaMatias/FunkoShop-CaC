@@ -166,6 +166,10 @@ header{
 
 /* Edit */
 
+input[type=submit] {
+    cursor: pointer;
+}
+
 .edit__title {
     font-family: var(--alternative-font);
     font-weight: 700;

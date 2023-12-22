@@ -161,6 +161,10 @@ header{
 
 /* Delete */
 
+button {
+    cursor: pointer;
+}
+
 .delete__title {
     font-size: var(--font-jumbo);
     font-family: var(--alternative-font);
