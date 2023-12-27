@@ -20,6 +20,21 @@ const getUserByEmailFromDB = async(email)=>{
         
     }
 }
+
+const getUserAndRoleByEmailFromDB = async(email)=>{
+    try {
+        const [datos] = await pool.query(`SELECT user.*, role.*
+        FROM user
+        JOIN user_has_role ON user.user_id = user_has_role.user_user_id
+        JOIN role ON user_has_role.role_role_id = role.role_id
+        WHERE user.email = ?`, [email]);
+        const [user] = datos
+        return user;
+    } catch (error) {
+        
+    }
+}
+
 const addUserFromDB = async(userData)=>{
     const {name, lastname, email, password} = userData;
     try {
@@ -36,5 +51,6 @@ const addUserFromDB = async(userData)=>{
 module.exports = {
     getAllUsersFromDB,
     addUserFromDB,
-    getUserByEmailFromDB
+    getUserByEmailFromDB,
+    getUserAndRoleByEmailFromDB
 }
