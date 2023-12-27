@@ -5,13 +5,9 @@ const agregarItem =  async(req, res)=> {
     let indice = validar(cart, req.params.id); //Me fijo si el item a agregar está en el carrito
     let funko = await getFunkoFromDB(req.params.id)
 
-    console.log(funko);
-    console.log("llego ak")
     if(indice != -1){ //Si está, le sumo la cantidad que haya ingresado
-        console.log("Le suma la cantidad que puse");
         cart[indice].quantity = parseInt(cart[indice].quantity) + parseInt(req.params.quantity);
     }else{ //Si no, lo agrego
-        console.log("Lo tiene que agregar");
         let item = {
             id: req.params.id,
             funko: funko,
@@ -19,7 +15,6 @@ const agregarItem =  async(req, res)=> {
             price: parseFloat(funko.price) * parseInt(req.params.quantity)
         }
         cart.push(item);
-        console.log("cart quedo: "+JSON.stringify(cart))
     }
 }
 
