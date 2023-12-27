@@ -27,14 +27,25 @@
             </div>
             <form class="account__form" method="post" action="">
                 <fieldset>
+                    
                     <div class="account__form-div">
                         <label class="account__form-label" for="email">Email: </label>
-                        <input class="account__form-input" id="email" type="email" placeholder="johndoe@correo.com" name="email">
+                        <input class="account__form-input" id="email" type="email" placeholder="johndoe@correo.com" name="email" value='<%= valores.email %>'>
                     </div>
+
+                    <% if (errores.find( (element) => element.path === 'email') != null) {%>
+                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'email').msg %> </p>
+                        <% } %>
+
                     <div class="account__form-div">
                         <label class="account__form-label" for="contraseña">Contraseña: </label>
                         <input class="account__form-input" id="contraseña" type="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF" name="password">
                     </div>
+
+                    <% if (errores.find( (element) => element.path === 'password') != null) {%>
+                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'password').msg %> </p>
+                        <% } %>
+
                 </fieldset>
                 <fieldset>
                         <div>
