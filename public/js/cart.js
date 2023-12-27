@@ -2,10 +2,10 @@
 const addButtons = document.querySelectorAll(`[id^="add-item-"]`);
 const substractButtons = document.querySelectorAll(`[id^="substract-item-"]`);
 
-// const quantity = document.querySelector("#quantity-item-");
-
-// const totalPrice = document.querySelector("#totalPrice")
-// const itemPrice = document.querySelector("#itemPrice");
+const cantItems = document.getElementById('cantItems');
+const subtotal = document.getElementById('subtotal');
+const precioTotal = document.getElementById('precioTotal');
+const envio = document.getElementById('precioEnvio');
 
 addButtons.forEach(function (incrementator) {
     incrementator.addEventListener('click' , () =>{
@@ -15,8 +15,15 @@ addButtons.forEach(function (incrementator) {
         let priceId = incrementator.id.replace("add-", "totalPrice-");
         let priceAsociado = document.getElementById(`${priceId}`);
 
+        let itemPriceId = incrementator.id.replace("add-", "price-");
+        let itemPrice = document.getElementById(`${itemPriceId}`);
+
         quantityAsociado.value = Number(quantityAsociado.value) + 1;
-        priceAsociado.innerText = quantityAsociado.value * parseFloat(itemPrice.textContent);
+        priceAsociado.innerText = Number(quantityAsociado.value) * parseFloat(itemPrice.innerText);
+
+        cantItems.innerText = Number(cantItems.innerText) + 1;
+        subtotal.innerText = Number(subtotal.innerText) + parseFloat(itemPrice.innerText)
+        precioTotal.innerText = Number(subtotal.innerText) + Number(envio.innerText);
     }); 
 })
 
@@ -26,17 +33,21 @@ substractButtons.forEach(function (decrementator) {
         let quantityAsociado = document.getElementById(`${quantityId}`);
 
         let priceId = decrementator.id.replace("substract-", "totalPrice-");
-        console.log(priceId)
         let priceAsociado = document.getElementById(`${priceId}`);
+
+        let itemPriceId = decrementator.id.replace("substract-", "price-");
+        let itemPrice = document.getElementById(`${itemPriceId}`);
 
         if(quantityAsociado.value != 0) { //Para que no reste infinitamente
             quantityAsociado.value = Number(quantityAsociado.value) - 1;
-            priceAsociado.innerText = quantityAsociado.value * parseFloat(itemPrice.textContent);
+            priceAsociado.innerText = Number(quantityAsociado.value) * parseFloat(itemPrice.innerText);
+            
+            cantItems.innerText = Number(cantItems.innerText) - 1;
+            subtotal.innerText = Number(subtotal.innerText) - parseFloat(itemPrice.innerText)
+            precioTotal.innerText = Number(subtotal.innerText) + Number(envio.innerText);
         }
-
     }); 
 })
-
 
 
 // substract.addEventListener('click' , () => {
