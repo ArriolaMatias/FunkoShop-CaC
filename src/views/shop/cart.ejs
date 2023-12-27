@@ -51,28 +51,28 @@
                     <section class="cart__section-table">
                         <div class="cart__section-row">
                             <p class="cart__section-label">CANTIDAD DE ELEMENTOS </p>
-                            <p class="cart__section-text"> 
+                            <p id="cantItems" class="cart__section-text"> 
                                 <%= cantItems  || 0%>
                             </p>
                         </div>
                         <div class="cart__section-row">
                             <p class="cart__section-label">SUBTOTAL </p>
-                            <p class="cart__section-text"> 
+                            <p id="subtotal" class="cart__section-text"> 
                                 <%= precioTotal || 0%>
                             </p>
                         </div>
                         <div class="cart__section-row">
                             <p class="cart__section-label">ENVIO </p>
-                            <p class="cart__section-text"> $ 0.00 </p>
+                            <p id="precioEnvio" class="cart__section-text"> 0 </p>
                         </div>
                         <div class="cart__section-row cart__row-last">
                             <p class="cart__section-label">TOTAL </p>
-                            <p class="cart__section-text"> 
+                            <p id="precioTotal" class="cart__section-text"> 
                                 <%= precioTotal || 0 %>
                             </p>
                         </div>
                     </section>
-                    <button class="cart__section-button">IR A PAGAR</button>
+                    <a href="./checkout"> <button class="cart__section-button">IR A PAGAR</button> </a>
                 </div>
             </div>
         </section>
