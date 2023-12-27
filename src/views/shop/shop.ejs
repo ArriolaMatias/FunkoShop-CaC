@@ -46,23 +46,39 @@
                         </label>
                     </div>
                 </div>
+
+                <div class="container-categorias">
+                    <details open>
+                        <summary class="formulario-title"> CATEGORIAS </summary>
+                        <div class="div-container-filtrar">
+                            <%licences.map(licence=>{%>
+                                <label for="licencia">
+                                    <input value="<%= licence.licence_id %>" type="radio" name="licencia" id="" >
+                                    <%= licence.licence_name %> </label>
+                              <%})%>
+                        </div>
+                    </details>
+
+                </div>
+
+
                 <div class="container-checkbox">
                     <p class="formulario-title">FILTRAR</p>
                     <div class="div-container-filtrar">
-                        <label for="">
-                            <input type="checkbox" name="nuevos" id="" >
+                        <label for="nuevos">
+                            <input type="checkbox" name="nuevos" id="nuevos" >
                             NUEVOS</label>
-                        <label for="">
-                            <input disabled type="checkbox" name="" id="" >
+                        <label for="ofertas">
+                            <input disabled type="checkbox" name="" id="ofertas" >
                             OFERTAS</label>
-                        <label for="">
-                            <input type="checkbox" name="ultimos" id="" >
+                        <label for="ultimos">
+                            <input type="checkbox" name="ultimos" id="ultimos" >
                             ULTIMAS UNIDADES</label>
-                        <label for="">
-                            <input disabled type="checkbox" name="" id="" >
+                        <label for="especial">
+                            <input disabled type="checkbox" name="" id="especial" >
                             EDICIÓN ESPECIAL</label>
-                        <label for="">
-                            <input disabled type="checkbox" name="" id="" >
+                        <label for="favoritos">
+                            <input disabled type="checkbox" name="" id="favoritos" >
                             FAVORITOS</label>
                     </div>
                 </div>
@@ -75,6 +91,12 @@
             <% listaFunkos.forEach(funko => { %>
                 <%- include('../partial/card.ejs', {funko: funko}) -%>
             <% }) %>
+
+            <% if (listaFunkos.length === 0) { %>
+             <div class="div-msg">
+                <p> No se han encontrado resultados </p>
+             </div>
+            <% } %>
 
         </section>
     </main>
