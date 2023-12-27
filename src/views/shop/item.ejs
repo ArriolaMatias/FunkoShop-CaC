@@ -34,13 +34,13 @@
 
                     <button class="item__submit btn btn--primary btn--medium" onclick="return agregarItem('<%= funko.product_id %>' )" type="submit"> Agregar al carrito </button>
                 </div>
-                <a class="item__promo" href=""> <u>Ver métodos de pago</u> - 3 CUOTAS SIN INTERÉS </a>
+                <a class="item__promo" href=""> <u>Ver métodos de pago</u> - <%= funko.dues %> CUOTAS SIN INTERÉS </a>
             </div>
         </article>
         <section>
             <div class="container">
                 <h3 class="slider__title">Productos relacionados</h3>
-                <%- include('../partial/slider.ejs',{funkos:funkos}); -%>
+                <%- include('../partial/slider.ejs',{funkos:relatedFunkos}); -%>
             </div>
         </section>
     </main>
@@ -57,14 +57,13 @@
         $.ajax({
             url: url,
             type: 'POST',
-            dataType: 'json',
-            success: function (data, textStatus, jqXHR){
-                console.log('Agregado');
+            dataType: 'text',
+            success: function (data){
+                window.location.href = data;
             }, error: function (jqXHR, textStatus, errorThrown){
-                console.log(jqXHR);
+                console.log(jqXHR, "error");
             }
         });
-        alert('Parece que no hizo nada, pero lo agregó');
         return false;
     }
 </script>
