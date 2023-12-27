@@ -19,6 +19,16 @@ const getFunkoFromDB = async(id)=>{
         throw error;
     }
 }
+
+const getFunkosByLicence = async(id)=>{
+    try {
+        const [datos] = await pool.query('SELECT * FROM product WHERE licence_id = ?',[id]);
+        return datos;
+    } catch (error) {
+        console.error('Error querying MySQL:', error);
+        throw error;
+    }
+}
 const addFunkoFromDB = async(funkoData)=>{
     try {
         const [datos] = await pool.query("INSERT INTO product SET ?",[funkoData]);
@@ -78,6 +88,11 @@ const getFunkosBy = async (filtros) => {
         whereClause += 'stock <= 5 AND '
     }
     
+    if (filtros.licencia){
+        whereClause += 'licence_id = ? AND '
+        values.push(`${filtros.licencia}`)
+    }
+
     // CONSTRUCCION DE LA QUERY 
 
     if (whereClause != ''){
@@ -105,6 +120,7 @@ const getFunkosBy = async (filtros) => {
 
 module.exports = {
     getAllFunkosFromDB,
+    getFunkosByLicence,
     getFunkosBy,
     getFunkoFromDB,
     addFunkoFromDB,
