@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/faqs.css" />
+    <!-- Cargo el titulo del sitio de forma dinámica -->
+    <link rel="icon"  type="image/png" href="/img/branding/isotype.svg">
+    <title> <%= title %> </title> 
+</head>
+<body>
+    <!-- Incluyo el Header como vista parcial -->
+    <%- include('partial/header-shop'); -%>
+    
+    <!-- Agrego el contenido de la web -->
+    <main class="container faqs">
+        <h1 class="faqs__title">PREGUNTAS FRECUENTES</h1>
+        <section class="faqs__section">
+            <div class="faqs__section-div">
+                <h2 class="faqs__section-title">¿Son originales?</h2>
+                <p class="faqs__section-text">¡Sí! Todos nuestros productos son <span class="faqs__bold">originales</span> e <span class="faqs__bold">importados</span>. No trabajamos con réplicas ni imitaciones.</p>
+            </div>
+            <div class="faqs__section-div">
+                <h2 class="faqs__section-title">¿Cuáles son los medios de pago?</h2>
+                <ol>
+                    <li class="faqs__section-text">1. Mercado Pago, hasta <span class="faqs__bold">6 cuotas SIN INTERÉS</span>.</li>
+                    <li class="faqs__section-text">2. Transferencia Bancaria en AR$ (CBU) - <span class="faqs__bold">25% de DESCUENTO</span>.</li>
+                    <li class="faqs__section-text">3. Efectivo en AR$ (Solamente para retirar) - <span class="faqs__bold">25% de DESCUENTO</span>.</li>
+                </ol>
+            </div>
+            <div class="faqs__section-div">
+                <h2 class="faqs__section-title">¿Cómo hago para pagar con Mercado Pago?</h2>
+                <p class="faqs__section-text">¡Es muy facil! Agregas el producto al carrito y finalizas la compra. Automáticamente vas a ser redireccionado a Mercado Pago y podés abonar en hasta <span class="faqs__bold">6 cuotas sin interés</span>.</p>
+            </div>
+            <div class="faqs__section-div">
+                <h2 class="faqs__section-title">¿Cuánto sale el envío?</h2>
+                <p class="faqs__section-text">Ofrecemos <span class="faqs__bold">ENVÍOS GRATIS</span> a Sucursal en todos los productos.</p>
+                <p class="faqs__section-text">En compras mayores a $25.000 podrás tener <span class="faqs__bold">ENVÍO GRATIS</span> a domicilio.</p>
+            </div>
+            <div class="faqs__section-div">
+                <h2 class="faqs__section-title">¿Qué pasa si quiero cancelar la compra pero ya lo pagué?</h2>
+                <p class="faqs__section-text">Una vez que está abonada la seña y nosotros ya realizamos el pedido a nuestro proveedor, no es posible cancelar el pedido. De ser así, no se devolverá el dinero.</p>
+                <p class="faqs__section-text">Por otro lado, si aún no realizamos el pedido, es posible cancelar el pedido con su respectiva devolución de dinero.</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Incluyo el footer como vista parcial -->
+    <%- include('partial/footer'); -%>
+</body>
+</html>

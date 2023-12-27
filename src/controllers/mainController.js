@@ -22,18 +22,16 @@ const mainControllers = {
             })
     },
     about: (req, res) => {
-        res.render('default-template.ejs',
+        res.render('about.ejs',
             {
                 title: 'About | Funkoshop',
-                content: 'Ruta para la vista de about',
                 cart: req.session.cart
             })
     },
     faqs: (req, res) => {
-        res.render('default-template.ejs',
+        res.render('faqs.ejs',
             {
-                title: 'FAQS | Funkoshop',
-                content: 'Ruta para la vista de preguntas frecuentes',
+                title: 'Preguntas Frecuentes | Funkoshop',
                 cart: req.session.cart
             })
     },
