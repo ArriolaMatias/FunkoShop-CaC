@@ -250,3 +250,7 @@ th {
     font-size: 34px;
     color: var(--primary-solid);
 }
+
+div.dataTables_wrapper div.dataTables_filter {
+    display: none;
+}
