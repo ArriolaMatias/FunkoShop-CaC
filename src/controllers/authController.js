@@ -2,31 +2,52 @@ const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const { validationResult } = require('express-validator');
 dotenv.config();
-const {addUserFromDB, getUserByEmailFromDB} = require('../models/users');
+const {addUserFromDB, getUserByEmailFromDB, getUserAndRoleByEmailFromDB} = require('../models/users');
 const authControllers = {
     login: (req, res) => {     
         res.render('admin/login.ejs', 
         { 
             title: 'Iniciar Sesión | Funkoshop',
-            msg: req.query.msg
+            msg: req.query.msg,
+            errores: [],
+            valores: req.body
     })},
 
     login_post: async(req, res) => { 
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()){ 
+            console.log(errors.array());
+            res.render('admin/login.ejs', {
+                title: 'Iniciar Sesión | FunkoShop',
+                errores: errors.array(),
+                valores: req.body,
+                msg: req.query.msg
+            })
+        }
+            
         try {
-            const {email, password} = req.body;
-            const user = await getUserByEmailFromDB(email);
-            const passwordAdmin = process.env.PASSWORD_ADMIN;
+            console.log(req.body.email)
+            const user = await getUserAndRoleByEmailFromDB(req.body.email);
+            console.log(user)
+            if (user.role_name === 'ADMIN') { req.session.esAdmin = true; res.redirect('/admin')}
+            else {req.session.esAdmin = false; res.redirect('/shop')}
 
-            if(user && Object.keys(user).length > 1 && user.password == password && user.password == passwordAdmin){
 
-                req.session.esAdmin = true;
-                res.redirect('/admin');
-            }else if(user && Object.keys(user).length > 1 && user.password == password){
-                req.session.esAdmin = false;
-                res.redirect('/');
-            }else{
-                res.redirect('/auth/login');
-            }
+            // const {email, password} = req.body;
+            // // const user = await getUserByEmailFromDB(email);
+            // const passwordAdmin = process.env.PASSWORD_ADMIN;
+
+            // if(user && Object.keys(user).length > 1 && user.password == password && user.password == passwordAdmin){
+
+            //     req.session.esAdmin = true;
+            //     res.redirect('/admin');
+            // }else if(user && Object.keys(user).length > 1 && user.password == password){
+            //     req.session.esAdmin = false;
+            //     res.redirect('/');
+            // }else{
+            //     res.redirect('/auth/login');
+            // }
         } catch (error) {
             console.log(error);
         }
