@@ -7,7 +7,7 @@
             <div class="cart__item-info">
                 <h3 class="cart__item-name"> <%= item.funko.product_name  %> </h3>
                 <p class="cart__item-licence"> <%= item.funko.licence_name %> </p>
-                <p class="cart__item-price">Precio unitario: $</p> <span id="itemPrice" class="cart__item-price"> <%= item.funko.price %> </span>
+                <p class="cart__item-price">Precio unitario: $</p> <span id="price-item-<%= item.id %>" class="cart__item-price"> <%= item.funko.price %> </span>
             </div>
         </div>
     </td>
@@ -35,15 +35,13 @@
         $.ajax({
             url: url,
             type: 'POST',
-            dataType: 'json',
-            success: function (data, textStatus, jqXHR){
-                console.log('Eliminado');
+            dataType: 'text',
+            success: function (data){
+                window.location.href = data;
             }, error: function (jqXHR, textStatus, errorThrown){
                 console.log(jqXHR);
             }
         });
-        alert('Parece que no hizo nada, pero lo borro');
-        return false;
     }
 </script>
 <script>
