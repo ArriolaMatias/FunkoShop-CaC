@@ -5,8 +5,11 @@
 <article class="card-item">
     <a class="card-item__link" href="/shop/item/<%= funko.product_id %>">
         <picture class="card-item__cover">
+            <% if (funko.stock <= 5) { %>
+                <span class="card-item__tag-last"> Ultimas unidades </span>
+            <% } %>
             <% if (diferenciaEnDias <= 7) { %>
-                <span class="card-item__tag"> Nuevo </span>
+                <span class="card-item__tag-new"> Nuevo </span>
             <% } %>
 
             <img class="card-item__img--front" src="/img<%= funko.image_front %>"
@@ -18,7 +21,7 @@
             <p class="card-item__licence"> <%= funko.licence_name %></p>
             <h4 class="card-item__name"> <%= funko.product_name  %> </h4>
             <p class="card-item__price"> $<%= funko.price %> </p>
-            <p class="card-item__promo"> 2 cuotas sin interés </p>
+            <p class="card-item__promo"> <%= funko.dues %> cuotas sin interés </p>
         </div>
     </a>
 </article>
