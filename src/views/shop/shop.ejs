@@ -52,8 +52,10 @@
                         <summary class="formulario-title"> CATEGORIAS </summary>
                         <div class="div-container-filtrar">
                             <%licences.map(licence=>{%>
-                                <label for="licencia">
-                                    <input value="<%= licence.licence_id %>" type="radio" name="licencia" id="" >
+                                <% let checked = '' %>
+                                <% if (parseInt(values.licencia) === licence.licence_id) {checked = 'checked'} %>
+                                <label for="<%= licence.licence_name %>">
+                                    <input value="<%= licence.licence_id %>" type="radio" name="licencia" id="<%= licence.licence_name %>" <%= checked %> >
                                     <%= licence.licence_name %> </label>
                               <%})%>
                         </div>
@@ -86,19 +88,51 @@
             </section>
             </form>
         </section>
-        <section class="card-items">
+        <section class="shop-area">
+            <section class="card-items">
 
-            <% listaFunkos.forEach(funko => { %>
-                <%- include('../partial/card.ejs', {funko: funko}) -%>
-            <% }) %>
+                <% listaFunkos.forEach(funko => { %>
+                    <%- include('../partial/card.ejs', {funko: funko}) -%>
+                <% }) %>
+    
+                <% if (listaFunkos.length === 0) { %>
+                 <div class="div-msg">
+                    <p> No se han encontrado resultados </p>
+                 </div>
+                <% } %>
+            </section>
+            <div class="pagination">
 
-            <% if (listaFunkos.length === 0) { %>
-             <div class="div-msg">
-                <p> No se han encontrado resultados </p>
-             </div>
-            <% } %>
+                <!-- Mantengo la query para pasarla como parametro a la paginación -->
+                <% let query = '' %>
+                <% if (values.nombre != undefined) { query += `&nombre=${values.nombre}` }%>
+                <% if (values.orden != undefined) { query += `&orden=${values.orden}` }%>
+                <% if (values.precioMin != undefined) { query += `&precioMin=${values.precioMin}` }%>
+                <% if (values.precioMax != undefined) { query += `&precioMax=${values.precioMax}` }%>
+                <% if (values.licencia != undefined) { query += `&licencia=${values.licencia}` }%>
+                <% if (values.nuevos != undefined) { query += `&nuevos=${values.nuevos}` }%>
+                <% if (values.ultimos != undefined) { query += `&ultimos=${values.ultimos}` }%>
 
+
+                <% if (paginaActual > 1) { %>
+                    <a href="?paginaActual=<%= paginaActual -1 %>&size=<%= size %><%= query %>"> Anterior </a>
+                <% } %>
+    
+                <% const startPage = Math.max( 1, paginaActual - 2) %>
+                <% const endPage = Math.min(  totalPages, startPage + 4 ) %>
+    
+                <% for( let i = startPage; i <= endPage; i++ ) { %>
+                    <a href="?paginaActual=<%= i %>&size=<%= size %><%= query %>"
+                    <%= i===paginaActual ? 'class=active' : '' %> > <%= i %> 
+                    </a>
+                <% } %>
+    
+                <% if (paginaActual < totalPages) { %>
+                    <a href="?paginaActual=<%= paginaActual + 1 %>&size=<%= size %><%= query %>"> Siguiente </a>
+                <% } %>
+            </div>
         </section>
+        
     </main>
     
     <!-- Incluyo el footer como vista parcial -->
