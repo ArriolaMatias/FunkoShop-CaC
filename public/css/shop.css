@@ -362,6 +362,34 @@ background-color: var(--primary-900);
     font-size: medium;
 }
 
+.shop_area{
+    display: flex;
+    flex-direction: column;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.pagination>a{
+    padding: 1.7rem;
+    border: 1px solid var(--light-bg-solid);
+    background-color: var(--dark-bg-solid);
+    color: var(--light-font-solid);
+    font-size: medium;
+}
+
+.pagination>a:hover{
+    background-color: var(--primary-solid);
+}
+
+.pagination>a.active{
+    background-color: var(--primary-solid);
+}
+
+
+
 /*/-------------Filtros -------------*/
 .search-filters-title {
     display: none;
