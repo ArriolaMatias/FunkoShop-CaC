@@ -1,22 +1,40 @@
 const Utilities = require("../utilities/json-utilities.js");
-const { getAllFunkosFromDB, getFunkosByLicence, getFunkoFromDB, getFunkosBy } = require("../models/model.js");
+const { getAllFunkosFromDB, getAllFunkosPaginatedFromDB, getFunkosByLicence, getFunkoFromDB, getFunkosBy } = require("../models/model.js");
 const { getAllLicencesFromDB } = require("../models/licence.js");
 const {agregarItem, deleteItem, popItem} = require("../models/cart.js");
+
+const LIMIT_OF_PRODUCTS_PER_PAGE = 10
 
 const shopControllers = {
     shop: async (req, res) => {
         if (req.session.cart === undefined) {req.session.cart = []; } //inicializo la variable de sesion para el carrito
         const responseLicence = await getAllLicencesFromDB();
+
+        if (req.query.paginaActual === undefined) { req.query.paginaActual = 1 };
+        if (req.query.size === undefined) { req.query.size = LIMIT_OF_PRODUCTS_PER_PAGE };
+
+        const page = parseInt(req.query.paginaActual)
+        const size = parseInt(req.query.size)
         try {
             let response;
-            if (Object.keys(req.query).length === 0) { response = await getAllFunkosFromDB(); }
-            else { console.log(req.query); response = await getFunkosBy(req.query); }
+            // if (Object.keys(req.query).length === 0) { response = await getAllFunkosPaginatedFromDB(req.query); }
+            // else { console.log(req.query); response = await getFunkosBy(req.query); }
+
+            response = await getFunkosBy(req.query);
+
+            console.log("cant items es: "+ response.total)
+            const totalPages = Math.ceil(response.total / size);
             
+            console.log("VALUES SERIA: \n" + JSON.stringify(req.query))
             res.render("./shop/shop.ejs", {
                 title: "Shop | Funkoshop",
-                listaFunkos: response,
+                listaFunkos: response.datos,
                 cart: req.session.cart,
-                licences: responseLicence
+                values: req.query,
+                licences: responseLicence,
+                paginaActual: page,
+                size: size,
+                totalPages: totalPages
             });
         } catch (error) {
             //!VISTA SI OCURRE UN ERROR
