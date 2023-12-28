@@ -9,6 +9,22 @@ const getAllFunkosFromDB = async()=>{
         throw error;
     }
 }
+
+const getAllFunkosPaginatedFromDB = async(filtros)=>{
+    const offset = (filtros.paginaActual - 1) * parseInt(filtros.size);
+    let countQuery = 'SELECT COUNT(*) as total FROM product';
+    
+    try {
+        const [datos] = await pool.query('SELECT product.*, licence.* FROM product JOIN licence ON product.licence_id = licence.licence_id ORDER BY product_id LIMIT ? OFFSET ?', [parseInt(filtros.size), offset]);
+        const [count] = await pool.query(countQuery);
+        console.log("DATOS: " + JSON.stringify(datos) +"\n TOTAL: "+ JSON.stringify(count))
+        return {datos: datos, total: count[0].total};
+    } catch (error) {
+        console.error('Error querying MySQL:', error);
+        throw error;
+    }
+}
+
 const getFunkoFromDB = async(id)=>{
     try {
         const [datos] = await pool.query('SELECT product.*, licence.* FROM product JOIN licence ON product.licence_id = licence.licence_id WHERE product_id = ?',[id]);
@@ -60,6 +76,9 @@ const deleteFunkoFromDB = async(id)=>{
 
 const getFunkosBy = async (filtros) => {
     let query = 'SELECT * FROM product ';
+    let countQuery = 'SELECT COUNT(*) as total FROM product ';
+    const offset = (filtros.paginaActual - 1) * parseInt(filtros.size);
+    console.log("OFFSET:" + offset)
     let whereClause = '';
     let values = [];
 
@@ -98,6 +117,7 @@ const getFunkosBy = async (filtros) => {
     if (whereClause != ''){
         whereClause = 'WHERE ' + whereClause.slice(0, -5);
         query += '' + whereClause;
+        countQuery += whereClause;
     }
 
     if (filtros.orden){
@@ -105,11 +125,14 @@ const getFunkosBy = async (filtros) => {
         query += ` ORDER BY price ${orden}`
     }
 
+    query += `LIMIT ${filtros.size} OFFSET ${offset}`
+
 
     try {
         console.log(query, values);
         const [rows] = await pool.query(query, values);
-        return rows;
+        const [count] = await pool.query(countQuery, values);
+        return { datos: rows, total: count[0].total };
         
     }catch (error){
         console.error('Error al obtener los productos de la base');
@@ -120,6 +143,7 @@ const getFunkosBy = async (filtros) => {
 
 module.exports = {
     getAllFunkosFromDB,
+    getAllFunkosPaginatedFromDB,
     getFunkosByLicence,
     getFunkosBy,
     getFunkoFromDB,
