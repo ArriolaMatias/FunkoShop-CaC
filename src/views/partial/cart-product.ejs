@@ -7,7 +7,7 @@
             <div class="cart__item-info">
                 <h3 class="cart__item-name"> <%= item.funko.product_name  %> </h3>
                 <p class="cart__item-licence"> <%= item.funko.licence_name %> </p>
-                <p class="cart__item-price">Precio unitario: $</p> <span id="price-item-<%= item.id %>" class="cart__item-price"> <%= item.funko.price %> </span>
+                <p class="cart__item-price">Precio unitario: $ <span id="price-item-<%= item.id %>"> <%= item.funko.price %> </span> </p>
             </div>
         </div>
     </td>
@@ -21,7 +21,7 @@
         </div>
     </td>
     <td>
-        <p id="totalPrice-item-<%= item.id %>" class="cart__table-price">$<%= Math.round((item.quantity * item.funko.price + Number.EPSILON) * 100) / 100 %></p>
+        <p id="totalPrice-item-<%= item.id %>" class="cart__table-price"><%= Math.round((item.quantity * item.funko.price + Number.EPSILON) * 100) / 100 %></p>
     </td>
     <td>
         <iconify-icon class="cart__table-icon" icon="ph:x-circle" onclick="return popItem('<%= item.funko.product_id %>' )"></iconify-icon>

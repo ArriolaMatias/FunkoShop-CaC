@@ -217,8 +217,9 @@ fieldset {
 
 .account__form-error {
     font-size: var(--font-small);
-    background-color: rgb(240, 110, 110);
-    color: rgb(77, 5, 5);
+    background-color: orange;
+    color: var(--dark-solid);
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     margin: -2rem 0rem 2rem 0rem;

@@ -3,7 +3,7 @@ const { getAllFunkosFromDB, getAllFunkosPaginatedFromDB, getFunkosByLicence, get
 const { getAllLicencesFromDB } = require("../models/licence.js");
 const {agregarItem, deleteItem, popItem} = require("../models/cart.js");
 
-const LIMIT_OF_PRODUCTS_PER_PAGE = 10
+const LIMIT_OF_PRODUCTS_PER_PAGE = 9
 
 const shopControllers = {
     shop: async (req, res) => {
