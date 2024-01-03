@@ -19,7 +19,7 @@
         <form class="create__form" action="/admin/create" method="POST" enctype="multipart/form-data">
             <div class="create__form-fila">
 
-                <label class="create__form-label" for="categoria">Categoría</label>
+                <label class="create__form-label" for="categoria">Categoría:</label>
                 <select class="create__form-select" name="category_id" id="categoria">
                   <% categories.map(category=>{%>
                     <option value="<%= category.category_id%>">
@@ -28,7 +28,7 @@
                     <%})%>
                 </select>
             
-                <label class="create__form-label" for="licencia">Licencia</label>
+                <label class="create__form-label" for="licencia">Licencia:</label>
                 <select class="create__form-select" name="licence_id" id="licencia">
                   <%licences.map(licence=>{%>
                     <option value="<%= licence.licence_id%>">
@@ -40,7 +40,7 @@
             </div>
             <div class="create__form-fila">
 
-                <label class="create__form-label" for="nombre">Nombre del producto</label>
+                <label class="create__form-label" for="nombre">Nombre del producto:</label>
                 <input class="create__form-input" type="text" name="product_name" id="nombre"
                     placeholder="Kakashi Hatake Shippuden Saga" required>
           
@@ -53,22 +53,22 @@
             </div>
             <div class="create__form-fila">
 
-                <label class="create__form-label" for="sku">SKU</label>
+                <label class="create__form-label" for="sku">SKU:</label>
                 <input class="create__form-input" type="text" name="sku" id="sku" placeholder="SSK111AB001" required>
 
-                <label class="create__form-label" for="precio">Precio</label>
+                <label class="create__form-label" for="precio">Precio:</label>
                 <input class="create__form-input" type="text" name="price" id="precio" placeholder="$ 0.000,00" required>
 
-                <label class="create__form-label" for="stock">Stock</label>
+                <label class="create__form-label" for="stock">Stock:</label>
                 <input class="create__form-input" type="text" name="stock" id="stock" placeholder="0" required>
           
             </div>
             <div class="create__form-fila">
 
-                <label class="create__form-label" for="descuento">Descuento</label>
+                <label class="create__form-label" for="descuento">Descuento:</label>
                 <input class="create__form-input" type="text" name="discount" id="descuento" placeholder="0%" required>
 
-                <label class="create__form-label" for="cuotas">Cuotas</label>
+                <label class="create__form-label" for="cuotas">Cuotas:</label>
                 <select class="create__form-select" type="number" name="dues" id="cuotas" required>
                     <option value="3" selected>3 cuotas sin interés</option>
                     <option value="6">6 cuotas sin interés</option>

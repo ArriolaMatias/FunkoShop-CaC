@@ -29,7 +29,7 @@
     /*Font-sizes--->Utiliza em*/
     --font-display: 4.6em;
     --font-jumbo: 3.8em;
-    --font-xlarge: 3em;
+    --font-xlarge: 3.2em;
     --font-large: 2.4em;
     --font-medium: 1.8em;
     --font-small: 1.6em;
@@ -270,5 +270,58 @@ input[type=submit] {
     color: var(--light-font-solid);
     background-color: var(--primary-solid);
     border: 0;
+}
+
+/*/-------------MediaQuerys-------------*/
+/*Medium devices (tablets, 768px and up)*/
+@media only screen and (max-width: 1280px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* For mobile phones: */
+@media only screen and (max-width: 768px) {
+    .edit__title {
+        font-size: var(--font-xlarge);
+        text-align: center;
+    }
+    
+    .edit__form-fila {
+        flex-direction: column;
+    }
+    .edit__form-label {
+        font-size: var(--font-medium);
+        text-align: center;
+    }
+    
+    .edit__form-select {
+        font-size: var(--font-small);
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .edit__form-input {
+        font-size: var(--font-small);
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .edit__form-textarea {
+        font-size: var(--font-medium);
+        width: 100%;
+    }
+    .edit__form-carga {
+        font-size: var(--font-small);
+    }
+    .edit__form-imagenes {
+        justify-content: center;
+    }
+    .edit__form-caption {
+        font-size: var(--font-small);
+    }
+      .edit__form-submit {
+        margin: 0 auto;
+    }
 }
    
