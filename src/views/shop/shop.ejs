@@ -24,7 +24,7 @@
                 
                 <div class="container-precio">
                     <label class="formulario-title" for="form-item">BUSCAR</label>
-                    <input id="form-item" type="text" placeholder="item o categoria" class="formulario-input input" name="nombre">
+                    <input id="form-item" type="text" placeholder="Buscar .." class="formulario-input input" name="nombre"> 
                 </div>
                 <div class="container-precio">
                     <label class="formulario-title" for="form-ordenar">ORDENAR POR</label>
@@ -38,11 +38,11 @@
                     <p class="formulario-title">PRECIO</p>
                     <div class="container-precio__container">
                         <label for="form-precio-min">MIN
-                            <input id="form-precio-min" type="number" placeholder="0" class="formulario-input" name="precioMin">
+                            <input id="form-precio-min" type="number" placeholder="0" class="formulario-input" name="precioMin" value="<%= values.precioMin %>">
                         </label>
                         <span>-</span>
                         <label for="form-precio-max">MAX
-                            <input id="form-precio-max" type="number" placeholder="0" class="formulario-input" name="precioMax">
+                            <input id="form-precio-max" type="number" placeholder="0" class="formulario-input" name="precioMax" value="<%= values.precioMax %>">
                         </label>
                     </div>
                 </div>
@@ -51,6 +51,9 @@
                     <details open>
                         <summary class="formulario-title"> CATEGORIAS </summary>
                         <div class="div-container-filtrar">
+                            <label for="todos">
+                                <input value="" type="radio" name="licencia" id="" checked='checked' default>
+                            Todas las categorías</label>
                             <%licences.map(licence=>{%>
                                 <% let checked = '' %>
                                 <% if (parseInt(values.licencia) === licence.licence_id) {checked = 'checked'} %>
@@ -68,15 +71,25 @@
                     <p class="formulario-title">FILTRAR</p>
                     <div class="div-container-filtrar">
                         <label for="nuevos">
-                            <input type="checkbox" name="nuevos" id="nuevos" >
+
+                            <% let nuevosOn = '' %>
+                            <% if (values.nuevos === 'on') {nuevosOn = 'checked'} %>
+                            
+                            <input type="checkbox" name="nuevos" id="nuevos" <%= nuevosOn %>>
                             NUEVOS</label>
                         <label for="ofertas">
                             <input disabled type="checkbox" name="" id="ofertas" >
                             OFERTAS</label>
+
                         <label for="ultimos">
-                            <input type="checkbox" name="ultimos" id="ultimos" >
+
+                            <% let ultimosOn = '' %>
+                            <% if (values.ultimos === 'on') {ultimosOn = 'checked'} %>
+
+                            <input type="checkbox" name="ultimos" id="ultimos" <%= ultimosOn %>>
                             ULTIMAS UNIDADES</label>
-                        <label for="especial">
+                        
+                            <label for="especial">
                             <input disabled type="checkbox" name="" id="especial" >
                             EDICIÓN ESPECIAL</label>
                         <label for="favoritos">
@@ -85,6 +98,7 @@
                     </div>
                 </div>
                 <input class="form-button" type="submit" value="Filtrar">
+                <input class="form-button" type="reset" value="Limpiar">
             </section>
             </form>
         </section>
