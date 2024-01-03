@@ -1,13 +1,17 @@
 const express = require('express');
 const router = express.Router();
+const validator = require('../middleware/validator.js')
 const adminController = require('../controllers/adminController.js');
 const uploadFile = require('../middleware/multer.js');
 const {requireAdmin} = require('../middleware/express-session.js');
 
+const bodyParser = require('body-parser')
+router.use(bodyParser.json());
+
 
 router.get('/',requireAdmin, adminController.admin);
 router.get('/create',requireAdmin, adminController.create);
-router.post('/create',requireAdmin,uploadFile.fields([{ name: 'image_front', maxCount: 1 }, { name: 'image_back', maxCount: 1 }]),adminController.create_post);
+router.post('/create',requireAdmin, uploadFile.fields([{ name: 'image_front', maxCount: 1 }, { name: 'image_back', maxCount: 1 }]), validator.createItem, adminController.create_post);
 router.get('/create',requireAdmin, adminController.create);
 router.get('/edit/:id',requireAdmin, adminController.edit);
 router.post('/edit/:id',requireAdmin,uploadFile.fields([{ name: 'image_front', maxCount: 1 }, { name: 'image_back', maxCount: 1 }]), adminController.edit_post);

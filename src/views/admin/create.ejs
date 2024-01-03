@@ -39,37 +39,52 @@
 
             </div>
             <div class="create__form-fila">
-
-                <label class="create__form-label" for="nombre">Nombre del producto</label>
-                <input class="create__form-input" type="text" name="product_name" id="nombre"
-                    placeholder="Kakashi Hatake Shippuden Saga" required>
-          
+                <label class="create__form-label" for="product_name">Nombre del producto</label>
+                <input class="create__form-input" type="text" name="product_name" id="product_name"
+                    placeholder="Nombre del item" value=<%= values.product_name %>>
             </div>
+            <% if (errores.find( (element) => element.path === 'product_name') != null) {%>
+                <p class="account__form-error"> <%= errores.find( (element) => element.path === 'product_name').msg %> </p>
+                <% } %>
             <div>
 
                 <textarea class="create__form-textarea" name="product_description" id="descripcion"
-                    placeholder="Descripción del producto" required></textarea>
+                    placeholder="Descripción del producto"></textarea>
           
             </div>
             <div class="create__form-fila">
 
                 <label class="create__form-label" for="sku">SKU</label>
-                <input class="create__form-input" type="text" name="sku" id="sku" placeholder="SSK111AB001" required>
+                <input class="create__form-input" type="text" name="sku" id="sku" placeholder="SSK111AB001" value=<%= values.sku %>>
 
                 <label class="create__form-label" for="precio">Precio</label>
-                <input class="create__form-input" type="text" name="price" id="precio" placeholder="$ 0.000,00" required>
+                <input class="create__form-input" type="text" name="price" id="price" placeholder="$ 0.000,00" value=<%= values.price %>>
 
                 <label class="create__form-label" for="stock">Stock</label>
-                <input class="create__form-input" type="text" name="stock" id="stock" placeholder="0" required>
+                <input class="create__form-input" type="text" name="stock" id="stock" placeholder="0" value=<%= values.stock %>>
           
             </div>
             <div class="create__form-fila">
+                <% if (errores.find( (element) => element.path === 'sku') != null) {%>
+                    <p class="account__form-error"> <%= errores.find( (element) => element.path === 'sku').msg %> </p>
+                    <% } %>
 
-                <label class="create__form-label" for="descuento">Descuento</label>
-                <input class="create__form-input" type="text" name="discount" id="descuento" placeholder="0%" required>
+                <% if (errores.find( (element) => element.path === 'price') != null) {%>
+                    <p class="account__form-error"> <%= errores.find( (element) => element.path === 'price').msg %> </p>
+                    <% } %>
 
-                <label class="create__form-label" for="cuotas">Cuotas</label>
-                <select class="create__form-select" type="number" name="dues" id="cuotas" required>
+                <% if (errores.find( (element) => element.path === 'stock') != null) {%>
+                    <p class="account__form-error"> <%= errores.find( (element) => element.path === 'stock').msg %> </p>
+                    <% } %>
+            </div>
+
+            <div class="create__form-fila">
+
+                <label class="create__form-label" for="discount">Descuento</label>
+                <input class="create__form-input" type="text" name="discount" id="discount" placeholder="0%" value=<%= values.discount %>>
+
+                <label class="create__form-label" for="dues">Cuotas</label>
+                <select class="create__form-select" type="number" name="dues" id="dues" value=<%= values.dues %>>
                     <option value="3" selected>3 cuotas sin interés</option>
                     <option value="6">6 cuotas sin interés</option>
                     <option value="8">8 Cuotas sin interés</option>
@@ -79,16 +94,22 @@
             </div>
             <div class="create__form-fila">
 
-                <label class="create__form-label" for="imagenes">Imagen Front:</label>
-                <input class="create__form-carga" type="file" id="imagenes" name="image_front" multiple>
+                <label class="create__form-label" for="image_front">Imagen Front:</label>
+                <input class="create__form-carga" type="file" id="image_front" name="image_front">
 
             </div>
+            <% if (errores.find( (element) => element.path === 'image_front') != null) {%>
+                <p class="account__form-error"> <%= errores.find( (element) => element.path === 'image_front').msg %> </p>
+                <% } %>
             <div class="create__form-fila">
 
-                <label class="create__form-label" for="imagenes_back">Imagen Back:</label>
-                <input class="create__form-carga" type="file" id="imagenes_back" name="image_back" multiple>
+                <label class="create__form-label" for="image_back">Imagen Back:</label>
+                <input class="create__form-carga" type="file" id="image_back" name="image_back">
 
             </div>
+            <% if (errores.find( (element) => element.path === 'image_back') != null) {%>
+                <p class="account__form-error"> <%= errores.find( (element) => element.path === 'image_back').msg %> </p>
+                <% } %>
             <div class="create__form-buttons">
 
                 <input class="create__form-button" type="submit" value="Agregar Producto">
