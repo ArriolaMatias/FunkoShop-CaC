@@ -143,6 +143,20 @@ header{
 .width-submenu:hover .submenu{
     display: block;
 }
+.navbar__custom-text{
+    display: inline-block;
+    font-size: var(--font-medium);
+    padding: var(--spacing-8) var(--spacing-12);
+}
+
+.navbar__custom-text:hover{
+    text-decoration: underline;
+    text-decoration-color: var(--primary-solid);
+}
+
+.navbar__custom-text--featured{
+    color: var(--primary-solid);
+}
 
 /*/---------header-----------*/
 
