@@ -71,11 +71,16 @@
                 <input class="edit__form-input" type="text" id="descuento" name="discount" placeholder="0%" value="<%= funko.discount %>">
 
                 <label class="edit__form-label" for="cuotas">Cuotas:</label>
+
                 <select class="edit__form-select" id="cuotas" name="dues">
-                    <option selected><%= funko.dues %></option>
-                    <option value="6">6 cuotas sin interés</option>
-                    <option value="8">8 Cuotas sin interés</option>
-                    <option value="10">10 Cuotas sin interés</option>
+
+                    <% cuotas.forEach(element => { %>
+                        <% if (element === Number(funko.dues)) {%>
+                        <option selected><%= element %> cuotas sin interés</option>
+                    <% }else { %>
+                        <option value="<%= element%>"> <%= element%> cuotas sin interés</option>
+                    <% }}) %>
+                    
                 </select>
 
             </div>
