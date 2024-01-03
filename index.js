@@ -13,6 +13,7 @@ const mainRoutes = require ('./src/routes/main.Routes.js');
 const shopRoutes = require ('./src/routes/shop.Routes.js');
 const adminRoutes = require ('./src/routes/admin.Routes.js');
 const authRoutes = require('./src/routes/auth.Routes.js');
+const expressValidator = require('express-validator');
 
 // Middlewares
 app.use(express.static('public'));

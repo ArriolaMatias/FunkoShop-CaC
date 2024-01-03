@@ -1,5 +1,6 @@
 const Utilities = require("../utilities/json-utilities.js");
-const { unlink } = require("fs");
+const { unlink, unlinkSync } = require("fs");
+const { validationResult } = require('express-validator');
 const {
     getAllFunkosFromDB,
     getFunkoFromDB,
@@ -16,6 +17,7 @@ const adminControllers = {
             res.render("admin/admin", {
                 title: "Panel de administración | FunkoShop",
                 listaFunkos: response,
+                loginAs: req.session.loginAs,
             });
         } catch (error) {
             //! CODIGO SI HAY ERROR
@@ -29,22 +31,49 @@ const adminControllers = {
                 title: "Agregar producto | FunkoShop",
                 licences: responseLicence,
                 categories: responseCategory,
+                errores: [],
+                values: req.body,
+                loginAs: req.session.loginAs,
             });
         } catch (error) {
             //!CODIGO DE ERROR
         }
     },
     create_post: async (req, res) => {
-        const funkoData = req.body;
-        funkoData.image_front = `/storage/${req.files["image_front"][0].filename}`;
-        funkoData.image_back = `/storage/${req.files["image_back"][0].filename}`;
-        try {
-            // funkoData.image_front = `/${req.file.filename}`
-            // funkoData.imagen_back =
-            await addFunkoFromDB(funkoData);
-            res.redirect("/admin");
-        } catch (error) { }
-    },
+        const errors = validationResult(req);
+        console.log(req.files);
+
+        if (!errors.isEmpty()){ 
+            console.log(errors.array());
+
+            //Si hay errores, las imagenes se suben igual, con lo cual las debo eliminar.
+            if(req.files['image_front']) { unlinkSync(req.files.image_front[0].path) }
+            if(req.files['image_back']) { unlinkSync(req.files.image_back[0].path) }
+
+            const responseLicence = await getAllLicencesFromDB();
+            const responseCategory = await getAllCategoriesFromDB();
+            res.render('admin/create.ejs', {
+                title: 'Agregar producto | FunkoShop',
+                licences: responseLicence,
+                categories: responseCategory,
+                errores: errors.array(),
+                values: req.body,
+                msg: req.query.msg,
+                loginAs: req.session.loginAs,
+            })
+        }else{
+            try {
+                const funkoData = req.body;
+                funkoData.image_front = `/storage/${req.files["image_front"][0].filename}`;
+                funkoData.image_back = `/storage/${req.files["image_back"][0].filename}`;
+                console.log('llega')
+                // funkoData.image_front = `/${req.file.filename}`
+                // funkoData.imagen_back =
+                await addFunkoFromDB(funkoData);
+                res.redirect("/admin");
+            } catch (error) { }
+        }
+        },
     edit: async (req, res) => {
         try {
             const id = req.params.id;
@@ -56,6 +85,8 @@ const adminControllers = {
                 funko: responseFunko,
                 licences: responseLicence,
                 categories: responseCategory,
+                cuotas: [3,6,9,10,12],
+                loginAs: req.session.loginAs,
             });
         } catch (error) {
             //! CODIGO DE ERROR
@@ -105,6 +136,7 @@ const adminControllers = {
             res.render("admin/delete", {
                 title: `Eliminar producto: ${response.product_name} | FunkoShop`,
                 funko: response,
+                loginAs: req.session.loginAs,
             });
         } catch (error) {
             //!CODIGO DE ERROR

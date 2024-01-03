@@ -68,9 +68,12 @@
                     <fieldset>
                             <div>
                                 <input class="account__form-button" type="submit" value="Registrar">
-                                <input class="account__form-checkbox" id="aceptar" type="checkbox"></a>
-                                <label class="account__form-terms" for="aceptar">Acepto <a href="">Términos y Condiciones</a></label>
+                                <input class="account__form-checkbox" id="terms" type="checkbox" name="terms" value="acepto"></a>
+                                <label class="account__form-terms" for="terms">Acepto <a href="">Términos y Condiciones</a></label>
                             </div>
+                            <% if (errores.find( (element) => element.path === 'terms') != null) {%>
+                                <p class="account__form-error"> <%= errores.find( (element) => element.path === 'terms').msg %> </p>
+                                <% } %>
                     </fieldset>
                 </form>
             </section>

@@ -8,7 +8,8 @@ const mainControllers = {
                 {
                     title: 'Home | Funkoshop',
                     funkos, 
-                    cart: req.session.cart
+                    cart: req.session.cart,
+                    loginAs: req.session.loginAs,
                 })
         } catch (error) {
 
@@ -18,21 +19,24 @@ const mainControllers = {
         res.render('contact.ejs',
             {
                 title: 'Contacto | Funkoshop',
-                cart: req.session.cart
+                cart: req.session.cart,
+                loginAs: req.session.loginAs,
             })
     },
     about: (req, res) => {
         res.render('about.ejs',
             {
                 title: 'About | Funkoshop',
-                cart: req.session.cart
+                cart: req.session.cart,
+                loginAs: req.session.loginAs,
             })
     },
     faqs: (req, res) => {
         res.render('faqs.ejs',
             {
                 title: 'Preguntas Frecuentes | Funkoshop',
-                cart: req.session.cart
+                cart: req.session.cart,
+                loginAs: req.session.loginAs,
             })
     },
 };
