@@ -6,6 +6,13 @@
             </a>
         </picture>
         <ul class="navbar__menu">
+            <% if (loginAs != undefined) { %>
+                <li class="">
+                    <a class="navbar__custom-text" href="#">
+                        ¡Hola, <span class="navbar__custom-text--featured"> <%= loginAs %></span>!
+                    </a>
+                </li>
+            <% } %>
             <li class="navbar__item width-submenu">
                 <a class="navbar__link width-icon" href="#">
                     SHOP<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -38,11 +45,19 @@
                     CONTACTO
                 </a>
             </li>
-            <li class="navbar__item">
-                <a class="navbar__link" href="/auth/login">
-                    LOGIN
-                </a>
-            </li>
+            <% if (loginAs != undefined) { %>
+                <li class="">
+                    <a class="navbar__link" href="/auth/logout">
+                        SALIR
+                    </a>
+                </li>
+            <% } else { %>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/auth/login">
+                        LOGIN
+                    </a>
+                </li>
+                <% } %>
             <li class="navbar__item">
                 <a class="navbar__cart" href="/shop/cart">
                     <img src="/img/icons/cart-icon.svg">

@@ -6,6 +6,13 @@
             </a>
         </picture>
         <ul class="navbar__menu">
+            <% if (loginAs != undefined) { %>
+                <li class="">
+                    <a class="navbar__custom-text" href="#">
+                        ¡Hola, <span class="navbar__custom-text--featured"> <%= loginAs %></span>!
+                    </a>
+                </li>
+            <% } %>
             <li class="navbar__item">
                 <a class="navbar__link" href="/shop">
                     VER TIENDA
@@ -17,7 +24,7 @@
                 </a>
             </li>
             <li class="navbar__item">
-                <a class="navbar__link" href="/">
+                <a class="navbar__link" href="/auth/logout">
                     SALIR
                 </a>
             </li>
