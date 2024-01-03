@@ -30,6 +30,7 @@ const shopControllers = {
                 title: "Shop | Funkoshop",
                 listaFunkos: response.datos,
                 cart: req.session.cart,
+                loginAs: req.session.loginAs,
                 values: req.query,
                 licences: responseLicence,
                 paginaActual: page,
@@ -51,7 +52,8 @@ const shopControllers = {
                 title: `${response.product_name} | Funkoshop`,
                 funko: response,
                 relatedFunkos: relatedFunkos,
-                cart: req.session.cart
+                cart: req.session.cart,
+                loginAs: req.session.loginAs,
             });
         } catch (error) { }
     },
@@ -70,7 +72,8 @@ const shopControllers = {
         try {
             res.render("./shop/cart.ejs", {
                 title: "Carrito | Funkoshop",
-                cart: req.session.cart
+                cart: req.session.cart,
+                loginAs: req.session.loginAs,
             });
         } catch (error) { }
     },
@@ -78,7 +81,8 @@ const shopControllers = {
         res.render("default-template.ejs", {
             title: "Checkout | Funkoshop",
             content: "Ruta para la vista de pagos",
-            cart: req.session.cart
+            cart: req.session.cart,
+            loginAs: req.session.loginAs,
         });
     },
     shop_search: (req, res) => {
@@ -86,7 +90,8 @@ const shopControllers = {
         res.render("./shop/shop.ejs", {
             title: "Shop | Funkoshop",
             listaFunkos: response,
-            cart: req.session.cart
+            cart: req.session.cart,
+            loginAs: req.session.loginAs,
         });
     }
 };

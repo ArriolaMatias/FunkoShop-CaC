@@ -8,28 +8,29 @@ const authControllers = {
         res.render('admin/login.ejs', 
         { 
             title: 'Iniciar Sesión | Funkoshop',
+            loginAs: req.session.loginAs,
             msg: req.query.msg,
             errores: [],
-            valores: req.body
+            valores: req.body,
+            loginAs: req.session.loginAs,
     })},
 
     login_post: async(req, res) => { 
         const errors = validationResult(req);
 
         if (!errors.isEmpty()){ 
-            console.log(errors.array());
             res.render('admin/login.ejs', {
                 title: 'Iniciar Sesión | FunkoShop',
                 errores: errors.array(),
                 valores: req.body,
-                msg: req.query.msg
+                msg: req.query.msg,
+                loginAs: req.session.loginAs,
             })
         }
             
         try {
-            console.log(req.body.email)
             const user = await getUserAndRoleByEmailFromDB(req.body.email);
-            console.log(user)
+            req.session.loginAs = `${user.name}`;
             if (user.role_name === 'ADMIN') { req.session.esAdmin = true; res.redirect('/admin')}
             else {req.session.esAdmin = false; res.redirect('/shop')}
 
@@ -56,7 +57,8 @@ const authControllers = {
         res.render('admin/register.ejs', {
             title: "Registro | FunkoShop",
             errores: [],
-            valores: req.body
+            valores: req.body,
+            loginAs: req.session.loginAs,
         })
     },
     register_post: async(req, res) => { 
@@ -66,7 +68,8 @@ const authControllers = {
             res.render('admin/register.ejs', {
                 title: 'Registro | FunkoShop',
                 errores: errors.array(),
-                valores: req.body
+                valores: req.body,
+                loginAs: req.session.loginAs,
             })
         }
         else{
@@ -79,7 +82,7 @@ const authControllers = {
         }
     }
 },
-    logout: (req, res) => { res.send("Ruta para logout")},
+    logout: (req, res) => { req.session.destroy();  res.redirect('/')},
 }
 
 module.exports = authControllers;
