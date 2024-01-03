@@ -25,6 +25,17 @@ const getAllFunkosPaginatedFromDB = async(filtros)=>{
     }
 }
 
+const getProductBySkuFromDB = async (sku) => {
+        try{
+            const [datos] = await pool.query('SELECT * FROM product WHERE sku = ?',[sku]);
+            const [product] = datos;
+            return product;
+        } catch (error){
+            console.error('Error querying MySQL:', error);
+            throw error;
+        }
+}
+
 const getFunkoFromDB = async(id)=>{
     try {
         const [datos] = await pool.query('SELECT product.*, licence.* FROM product JOIN licence ON product.licence_id = licence.licence_id WHERE product_id = ?',[id]);
@@ -122,10 +133,10 @@ const getFunkosBy = async (filtros) => {
 
     if (filtros.orden){
         const orden = filtros.orden === 'DESC'? 'DESC' : 'ASC';
-        query += ` ORDER BY price ${orden}`
+        query += ` ORDER BY price ${orden} `
     }
 
-    query += `LIMIT ${filtros.size} OFFSET ${offset}`
+    query += ` LIMIT ${filtros.size} OFFSET ${offset}`
 
 
     try {
@@ -144,6 +155,7 @@ const getFunkosBy = async (filtros) => {
 module.exports = {
     getAllFunkosFromDB,
     getAllFunkosPaginatedFromDB,
+    getProductBySkuFromDB,
     getFunkosByLicence,
     getFunkosBy,
     getFunkoFromDB,
