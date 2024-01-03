@@ -157,6 +157,21 @@ header {
     display: block;
 }
 
+.navbar__custom-text{
+    display: inline-block;
+    font-size: var(--font-medium);
+    padding: var(--spacing-8) var(--spacing-12);
+}
+
+.navbar__custom-text:hover{
+    text-decoration: underline;
+    text-decoration-color: var(--primary-solid);
+}
+
+.navbar__custom-text--featured{
+    color: var(--primary-solid);
+}
+
 /*/---------header-----------*/
 
 
@@ -298,6 +313,16 @@ header {
     border: 1px solid #000;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { 
+    -moz-appearance:textfield;
+ }
+
+
 .div-container-filtrar {
     display: flex;
     flex-direction: column;
@@ -342,11 +367,14 @@ header {
     border-radius: 50px;
     font-weight: 500;
     transition: background .3s ease-in-out;
+    cursor: pointer;
+    border: none;
 }
 
 .form-button:hover {
 background-color: var(--primary-900);
 }
+
 
 .div-msg{
     grid-column-start: 2;

@@ -251,3 +251,15 @@ input[type=submit], input[type=reset] {
     border: 0;
     margin-right: var(--spacing-36);
 }
+
+.account__form-error {
+    font-size: var(--font-small);
+    background-color: orange;
+    color: var(--dark-solid);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: -2rem 0rem 2rem 0rem;
+    padding: .3rem;
+    max-width: 400px;
+}
