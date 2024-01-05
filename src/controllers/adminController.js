@@ -64,8 +64,9 @@ const adminControllers = {
         }else{
             try {
                 const funkoData = req.body;
-                funkoData.image_front = `/storage/${req.files["image_front"][0].filename}`;
-                funkoData.image_back = `/storage/${req.files["image_back"][0].filename}`;
+                let destination = req.files["image_front"][0].destination.replace('public/img','');
+                funkoData.image_front = `${destination}/${req.files["image_front"][0].filename}`;
+                funkoData.image_back = `${destination}/${req.files["image_back"][0].filename}`;
                 console.log('llega')
                 // funkoData.image_front = `/${req.file.filename}`
                 // funkoData.imagen_back =
@@ -101,17 +102,21 @@ const adminControllers = {
             if (req.files && Object.keys(req.files).length > 0) {
 
                 if (req.files.image_front !== undefined) {
-                    funkoData.image_front = `/storage/${req.files.image_front[0].filename}`;
-                    unlink(`public/img/${imgAntFunko.image_front}`, (err) => {
+                    console.log(req.files);
+                    let destination = req.files["image_front"][0].destination.replace('public/img/','');
+                    funkoData.image_front = `${destination}/${req.files.image_front[0].filename}`;
+                    unlink(`public${imgAntFunko.image_front}`, (err) => {
                         if (err) {
+                            console.log(imgAntFunko.image_front)
                             console.log("Ocurrio un error al eliminar la imagen front");
                             return;
                         }
                     });
                 }
                 if (req.files.image_back !== undefined) {
-                    funkoData.image_back = `/storage/${req.files.image_back[0].filename}`;
-                    unlink(`public/img/${imgAntFunko.image_back}`, (err) => {
+                    let destination = req.files["image_back"][0].destination.replace('public/img/','');
+                    funkoData.image_back = `${destination}/${req.files.image_back[0].filename}`;
+                    unlink(`public${imgAntFunko.image_back}`, (err) => {
                         if (err) {
                             console.log("Ocurrio un error al eliminar la imagen back");
                             return;
