@@ -252,7 +252,44 @@ input[type=submit], input[type=reset] {
     margin-right: var(--spacing-36);
 }
 
-<<<<<<< HEAD
+.account__form-error {
+    font-size: var(--font-small);
+    background-color: orange;
+    color: var(--dark-solid);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: -2rem 0rem 2rem 0rem;
+    padding: .3rem;
+    max-width: 400px;
+}
+
+.create__form-imagenes {
+    display: flex;
+    gap: var(--spacing-36);
+    align-items: center;
+}
+
+.create__form-imagen {
+    width: 12.5%;
+    height: auto;
+}
+
+.create__form-imagen img {
+    border-bottom: 1px solid var(--primary-solid);
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.create__form-caption {
+    font-family: var(--alternative-font);
+    font-weight: 500;
+    font-size: var(--font-medium);
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.5rem 0;
+}
+
 /*/-------------MediaQuerys-------------*/
 /*Medium devices (tablets, 768px and up)*/
 @media only screen and (max-width: 1280px) {
@@ -304,16 +341,4 @@ input[type=submit], input[type=reset] {
     .create__form-button {
         margin: 0 auto;
     }
-=======
-.account__form-error {
-    font-size: var(--font-small);
-    background-color: orange;
-    color: var(--dark-solid);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    margin: -2rem 0rem 2rem 0rem;
-    padding: .3rem;
-    max-width: 400px;
->>>>>>> f22ae4d8d750d32f7d2df2fc2c285d0ca9f9db81
 }

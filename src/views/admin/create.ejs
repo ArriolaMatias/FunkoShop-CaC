@@ -110,6 +110,21 @@
             <% if (errores.find( (element) => element.path === 'image_back') != null) {%>
                 <p class="account__form-error"> <%= errores.find( (element) => element.path === 'image_back').msg %> </p>
                 <% } %>
+
+                <div class="create__form-imagenes">
+
+                    <picture class="create__form-imagen">
+                        <img  id="image_front_placeholder" src="#" alt="Imagen del frente del producto">
+                        <p class="create__form-caption">Frente</p>
+                    </picture>
+    
+                    <picture class="create__form-imagen" >
+                        <img id="image_back_placeholder" src="#" alt="Imagen del dorso del producto">
+                        <p class="create__form-caption">Dorso</p>
+                    </picture>
+    
+                </div>
+
             <div class="create__form-buttons">
 
                 <input class="create__form-button" type="submit" value="Agregar Producto">
@@ -121,5 +136,39 @@
 
     <!-- Incluyo el footer como vista parcial -->
     <%- include('../partial/footer'); -%>
+    <script>
+        document.getElementById('image_front').addEventListener('change', function(e) {
+          var inputFile = e.target;
+          var file = inputFile.files[0];
+    
+          if (file) {
+            var reader = new FileReader();
+    
+            reader.onload = function(e) {
+              var thumbnail = document.getElementById('image_front_placeholder');
+              thumbnail.src = e.target.result;
+            };
+    
+            reader.readAsDataURL(file);
+          }
+        });
+
+
+        document.getElementById('image_back').addEventListener('change', function(e) {
+          var inputFile = e.target;
+          var file = inputFile.files[0];
+    
+          if (file) {
+            var reader = new FileReader();
+    
+            reader.onload = function(e) {
+              var thumbnail = document.getElementById('image_back_placeholder');
+              thumbnail.src = e.target.result;
+            };
+    
+            reader.readAsDataURL(file);
+          }
+        });
+      </script>
 </body>
 </html>
