@@ -10,6 +10,20 @@ const getAllLicencesFromDB = async()=>{
     }
 }
 
+
+const getLicenceById = async(id) => {
+    try{
+        const [datos] = await pool.query('SELECT * FROM licence WHERE licence_id = ?',[id]);
+        const [product] = datos;
+        return product;
+    } catch (error){
+        console.error('Error querying MySQL:', error);
+        throw error;
+    }
+}
+
+
 module.exports = {
-    getAllLicencesFromDB
+    getAllLicencesFromDB,
+    getLicenceById
 }
