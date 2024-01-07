@@ -99,64 +99,53 @@ img {
 }
 
 /*---------header-----------*/
-header {
+header{
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-36);
 }
-
-.navbar {
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-.navbar__logo {
+.navbar__logo{
     max-width: 300px;
 }
-
-.navbar__menu {
+.navbar__menu{
     display: flex;
     align-items: center;
     gap: var(--spacing-20);
 }
 
-.navbar__item {}
-
-.navbar__link {
+.navbar__link{
     display: inline-block;
     font-size: var(--font-medium);
     padding: var(--spacing-8) var(--spacing-12);
     transition: background-color .3s ease-in-out;
     position: relative;
 }
-
-.navbar__link:hover {
+.navbar__link:hover{
     background-color: var(--primary-solid);
 }
-
-.submenu {
+.submenu{
     display: none;
     width: 300px;
     position: absolute;
     background-color: var(--dark-bg-solid);
     z-index: 3;
 }
-
-.submenu__link {
+.submenu__link{
     display: block;
     padding: var(--spacing-8) var(--spacing-16);
     font-size: var(--font-medium);
     transition: background-color .3s ease-in-out;
 }
-
-.submenu__link:hover {
+.submenu__link:hover{
     background-color: var(--primary-solid);
 }
-
-.width-submenu:hover .submenu {
+.width-submenu:hover .submenu{
     display: block;
 }
-
 .navbar__custom-text{
     display: inline-block;
     font-size: var(--font-medium);
@@ -170,6 +159,45 @@ header {
 
 .navbar__custom-text--featured{
     color: var(--primary-solid);
+}
+
+.hamburger-menu {
+    font-size: var(--font-display);
+    cursor: pointer;
+    display: none; /* Ocultar inicialmente en pantallas más grandes */
+}
+
+@media (max-width: 768px) {
+    .navbar__menu {
+        display: none; /* Ocultar lista de navegación en pantallas más pequeñas */
+        flex-direction: column;
+        position: absolute;
+        top: 135px;
+        left: 0;
+        width: 100%;
+    }
+
+    .navbar__menu.show {
+        display: flex; /* Mostrar lista de navegación cuando se activa */
+        z-index: 1;
+        background-color: var(--dark-bg-solid);
+        padding-bottom: var(--spacing-24);
+    }
+
+    .navbar__menu li {
+        margin: 0;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid white;
+    }
+
+    .hamburger-menu {
+        display: block; /* Mostrar el ícono de hamburguesa en pantallas más pequeñas */
+    }
+
+    .submenu{
+        position: unset;
+    }
 }
 
 /*/---------header-----------*/

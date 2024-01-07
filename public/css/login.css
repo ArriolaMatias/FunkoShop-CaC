@@ -193,8 +193,10 @@ fieldset {
 
 .account__msg{
     align-self: center;
-    background-color: rgb(105, 173, 91);
+    background-color: lightgreen;
     width: 55%;
+    margin: 1rem;
+    border-radius: 5px;
 }
 
 .msg{
@@ -202,7 +204,7 @@ fieldset {
     font-family: var(--alternative-font);
     font-weight: 400;
     text-align: center;
-    color: rgb(5, 43, 5);
+    color: var(--dark-solid);
     margin: 1rem;
     padding: 0.5rem;
 }

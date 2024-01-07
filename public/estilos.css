@@ -438,7 +438,9 @@ background-color: var(--primary-900);
         width: 90%;
         margin: var(--spacing-28) auto;
     }
+}
 
+@media only screen and (max-width: 1080px) {
     .logo-principal {
         content: url("/img/branding/isotype.svg");
         max-width: 60%;
@@ -447,10 +449,6 @@ background-color: var(--primary-900);
 
 /* For mobile phones: */
 @media only screen and (max-width: 768px) {
-
-    .width-icon svg{
-        display: none;
-    }
     .collection__title {
         font-size: var(--font-jumbo);
     }

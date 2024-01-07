@@ -76,7 +76,7 @@ const authControllers = {
         try {
             const userData = req.body;
             await addUserFromDB(userData);
-            let msg = 'Usuario creado! Inicia sesión para continuar';
+            let msg = '¡Usuario creado! Inicia sesión para continuar';
             res.redirect(`/auth/login/?msg=${msg}`);
         } catch (error) {
         }
