@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/register.css">
+    <link rel="stylesheet" href="../estilos.css">
+    <link rel="stylesheet" href="../css/auth.css">
     <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title>
-    <link rel="icon"  type="image/png" href="/img/branding/isotype.svg">
+    <link rel="icon" type="image/png" href="/img/branding/isotype.svg">
 </head>
 <body>
     <!-- Incluyo el Header como vista parcial -->
@@ -15,71 +16,76 @@
 
     <!-- Agrego el contenido de la web -->
     <main class="container">
-            <section class="register">   
-                <div>
-                    <h2 class="account__title">CREA TU CUENTA</h2>
-                    <p class="account__text">Completa el formulario para ser parte del mundo de los Funkos</p>
-                </div>
-                <form class="account__form" method="post" action="/auth/register">
-                    <fieldset>
-                        <div class="account__form-div">
-                            <label class="account__form-label" for="nombre">Nombre: </label>
-                            <input class="account__form-input" id="nombre" type="text" placeholder="John" name="name" value="<%= valores.name %>">
-                        </div>
+        <section class="register">   
+                
+            <div>
+                <h2 class="account__title">CREA TU CUENTA</h2>
+                <p class="account__text">Completa el formulario para ser parte del mundo de los Funkos</p>
+            </div>
+                
+            <form class="account__form" method="post" action="/auth/register">
+                <fieldset>
+
+                    <div class="account__form-div">
+                        <label class="account__form-label" for="nombre">Nombre: </label>
+                        <input class="account__form-input" id="nombre" type="text" placeholder="John" name="name" value="<%= valores.name %>">
+                    </div>
+                    <% if (errores.find( (element) => element.path === 'name') != null) {%>
+                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'name').msg %> </p>
+                        <% } %>
+
+                    <div class="account__form-div">
+                        <label class="account__form-label" for="apellido">Apellido: </label>
+                        <input class="account__form-input" id="apellido" type="text" placeholder="Doe" name="lastname" value="<%= valores.lastname %>">
+                    </div>
+                    <% if (errores.find( (element) => element.path === 'lastname') != null) {%>
+                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'lastname').msg %> </p>
+                        <% } %>
+
+                    <div class="account__form-div">
+                        <label class="account__form-label" for="email">Email: </label>
+                        <input class="account__form-input" id="email" type="email" placeholder="johndoe@correo.com" name="email" value="<%= valores.email %>">
+                    </div>
+                    <% if (errores.find( (element) => element.path === 'email') != null) {%>
+                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'email').msg %> </p>
+                        <% } %>
                         
-                        <% if (errores.find( (element) => element.path === 'name') != null) {%>
-                            <p class="account__form-error"> <%= errores.find( (element) => element.path === 'name').msg %> </p>
-                            <% } %>
+                    <div class="account__form-div">
+                        <label class="account__form-label" for="contraseña">Contraseña: </label>
+                        <input class="account__form-input" id="contraseña" type="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF" name="password">
+                    </div>
+                    <% if (errores.find( (element) => element.path === 'password') != null) {%>
+                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'password').msg %> </p>
+                        <% } %>
 
-                        <div class="account__form-div">
-                            <label class="account__form-label" for="apellido">Apellido: </label>
-                            <input class="account__form-input" id="apellido" type="text" placeholder="Doe" name="lastname" value="<%= valores.lastname %>">
-                        </div>
-                        <% if (errores.find( (element) => element.path === 'lastname') != null) {%>
-                            <p class="account__form-error"> <%= errores.find( (element) => element.path === 'lastname').msg %> </p>
-                            <% } %>
+                    <div class="account__form-div">
+                        <label class="account__form-label" for="reContraseña">Repita Contraseña: </label>
+                        <input class="account__form-input" id="reContraseña" type="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF" name="rePassword" formnovalidate="formnovalidate">
+                    </div>
+                    <% if (errores.find( (element) => element.path === 'rePassword') != null) {%>
+                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'rePassword').msg %> </p>
+                        <% } %>
 
-                        <div class="account__form-div">
-                            <label class="account__form-label" for="email">Email: </label>
-                            <input class="account__form-input" id="email" type="email" placeholder="johndoe@correo.com" name="email" value="<%= valores.email %>">
-                        </div>
-                        <% if (errores.find( (element) => element.path === 'email') != null) {%>
-                            <p class="account__form-error"> <%= errores.find( (element) => element.path === 'email').msg %> </p>
-                            <% } %>
+                </fieldset>
+                <fieldset>
+
+                    <div>
+                        <input class="account__form-button" type="submit" value="Registrar">
+                        <input class="account__form-checkbox" id="terms" type="checkbox" name="terms" value="acepto"></a>
+                        <label class="account__form-terms" for="terms">Acepto <a href="">Términos y Condiciones</a></label>
+                    </div>
+                    <% if (errores.find( (element) => element.path === 'terms') != null) {%>
+                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'terms').msg %> </p>
+                        <% } %>
                         
-                        <div class="account__form-div">
-                            <label class="account__form-label" for="contraseña">Contraseña: </label>
-                            <input class="account__form-input" id="contraseña" type="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF" name="password">
-                        </div>
-                        <% if (errores.find( (element) => element.path === 'password') != null) {%>
-                            <p class="account__form-error"> <%= errores.find( (element) => element.path === 'password').msg %> </p>
-                            <% } %>
+                </fieldset>
+            </form>
 
-                        <div class="account__form-div">
-                            <label class="account__form-label" for="reContraseña">Repita Contraseña: </label>
-                            <input class="account__form-input" id="reContraseña" type="password" 
-                            placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF" 
-                            name="rePassword" formnovalidate="formnovalidate">
-                        </div>
-                        <% if (errores.find( (element) => element.path === 'rePassword') != null) {%>
-                            <p class="account__form-error"> <%= errores.find( (element) => element.path === 'rePassword').msg %> </p>
-                            <% } %>
-                    </fieldset>
-                    <fieldset>
-                            <div>
-                                <input class="account__form-button" type="submit" value="Registrar">
-                                <input class="account__form-checkbox" id="terms" type="checkbox" name="terms" value="acepto"></a>
-                                <label class="account__form-terms" for="terms">Acepto <a href="">Términos y Condiciones</a></label>
-                            </div>
-                            <% if (errores.find( (element) => element.path === 'terms') != null) {%>
-                                <p class="account__form-error"> <%= errores.find( (element) => element.path === 'terms').msg %> </p>
-                                <% } %>
-                    </fieldset>
-                </form>
-            </section>
+        </section>
     </main>
 
     <!-- Incluyo el footer como vista parcial -->
     <%- include('../partial/footer') %>
 </body>
+
 </html>

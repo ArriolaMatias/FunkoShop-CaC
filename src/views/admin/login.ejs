@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../estilos.css">
+    <link rel="stylesheet" href="../css/auth.css">
     <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title>
-    <link rel="icon"  type="image/png" href="/img/branding/isotype.svg">
+    <link rel="icon" type="image/png" href="/img/branding/isotype.svg">
 </head>
 <body>
     <!-- Incluyo el Header como vista parcial -->
@@ -16,23 +17,24 @@
     <!-- Agrego el contenido de la web -->
     <main class="container">
         <section class="login">
-            <div class="account__msg">
+            
+            <div class="account__msg-div">
                 <% if (msg != undefined) { %>
-                 <p class="msg">  <%= msg %> </p>
+                 <p class="account__msg">  <%= msg %> </p>
                  <% } %>
             </div>
 
             <div>
                 <h2 class="account__title">INGRESAR A MI CUENTA</h2>
             </div>
+
             <form class="account__form" method="post" action="">
                 <fieldset>
-                    
+
                     <div class="account__form-div">
                         <label class="account__form-label" for="email">Email: </label>
                         <input class="account__form-input" id="email" type="email" placeholder="johndoe@correo.com" name="email" value='<%= valores.email %>'>
                     </div>
-
                     <% if (errores.find( (element) => element.path === 'email') != null) {%>
                         <p class="account__form-error"> <%= errores.find( (element) => element.path === 'email').msg %> </p>
                         <% } %>
@@ -41,25 +43,28 @@
                         <label class="account__form-label" for="contraseña">Contraseña: </label>
                         <input class="account__form-input" id="contraseña" type="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF" name="password">
                     </div>
-
                     <% if (errores.find( (element) => element.path === 'password') != null) {%>
                         <p class="account__form-error"> <%= errores.find( (element) => element.path === 'password').msg %> </p>
                         <% } %>
 
                 </fieldset>
                 <fieldset>
-                        <div>
-                            <input class="account__form-button" type="submit" value="Ingresar">
-                            <input class="account__form-checkbox" id="aceptar" type="checkbox"></a>
-                            <label class="account__form-terms" for="aceptar">Recordarme</label>
-                            <p class="account__form-forgot">Olvidé mi contraseña</p>
-                        </div>
+
+                    <div>
+                        <input class="account__form-button" type="submit" value="Ingresar">
+                        <input class="account__form-checkbox" id="aceptar" type="checkbox"></a>
+                        <label class="account__form-terms" for="aceptar">Recordarme</label>
+                        <p class="account__form-forgot">Olvidé mi contraseña</p>
+                    </div>
+                    
                 </fieldset>
             </form>
+
         </section>
     </main>
 
     <!-- Incluyo el footer como vista parcial -->
     <%- include('../partial/footer') %>
 </body>
+
 </html>

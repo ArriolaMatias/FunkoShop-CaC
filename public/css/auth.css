@@ -1,0 +1,146 @@
+/* -------- Auth -------- */
+
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+.account__form fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+.account__msg-div {
+    align-self: center;
+    background-color: lightgreen;
+    width: 55%;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+.account__msg {
+    font-size: var(--font-small);
+    font-family: var(--alternative-font);
+    font-weight: 400;
+    text-align: center;
+    color: var(--dark-solid);
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.account__title {
+    font-size: var(--font-jumbo);
+    font-family: var(--alternative-font);
+    font-weight: 700;
+    text-align: center;
+    margin-top: var(--spacing-36);
+    margin-bottom: var(--spacing-36);
+}
+
+.account__text {
+    font-size: var(--font-xlarge);
+    font-family: var(--alternative-font);
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: var(--spacing-36);
+}
+
+.account__form {
+    font-family: var(--base-font);
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--spacing-36);
+}
+
+.account__form-div {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-16);
+    margin-bottom: var(--spacing-36);
+}
+
+.account__form-label {
+    font-size: var(--font-large);
+}
+
+.account__form-input {
+    font-size: var(--font-small);
+    border: 0;
+    border-bottom: 2px solid var(--primary-solid);
+}
+
+.account__form-error {
+    font-size: var(--font-small);
+    background-color: orange;
+    color: var(--dark-solid);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: -2rem 0rem 2rem 0rem;
+    padding: .3rem;
+}
+
+.account__form-button {
+    width: 103px;
+    height: 39px;
+    font-size: var(--font-xxsmall);
+    color: var(--light-font-solid);
+    background-color: var(--primary-solid);
+    border: 0;
+    margin-right: var(--spacing-16);
+}
+
+.account__form-checkbox {
+    margin-right: var(--spacing-8);
+    outline: 2px solid var(--dark-solid);
+    border-radius: 3px;
+}
+
+.account__form-terms,
+.account__form-remember {
+    font-size: var(--font-medium);
+}
+
+.account__form-forgot {
+    font-size: var(--font-xsmall);
+    color: var(--secondary-solid);
+    text-align: center;
+    margin-top: var(--spacing-24);
+}
+
+/* -------- Media Queries -------- */
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (max-width: 1280px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* For mobile phones */
+@media only screen and (max-width: 768px) {
+    .account__title {
+        font-size: var(--font-xlarge);
+    }
+
+    .account__text {
+        font-size: var(--font-large);
+    }
+
+    .account__form-label {
+        font-size: var(--font-medium);
+    }
+
+    .account__form-input {
+        font-size: var(--font-xsmall);
+    }
+
+    .account__form-terms,
+    .account__form-remember {
+        font-size: var(--font-small);
+    }
+}

@@ -179,7 +179,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-fieldset {
+.account__form fieldset {
     border: 0;
     padding: 0;
     margin: 0;
@@ -191,7 +191,7 @@ fieldset {
     flex-direction: column;
   }
 
-.account__msg{
+.account__msg-div {
     align-self: center;
     background-color: lightgreen;
     width: 55%;
@@ -199,7 +199,7 @@ fieldset {
     border-radius: 5px;
 }
 
-.msg{
+.account__msg {
     font-size: var(--font-small);
     font-family: var(--alternative-font);
     font-weight: 400;

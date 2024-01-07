@@ -246,7 +246,7 @@ header{
     border-spacing: var(--spacing-28); 
 }
 
-th {
+.admin__table-head th {
     padding-bottom: var(--spacing-8);
 }
 
