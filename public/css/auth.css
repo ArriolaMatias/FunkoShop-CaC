@@ -116,8 +116,9 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media only screen and (max-width: 1280px) {
-    .container {
+    .login, .register {
         width: 90%;
+        margin: 0 auto;
     }
 }
 

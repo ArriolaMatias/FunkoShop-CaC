@@ -4,74 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/about.css" />
+    <link rel="stylesheet" href="../estilos.css">
+    <link rel="stylesheet" href="../css/main.css">
     <!-- Cargo el titulo del sitio de forma dinámica -->
     <link rel="icon" type="image/png" href="/img/branding/isotype.svg">
-    <title>
-        <%= title %>
-    </title>
+    <title> <%= title %> </title>
 </head>
-
 <body>
     <!-- Incluyo el Header como vista parcial -->
     <%- include('partial/header-shop'); -%>
 
-        <!-- Agrego el contenido de la web -->
-        <main class="container about">
-            <h1 class="about__title">SOBRE NOSOTROS</h1>
-            <section class="about__collection">
-                <picture class="about__collection-cover">
-                    <img src="/img/star-wars/baby-yoda-1.webp" alt="Figura coleccionable Funko">
-                </picture>
-                <article class="about__collection-content">
-                    <p class="about__collection-text">En el año 2020, tras haber cultivado una vibrante comunidad en las
-                        redes sociales, la decisión de abrir la tienda de Funkoshop se convirtió en un paso natural. La
-                        apertura de esta tienda fue el siguiente capítulo en la evolución de nuestra comunidad,
-                        permitiendo a los amantes de estas figuras coleccionables tener acceso a una selección
-                        cuidadosamente elegida y contribuir al crecimiento continuo de esta fascinante colección de
-                        iconos pop.</p>
-                </article>
-            </section>
-            <section class="about__collection">
-                <picture class="about__collection-cover">
-                    <img src="/img/harry-potter/Harry-1.webp" alt="Figura coleccionable Funko">
-                </picture>
-                <article class="about__collection-content">
-                    <p class="about__collection-text">En Funkoshop, no solo vendemos productos; vivimos y respiramos el
-                        espíritu de la colección. Somos un equipo de apasionados amantes de la cultura pop que busca
-                        constantemente las figuras más exclusivas para agregar a tu colección. Cada figura
-                        que ofrecemos cuenta una historia y despierta recuerdos entrañables.</p>
-                </article>
-            </section>
-            <section class="about__collection">
-                <picture class="about__collection-cover">
-                    <img src="/img/pokemon/charmander-1.webp" alt="Figura coleccionable Funko">
-                </picture>
-                <article class="about__collection-content">
-                    <p class="about__collection-text">Nuestra misión va más allá de ser simplemente una tienda en línea;
-                        queremos ser tu compañero de viaje en el emocionante mundo de los Funko Pop. Desde los clásicos
-                        atemporales hasta las últimas y más emocionantes ediciones limitadas, nos esforzamos por traerte
-                        la mejor selección para que tu colección refleje tu personalidad única.</p>
-                </article>
-            </section>
-            <section class="about__collection">
-                <picture class="about__collection-cover about__cover-logo">
-                    <img src="/img/star-wars/trooper-1.webp" alt="Figura coleccionable Funko">
-                </picture>
-                <article class="about__collection-content">
-                    <p class="about__collection-text">En Funkoshop, creemos que la verdadera magia de los Funko Pop está
-                        en la conexión emocional que crean. Cada figura es una puerta a un universo de recuerdos, y nos
-                        emociona ser parte de tu viaje coleccionista. Únete a nosotros mientras exploramos juntos el
-                        maravilloso mundo de la cultura pop a través de estas encantadoras y coleccionables obras de
-                        arte.</p>
-                </article>
-            </section>
-        </main>
+    <!-- Agrego el contenido de la web -->
+    <main class="container about">
 
-        <!-- Incluyo el footer como vista parcial -->
-        <%- include('partial/footer'); -%>
+        <h1 class="about__title">SOBRE NOSOTROS</h1>
 
-        <script src="/js/header-menu-responsive.js"></script>
+        <section class="about__collection">
+            <picture class="about__collection-cover">
+                <img src="/img/star-wars/baby-yoda-1.webp" alt="Figura coleccionable Funko">
+            </picture>
+            <article class="about__collection-content">
+                <p class="about__collection-text">En el año 2020, tras haber cultivado una vibrante comunidad en las
+                    redes sociales, la decisión de abrir la tienda de Funkoshop se convirtió en un paso natural. La
+                    apertura de esta tienda fue el siguiente capítulo en la evolución de nuestra comunidad,
+                    permitiendo a los amantes de estas figuras coleccionables tener acceso a una selección
+                    cuidadosamente elegida y contribuir al crecimiento continuo de esta fascinante colección de
+                    iconos pop.</p>
+            </article>
+        </section>
+        <section class="about__collection">
+            <picture class="about__collection-cover">
+                <img src="/img/harry-potter/Harry-1.webp" alt="Figura coleccionable Funko">
+            </picture>
+            <article class="about__collection-content">
+                <p class="about__collection-text">En Funkoshop, no solo vendemos productos; vivimos y respiramos el
+                    espíritu de la colección. Somos un equipo de apasionados amantes de la cultura pop que busca
+                    constantemente las figuras más exclusivas para agregar a tu colección. Cada figura
+                    que ofrecemos cuenta una historia y despierta recuerdos entrañables.</p>
+            </article>
+        </section>
+        <section class="about__collection">
+            <picture class="about__collection-cover">
+                <img src="/img/pokemon/charmander-1.webp" alt="Figura coleccionable Funko">
+            </picture>
+            <article class="about__collection-content">
+                <p class="about__collection-text">Nuestra misión va más allá de ser simplemente una tienda en línea;
+                    queremos ser tu compañero de viaje en el emocionante mundo de los Funko Pop. Desde los clásicos
+                    atemporales hasta las últimas y más emocionantes ediciones limitadas, nos esforzamos por traerte
+                    la mejor selección para que tu colección refleje tu personalidad única.</p>
+            </article>
+        </section>
+        <section class="about__collection">
+            <picture class="about__collection-cover about__cover-logo">
+                <img src="/img/star-wars/trooper-1.webp" alt="Figura coleccionable Funko">
+            </picture>
+            <article class="about__collection-content">
+                <p class="about__collection-text">En Funkoshop, creemos que la verdadera magia de los Funko Pop está
+                    en la conexión emocional que crean. Cada figura es una puerta a un universo de recuerdos, y nos
+                    emociona ser parte de tu viaje coleccionista. Únete a nosotros mientras exploramos juntos el
+                    maravilloso mundo de la cultura pop a través de estas encantadoras y coleccionables obras de
+                    arte.</p>
+            </article>
+        </section>
+        
+    </main>
+
+    <!-- Incluyo el footer como vista parcial -->
+    <%- include('partial/footer'); -%>
+
+    <script src="/js/header-menu-responsive.js"></script>
 </body>
 
 </html>
