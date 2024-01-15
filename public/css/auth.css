@@ -100,8 +100,7 @@
     border-radius: 3px;
 }
 
-.account__form-terms,
-.account__form-remember {
+.account__form-terms, .account__form-remember {
     font-size: var(--font-medium);
 }
 
@@ -140,8 +139,7 @@
         font-size: var(--font-xsmall);
     }
 
-    .account__form-terms,
-    .account__form-remember {
+    .account__form-terms, .account__form-remember {
         font-size: var(--font-small);
     }
 }

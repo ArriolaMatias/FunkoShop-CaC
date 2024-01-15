@@ -3,6 +3,7 @@
 @import url("https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css");
 
 :root {
+
     /* Palette */
 
     --primary-solid: #ff3333;
@@ -24,11 +25,13 @@
     --light-bg-solid: #fafaff;
     --light-font-solid: #fff;
 
-    /*Typography*/
+    /* Typography */
+
     --base-font: "Inter", sans-serif;
     --alternative-font: "Raleway", sans-serif;
 
-    /*Font-sizes--->Utiliza em*/
+    /* Font-sizes ---> Utiliza em */
+
     --font-display: 4.6em;
     --font-jumbo: 3.8em;
     --font-xlarge: 3.2em;
@@ -38,7 +41,8 @@
     --font-xsmall: 1.4em;
     --font-xxsmall: 1.2em;
 
-    /*Spacing--->Utiliza rem*/
+    /* Spacing ---> Utiliza rem */
+
     --spacing-128: 12.8rem;
     --spacing-68: 6.8rem;
     --spacing-36: 3.6rem;
@@ -108,7 +112,8 @@ button, input[type=submit], input[type=reset] {
     color: #B9B9B9;
 }
 
-/*---------header-----------*/
+/* -------- Header -------- */
+
 header {
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-36);
@@ -223,9 +228,8 @@ header {
     }
 }
 
-/*/---------header-----------*/
+/* -------- Footer -------- */
 
-/*---------footer-----------*/
 .footer {
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-68);
@@ -236,36 +240,32 @@ header {
     text-align: center;
 }
 
-/*/---------footer-----------*/
+/* -------- Slider y Card -------- */
 
-/*---------Slider-----------*/
 .slider {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-36);
-    margin: var(--spacing-68) auto;
-    text-transform: uppercase;
+    margin: 0 auto;
 }
 
 .slider__title {
     font-family: var(--alternative-font);
     font-size: var(--font-display);
+}
+
+.card-item {
     text-transform: uppercase;
 }
 
-/* .slider__items {
-    display: flex;
-    gap: var(--spacing-24);
-} */
-
 .card-item__cover {
+    /* Con display flex el tamaño de la caja queda fijo */
     display: flex;
     position: relative;
 }
 
 .card-item__tag-new {
     font-size: var(--font-xsmall);
-    text-transform: uppercase;
     background-color: var(--primary-solid);
     color: var(--light-font-solid);
     padding: var(--spacing-8) var(--spacing-12);
@@ -275,7 +275,6 @@ header {
 
 .card-item__tag-last {
     font-size: var(--font-xsmall);
-    text-transform: uppercase;
     background-color: var(--dark-bg-solid);
     color: var(--light-font-solid);
     padding: var(--spacing-8) var(--spacing-12);
@@ -309,6 +308,7 @@ header {
 .card-item__licence {
     font-size: var(--font-xsmall);
     font-weight: 500;
+    color: var(--dark-500);
 }
 
 .card-item__name {
@@ -318,6 +318,7 @@ header {
 
 .card-item__price {
     font-size: var(--font-small);
+    color: var(--dark-900);
 }
 
 .card-item__promo {
@@ -340,8 +341,7 @@ header {
     left: 0;
 }
 
-/*/---------Slider-----------*/
-
+/* -------- Animations -------- */
 
 @keyframes fade {
     0% {
@@ -353,20 +353,12 @@ header {
     }
 }
 
-/*/-------------MediaQuerys-------------*/
+/* -------- Media Queries -------- */
 
+/* Medium devices (tablets, 768px and up) */
 @media only screen and (max-width: 1080px) {
     .logo-principal {
         content: url("/img/branding/isotype.svg");
         max-width: 60%;
-    }
-}
-
-/* For mobile phones: */
-@media only screen and (max-width: 768px) {
-    .slider__title {
-        font-size: var(--font-jumbo);
-        margin-top: var(--spacing-36);
-        text-align: center;
     }
 }

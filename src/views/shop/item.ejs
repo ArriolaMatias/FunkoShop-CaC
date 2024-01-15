@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<link rel="stylesheet" href="../../../css/item.css">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Cargo el titulo del sitio de forma dinámica -->
+    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/css/shop.css">
     <link rel="icon"  type="image/png" href="/img/branding/isotype.svg">
+    <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title> 
 </head>
 <body>
@@ -14,36 +15,41 @@
     <%- include('../partial/header-shop'); -%>
     
     <!-- Agrego el contenido de la web -->
-    <main class="container">
+    <main class="container item">
 
-        <article class="product-item">
-            <picture class="product-img">
-                <img src="/img/<%= funko.image_front %>" alt="">
+        <article class="item__product">
+            <picture class="item__product-img">
+                <img src="/img/<%= funko.image_front %>" alt="<%= funko.product_name %>">
             </picture>
-            <div class="item__info">
-                <p class="item__licence"> <%= funko.licence_name %> </p>
-                <h3 class="item__name"> <%= funko.product_name  %> </h3>
-                <p class="item__description"> <%= funko.product_description %> </p>
-                <p class="item__price"> $<%= funko.price %> </p>
-                <div class="item__cart">
-                    <input type="text" class="item__input" name="quantity" id="quantity" placeholder="0" max=<%= funko.stock %> >
+
+            <div class="item__product-info">
+                <p class="item__product-licence"> <%= funko.licence_name %> </p>
+                <h3 class="item__product-name"> <%= funko.product_name %> </h3>
+                <p class="item__product-description"> <%= funko.product_description %> </p>
+                <p class="item__product-price"> $<%= funko.price %> </p>
+
+                <div class="item__product-cart">
+                    <input type="text" class="item__product-input" name="quantity" id="quantity" placeholder="0" max="<%= funko.stock %>" >
                     <div class="item__cart-quantity">
-                        <button id="add" class="item__quantity" type="button"> + </button>
-                        <button id="substract" class="item__quantity" type="button"> - </button>
+                        <button id="add" class="item__quantity-button" type="button"> + </button>
+                        <button id="substract" class="item__quantity-button" type="button"> - </button>
                     </div>
 
-                    <button class="item__submit btn btn--primary btn--medium" onclick="return agregarItem('<%= funko.product_id %>' )" type="submit"> Agregar al carrito </button>
+                    <button class="item__product-submit" onclick="return agregarItem('<%= funko.product_id %>' )" type="submit"> Agregar al carrito </button>
                 </div>
-                <p class="item__stock"> <%= funko.stock %> UNIDADES EN STOCK</p>
-                <a class="item__promo" href=""> <u>Ver métodos de pago</u> - <%= funko.dues %> CUOTAS SIN INTERÉS </a>
+                
+                <p class="item__product-stock"> <%= funko.stock %> UNIDADES EN STOCK</p>
+                <a class="item__product-promo" href=""> <u>Ver métodos de pago</u> - <%= funko.dues %> CUOTAS SIN INTERÉS </a>
             </div>
         </article>
+
         <section>
-            <div class="container">
-                <h3 class="slider__title">Productos relacionados</h3>
+            <div class="container slider">
+                <h3 class="slider__title">PRODUCTOS RELACIONADOS</h3>
                 <%- include('../partial/slider.ejs',{funkos:relatedFunkos}); -%>
             </div>
         </section>
+
     </main>
     
     <!-- Incluyo el footer como vista parcial -->
@@ -53,7 +59,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"> </script>
     <script>
     function agregarItem(funko_id){
-        let id=funko_id; let quantity = $('.item__input').val();
+        let id=funko_id; let quantity = $('.item__product-input').val();
         let url = `${id}/${quantity}/add`;
         $.ajax({
             url: url,

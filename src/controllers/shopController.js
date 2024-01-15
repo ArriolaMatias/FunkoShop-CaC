@@ -80,7 +80,7 @@ const shopControllers = {
     cart_to_checkout: (req, res) => {
         res.render("default-template.ejs", {
             title: "Checkout | Funkoshop",
-            content: "Ruta para la vista de pagos",
+            content: "¡Gracias por su compra!",
             cart: req.session.cart,
             loginAs: req.session.loginAs,
         });

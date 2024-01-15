@@ -274,7 +274,7 @@
         margin: var(--spacing-36) auto;
     }
 
-    .index__slider, .about, .contact {
+    .slider, .about, .contact {
         width: 90%;
         margin: 0 auto;
     }
@@ -319,6 +319,12 @@
 
     .contact__form-label, .contact__form-input {
         margin: 0 auto;
+        text-align: center;
+    }
+
+    .slider__title {
+        font-size: var(--font-jumbo);
+        margin-top: var(--spacing-36);
         text-align: center;
     }
 }

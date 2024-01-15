@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../css/cart.css">
-    <!-- Cargo el titulo del sitio de forma dinámica -->
+    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/css/shop.css">
     <link rel="icon"  type="image/png" href="/img/branding/isotype.svg">
+    <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title> 
 </head>
 <body>
@@ -15,8 +16,11 @@
     
     <!-- Agrego el contenido de la web -->
     <main class="container cart">
+
         <section>
+
             <h1 class="cart__title">CARRITO DE COMPRAS</h1>
+
             <table class="cart__table">
                 <thead class="cart__table-head">
                     <tr class="cart__table-row">
@@ -43,10 +47,15 @@
                         <% } %>
                 </tbody>
             </table>
+
         </section>
+
         <section class="cart__summary">
+
             <h3 class="cart__title">RESUMEN</h3>
+
             <div class="cart__summary-section">
+
                 <div>
                     <section class="cart__section-table">
                         <div class="cart__section-row">
@@ -74,8 +83,11 @@
                     </section>
                     <a href="./checkout"> <button class="cart__section-button">IR A PAGAR</button> </a>
                 </div>
+                
             </div>
+            
         </section>
+
     </main>
     
     <!-- Incluyo el footer como vista parcial -->

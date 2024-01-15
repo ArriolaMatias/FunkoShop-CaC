@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilos.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <!-- Cargo el titulo del sitio de forma dinámica -->
+    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="icon"  type="image/png" href="/img/branding/isotype.svg">
+    <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title> 
 </head>
 <body>
@@ -58,9 +58,9 @@
             </picture>
         </section>
 
-        <section class="index__slider">
-            <div class="container">
-                <h3 class="slider__title">Últimos lanzamientos</h3>
+        <section>
+            <div class="container slider">
+                <h3 class="slider__title">ÚLTIMOS LANZAMIENTOS</h3>
                 <%- include('partial/slider.ejs',{funkos:funkos}); -%>
             </div>        
         </section>
