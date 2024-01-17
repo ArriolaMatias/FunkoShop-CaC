@@ -112,6 +112,17 @@ button, input[type=submit], input[type=reset] {
     color: #B9B9B9;
 }
 
+.validation-error {
+    font-size: var(--font-small);
+    background-color: orange;
+    color: var(--dark-solid);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: -var(--spacing-20) 0 var(--spacing-20) 0;
+    padding: var(--spacing-4);
+}
+
 /* -------- Header -------- */
 
 header {
@@ -238,6 +249,12 @@ header {
 .footer__copyright {
     margin-top: var(--spacing-16);
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-36);
+    }
 }
 
 /* -------- Slider y Card -------- */

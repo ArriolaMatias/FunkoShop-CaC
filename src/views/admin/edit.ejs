@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/edit.css">
+    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="icon" type="image/png" href="/img/branding/isotype.svg">
     <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title>
-    <link rel="icon"  type="image/png" href="/img/branding/isotype.svg">
 </head>
 <body>
     <!-- Incluyo el Header como vista parcial -->
@@ -15,12 +16,12 @@
     
     <!-- Agrego el contenido de la web -->
     <main class="container edit">
-        <h1 class="edit__title">EDITAR ITEM</h1>  
-        <form class="edit__form" action="/admin/edit/<%=funko.product_id%>" method="POST" enctype="multipart/form-data">
-            <div class="edit__form-fila">
+        <h1 class="crud__title">EDITAR ITEM</h1>  
+        <form class="crud__form" action="/admin/edit/<%=funko.product_id%>" method="POST" enctype="multipart/form-data">
+            <div class="crud__form-fila">
 
-                <label class="edit__form-label" for="categoria">Categoría:</label>
-                <select class="edit__form-select" id="categoria" name="category_id">
+                <label class="crud__form-label" for="categoria">Categoría:</label>
+                <select class="crud__form-select" id="categoria" name="category_id">
                     <% categories.map(category =>{%>
                             <option 
                             value="<%= category.category_id%>"
@@ -29,8 +30,8 @@
                         <%})%>
                 </select>
 
-                <label class="edit__form-label" for="licencia">Licencia:</label>
-                <select class="edit__form-select" id="licencia" name="licence_id">
+                <label class="crud__form-label" for="licencia">Licencia:</label>
+                <select class="crud__form-select" id="licencia" name="licence_id">
                     <%licences.map(licence =>{%>
                         <option value="<%= licence.licence_id%>"
                         <% if(licence.licence_id == funko.licence_id) { %> selected <% } %>
@@ -39,40 +40,40 @@
                 </select>
 
             </div>
-            <div class="edit__form-fila">
+            <div class="crud__form-fila">
 
-                <label class="edit__form-label" for="nombre">Nombre del producto:</label>
-                <input class="edit__form-input" type="text" id="nombre" name="product_name"
+                <label class="crud__form-label" for="product_name">Nombre del producto:</label>
+                <input class="crud__form-input" type="text" id="product_name" name="product_name"
                     placeholder="Kakashi Hatake Shippuden Saga" value="<%= funko.product_name %>">
 
             </div>
             <div>
 
-                <textarea class="edit__form-textarea" id="descripcion" name="product_description"
+                <textarea class="crud__form-textarea" id="descripcion" name="product_description"
                     placeholder="Descripción del producto"><%= funko.product_description %></textarea>
 
             </div>
-            <div class="edit__form-fila">
+            <div class="crud__form-fila">
 
-                <label class="edit__form-label" for="sku">SKU:</label>
-                <input class="edit__form-input" type="text" id="sku" name="sku" placeholder="SSK111AB001" value="<%= funko.sku %>">
+                <label class="crud__form-label" for="sku">SKU:</label>
+                <input class="crud__form-input" type="text" id="sku" name="sku" placeholder="SSK111AB001" value="<%= funko.sku %>">
 
 
-                <label class="edit__form-label" for="precio">Precio:</label>
-                <input class="edit__form-input" type="text" id="precio" name="price" placeholder="$ 0.000,00" value="<%= funko.price %>">
+                <label class="crud__form-label" for="price">Precio:</label>
+                <input class="crud__form-input" type="text" id="price" name="price" placeholder="$ 0.000,00" value="<%= funko.price %>">
                 
-                <label class="edit__form-label" for="stock">Stock:</label>
-                <input class="edit__form-input" type="text" id="stock" name="stock" placeholder="0" value="<%= funko.stock %>">
+                <label class="crud__form-label" for="stock">Stock:</label>
+                <input class="crud__form-input" type="text" id="stock" name="stock" placeholder="0" value="<%= funko.stock %>">
 
             </div>
-            <div class="edit__form-fila">
+            <div class="crud__form-fila">
 
-                <label class="edit__form-label" for="descuento">Descuento:</label>
-                <input class="edit__form-input" type="text" id="descuento" name="discount" placeholder="0%" value="<%= funko.discount %>">
+                <label class="crud__form-label" for="discount">Descuento:</label>
+                <input class="crud__form-input" type="text" id="discount" name="discount" placeholder="0%" value="<%= funko.discount %>">
 
-                <label class="edit__form-label" for="cuotas">Cuotas:</label>
+                <label class="crud__form-label" for="dues">Cuotas:</label>
 
-                <select class="edit__form-select" id="cuotas" name="dues">
+                <select class="crud__form-select" id="dues" name="dues">
 
                     <% cuotas.forEach(element => { %>
                         <% if (element === Number(funko.dues)) {%>
@@ -84,34 +85,38 @@
                 </select>
 
             </div>
-            <div class="edit__form-fila">
+            <div class="crud__form-fila">
 
-                <label class="edit__form-label" for="imagenes">Imagen Front:</label>
-                <input class="edit__form-carga" type="file" id="imagenes" name="image_front" multiple>
-
-            </div>
-            <div class="edit__form-fila">
-
-                <label class="edit__form-label" for="imagenes">Imagen Back:</label>
-                <input class="edit__form-carga" type="file" id="imagenes" name="image_back" multiple>
+                <label class="crud__form-label" for="image_front">Imagen Front:</label>
+                <input class="crud__form-carga" type="file" id="image_front" name="image_front" multiple>
 
             </div>
-            <div class="edit__form-imagenes">
+            <div class="crud__form-fila">
 
-                <picture class="edit__form-imagen">
+                <label class="crud__form-label" for="image_back">Imagen Back:</label>
+                <input class="crud__form-carga" type="file" id="image_back" name="image_back" multiple>
+
+            </div>
+            <div class="crud__form-imagenes">
+
+                <picture class="crud__form-imagen">
                     <img src="/img/<%= funko.image_front %>" alt="Imagen del frente del producto">
-                    <p class="edit__form-caption">Frente</p>
+                    <p class="crud__form-caption">Frente</p>
                 </picture>
 
-                <picture class="edit__form-imagen">
+                <picture class="crud__form-imagen">
                     <img src="/img/<%= funko.image_back %>" alt="Imagen del dorso del producto">
-                    <p class="edit__form-caption">Dorso</p>
+                    <p class="crud__form-caption">Dorso</p>
                 </picture>
 
             </div>
 
-            <input class="edit__form-submit" type="submit" value="Modificar Producto">
-            
+            <div class="crud__form-buttons">
+
+                <input class="crud__form-button" type="submit" value="Modificar Producto">
+                <input class="crud__form-button" type="reset" value="Restablecer">
+        
+            </div>
         </form>
     </main>
     

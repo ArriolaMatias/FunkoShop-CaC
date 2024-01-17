@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/estilos.css">
     <link rel="stylesheet" href="/css/auth.css">
-    <link rel="icon"  type="image/png" href="/img/branding/isotype.svg">
+    <link rel="icon" type="image/png" href="/img/branding/isotype.svg">
     <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title>
 </head>
@@ -31,7 +31,7 @@
                         <input class="account__form-input" id="nombre" type="text" placeholder="John" name="name" value="<%= valores.name %>">
                     </div>
                     <% if (errores.find( (element) => element.path === 'name') != null) {%>
-                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'name').msg %> </p>
+                        <p class="validation-error"> <%= errores.find( (element) => element.path === 'name').msg %> </p>
                         <% } %>
 
                     <div class="account__form-div">
@@ -39,7 +39,7 @@
                         <input class="account__form-input" id="apellido" type="text" placeholder="Doe" name="lastname" value="<%= valores.lastname %>">
                     </div>
                     <% if (errores.find( (element) => element.path === 'lastname') != null) {%>
-                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'lastname').msg %> </p>
+                        <p class="validation-error"> <%= errores.find( (element) => element.path === 'lastname').msg %> </p>
                         <% } %>
 
                     <div class="account__form-div">
@@ -47,7 +47,7 @@
                         <input class="account__form-input" id="email" type="email" placeholder="johndoe@correo.com" name="email" value="<%= valores.email %>">
                     </div>
                     <% if (errores.find( (element) => element.path === 'email') != null) {%>
-                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'email').msg %> </p>
+                        <p class="validation-error"> <%= errores.find( (element) => element.path === 'email').msg %> </p>
                         <% } %>
                         
                     <div class="account__form-div">
@@ -55,7 +55,7 @@
                         <input class="account__form-input" id="contraseña" type="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF" name="password">
                     </div>
                     <% if (errores.find( (element) => element.path === 'password') != null) {%>
-                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'password').msg %> </p>
+                        <p class="validation-error"> <%= errores.find( (element) => element.path === 'password').msg %> </p>
                         <% } %>
 
                     <div class="account__form-div">
@@ -63,7 +63,7 @@
                         <input class="account__form-input" id="reContraseña" type="password" placeholder="&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF" name="rePassword" formnovalidate="formnovalidate">
                     </div>
                     <% if (errores.find( (element) => element.path === 'rePassword') != null) {%>
-                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'rePassword').msg %> </p>
+                        <p class="validation-error"> <%= errores.find( (element) => element.path === 'rePassword').msg %> </p>
                         <% } %>
 
                 </fieldset>
@@ -75,7 +75,7 @@
                         <label class="account__form-terms" for="terms">Acepto <a href="">Términos y Condiciones</a></label>
                     </div>
                     <% if (errores.find( (element) => element.path === 'terms') != null) {%>
-                        <p class="account__form-error"> <%= errores.find( (element) => element.path === 'terms').msg %> </p>
+                        <p class="validation-error"> <%= errores.find( (element) => element.path === 'terms').msg %> </p>
                         <% } %>
                         
                 </fieldset>

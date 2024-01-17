@@ -163,8 +163,7 @@
 }
 
 .contact__form-button {
-    width: 150px;
-    height: 44px;
+    padding: var(--spacing-16) var(--spacing-36);
     font-size: var(--font-xsmall);
     font-weight: 600;
     color: var(--light-font-solid);

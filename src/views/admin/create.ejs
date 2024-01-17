@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/create.css">
+    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="icon" type="image/png" href="/img/branding/isotype.svg">
     <!-- Cargo el titulo del sitio de forma dinámica -->
     <title> <%= title %> </title>
-    <link rel="icon"  type="image/png" href="/img/branding/isotype.svg">
 </head>
 <body>
     <!-- Incluyo el Header como vista parcial -->
@@ -15,12 +16,12 @@
 
     <!-- Agrego el contenido de la web -->
     <main class="container create">
-        <h1 class="create__title">CREAR NUEVO ITEM</h1>
-        <form class="create__form" action="/admin/create" method="POST" enctype="multipart/form-data">
-            <div class="create__form-fila">
+        <h1 class="crud__title">CREAR NUEVO ITEM</h1>
+        <form class="crud__form" action="/admin/create" method="POST" enctype="multipart/form-data">
+            <div class="crud__form-fila">
 
-                <label class="create__form-label" for="categoria">Categoría:</label>
-                <select class="create__form-select" name="category_id" id="categoria">
+                <label class="crud__form-label" for="categoria">Categoría:</label>
+                <select class="crud__form-select" name="category_id" id="categoria">
                   <% categories.map(category=>{%>
                     <option value="<%= category.category_id%>">
                       <%= category.category_name%>
@@ -28,8 +29,8 @@
                     <%})%>
                 </select>
             
-                <label class="create__form-label" for="licencia">Licencia:</label>
-                <select class="create__form-select" name="licence_id" id="licencia">
+                <label class="crud__form-label" for="licencia">Licencia:</label>
+                <select class="crud__form-select" name="licence_id" id="licencia">
                   <%licences.map(licence=>{%>
                     <option value="<%= licence.licence_id%>">
                       <%= licence.licence_name%>
@@ -38,53 +39,53 @@
                 </select>
 
             </div>
-            <div class="create__form-fila">
-                <label class="create__form-label" for="product_name">Nombre del producto:</label>
-                <input class="create__form-input" type="text" name="product_name" id="product_name"
+            <div class="crud__form-fila">
+                <label class="crud__form-label" for="product_name">Nombre del producto:</label>
+                <input class="crud__form-input" type="text" name="product_name" id="product_name"
                     placeholder="Nombre del item" value=<%= values.product_name %>>
             </div>
             <% if (errores.find( (element) => element.path === 'product_name') != null) {%>
-                <p class="account__form-error"> <%= errores.find( (element) => element.path === 'product_name').msg %> </p>
+                <p class="validation-error"> <%= errores.find( (element) => element.path === 'product_name').msg %> </p>
                 <% } %>
             <div>
 
-                <textarea class="create__form-textarea" name="product_description" id="descripcion"
+                <textarea class="crud__form-textarea" name="product_description" id="descripcion"
                     placeholder="Descripción del producto"></textarea>
           
             </div>
-            <div class="create__form-fila">
+            <div class="crud__form-fila">
 
-                <label class="create__form-label" for="sku">SKU:</label>
-                <input class="create__form-input" type="text" name="sku" id="sku" placeholder="SSK111AB001" value=<%= values.sku %>>
+                <label class="crud__form-label" for="sku">SKU:</label>
+                <input class="crud__form-input" type="text" name="sku" id="sku" placeholder="SSK111AB001" value=<%= values.sku %>>
 
-                <label class="create__form-label" for="precio">Precio:</label>
-                <input class="create__form-input" type="text" name="price" id="price" placeholder="$ 0.000,00" value=<%= values.price %>>
+                <label class="crud__form-label" for="price">Precio:</label>
+                <input class="crud__form-input" type="text" name="price" id="price" placeholder="$ 0.000,00" value=<%= values.price %>>
 
-                <label class="create__form-label" for="stock">Stock:</label>
-                <input class="create__form-input" type="text" name="stock" id="stock" placeholder="0" value=<%= values.stock %>>
+                <label class="crud__form-label" for="stock">Stock:</label>
+                <input class="crud__form-input" type="text" name="stock" id="stock" placeholder="0" value=<%= values.stock %>>
           
             </div>
-            <div class="create__form-fila">
+            <div class="crud__form-fila">
                 <% if (errores.find( (element) => element.path === 'sku') != null) {%>
-                    <p class="account__form-error"> <%= errores.find( (element) => element.path === 'sku').msg %> </p>
+                    <p class="validation-error"> <%= errores.find( (element) => element.path === 'sku').msg %> </p>
                     <% } %>
 
                 <% if (errores.find( (element) => element.path === 'price') != null) {%>
-                    <p class="account__form-error"> <%= errores.find( (element) => element.path === 'price').msg %> </p>
+                    <p class="validation-error"> <%= errores.find( (element) => element.path === 'price').msg %> </p>
                     <% } %>
 
                 <% if (errores.find( (element) => element.path === 'stock') != null) {%>
-                    <p class="account__form-error"> <%= errores.find( (element) => element.path === 'stock').msg %> </p>
+                    <p class="validation-error"> <%= errores.find( (element) => element.path === 'stock').msg %> </p>
                     <% } %>
             </div>
 
-            <div class="create__form-fila">
+            <div class="crud__form-fila">
 
-                <label class="create__form-label" for="discount">Descuento:</label>
-                <input class="create__form-input" type="text" name="discount" id="discount" placeholder="0%" value=<%= values.discount %>>
+                <label class="crud__form-label" for="discount">Descuento:</label>
+                <input class="crud__form-input" type="text" name="discount" id="discount" placeholder="0%" value=<%= values.discount %>>
 
-                <label class="create__form-label" for="dues">Cuotas:</label>
-                <select class="create__form-select" type="number" name="dues" id="dues" value=<%= values.dues %>>
+                <label class="crud__form-label" for="dues">Cuotas:</label>
+                <select class="crud__form-select" type="number" name="dues" id="dues" value=<%= values.dues %>>
                     <option value="3" selected>3 cuotas sin interés</option>
                     <option value="6">6 cuotas sin interés</option>
                     <option value="8">8 Cuotas sin interés</option>
@@ -92,43 +93,43 @@
                 </select>
           
             </div>
-            <div class="create__form-fila">
+            <div class="crud__form-fila">
 
-                <label class="create__form-label" for="image_front">Imagen Front:</label>
-                <input class="create__form-carga" type="file" id="image_front" name="image_front">
+                <label class="crud__form-label" for="image_front">Imagen Front:</label>
+                <input class="crud__form-carga" type="file" id="image_front" name="image_front">
 
             </div>
             <% if (errores.find( (element) => element.path === 'image_front') != null) {%>
-                <p class="account__form-error"> <%= errores.find( (element) => element.path === 'image_front').msg %> </p>
+                <p class="validation-error"> <%= errores.find( (element) => element.path === 'image_front').msg %> </p>
                 <% } %>
-            <div class="create__form-fila">
+            <div class="crud__form-fila">
 
-                <label class="create__form-label" for="image_back">Imagen Back:</label>
-                <input class="create__form-carga" type="file" id="image_back" name="image_back">
+                <label class="crud__form-label" for="image_back">Imagen Back:</label>
+                <input class="crud__form-carga" type="file" id="image_back" name="image_back">
 
             </div>
             <% if (errores.find( (element) => element.path === 'image_back') != null) {%>
-                <p class="account__form-error"> <%= errores.find( (element) => element.path === 'image_back').msg %> </p>
+                <p class="validation-error"> <%= errores.find( (element) => element.path === 'image_back').msg %> </p>
                 <% } %>
 
-                <div class="create__form-imagenes">
+                <div class="crud__form-imagenes">
 
-                    <picture class="create__form-imagen">
+                    <picture class="crud__form-imagen">
                         <img  id="image_front_placeholder" src="#" alt="Imagen del frente del producto">
-                        <p class="create__form-caption">Frente</p>
+                        <p class="crud__form-caption">Frente</p>
                     </picture>
     
-                    <picture class="create__form-imagen" >
+                    <picture class="crud__form-imagen" >
                         <img id="image_back_placeholder" src="#" alt="Imagen del dorso del producto">
-                        <p class="create__form-caption">Dorso</p>
+                        <p class="crud__form-caption">Dorso</p>
                     </picture>
     
                 </div>
 
-            <div class="create__form-buttons">
+            <div class="crud__form-buttons">
 
-                <input class="create__form-button" type="submit" value="Agregar Producto">
-                <input class="create__form-button" type="reset" value="Limpiar">
+                <input class="crud__form-button" type="submit" value="Agregar Producto">
+                <input class="crud__form-button" type="reset" value="Limpiar">
         
             </div>
         </form>

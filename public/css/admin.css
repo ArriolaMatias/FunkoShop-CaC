@@ -1,179 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap");
-
-:root {
-    /* Palette */
-
-    --primary-solid: #ff3333;
-    --primary-900: rgb(255, 51, 51, 0.9);
-    --primary-500: rgb(255, 51, 51, 0.5);
-    --primary-300: rgb(255, 51, 51, 0.3);
-
-    --secondary-solid: #1d84b5;
-    --secondary-900: rgb(29, 132, 181, 0.9);
-    --secondary-500: rgb(29, 132, 181, 0.5);
-    --secondary-300: rgb(29, 132, 181, 0.3);
-
-    --dark-solid: #1f1f1f;
-    --dark-900: rgb(31, 31, 31, 0.9);
-    --dark-500: rgb(31, 31, 31, 0.5);
-    --dark-300: rgb(31, 31, 31, 0.3);
-
-    --dark-bg-solid: #30343f;
-    --light-bg-solid: #fafaff;
-    --light-font-solid: #fff;
-
-    /*Typography*/
-    --base-font: "Inter", sans-serif;
-    --alternative-font: "Raleway", sans-serif;
-
-    /*Font-sizes--->Utiliza em*/
-    --font-display: 4.6em;
-    --font-jumbo: 3.8em;
-    --font-xlarge: 3.2em;
-    --font-large: 2.4em;
-    --font-medium: 1.8em;
-    --font-small: 1.6em;
-    --font-xsmall: 1.4em;
-    --font-xxsmall: 1.2em;
-
-    /*Spacing--->Utiliza rem*/
-    --spacing-128: 12.8rem;
-    --spacing-68: 6.8rem;
-    --spacing-36: 3.6rem;
-    --spacing-32: 3.2rem;
-    --spacing-20: 2rem;
-    --spacing-24: 2.4rem;
-    --spacing-28: 2.8rem;
-    --spacing-16: 1.6rem;
-    --spacing-12: 1.2rem;
-    --spacing-8: 0.8rem;
-    --spacing-4: 0.4rem;
-}
-
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
-    color: var(--dark-solid);
-    font-family: var(--base-font);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    font-family: inherit;
-}
-
-header,
-footer {
-    color: var(--light-font-solid);
-    font-family: var(--alternative-font);
-}
-
-ul, ol {
-    list-style-type: none;
-}
-
-p {
-    font-size: 1.8em;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-img{
-    width: 100%;
-}
-.width-icon{
-    display: flex;
-    align-items: center;
-}
-/*---------header-----------*/
-header{
-    background-color: var(--dark-bg-solid);
-    padding: var(--spacing-36);
-}
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.navbar__logo{
-    max-width: 300px;
-}
-.navbar__menu{
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-20);
-}
-.navbar__item{
-    
-}
-
-.navbar__link{
-    display: inline-block;
-    font-size: var(--font-medium);
-    padding: var(--spacing-8) var(--spacing-12);
-    transition: background-color .3s ease-in-out;
-    position: relative;
-}
-.navbar__link:hover{
-    background-color: var(--primary-solid);
-}
-.submenu{
-    display: none;
-    width: 300px;
-    position: absolute;
-    background-color: var(--dark-bg-solid);
-    z-index: 3;
-}
-.submenu__link{
-    display: block;
-    padding: var(--spacing-8) var(--spacing-16);
-    font-size: var(--font-medium);
-    transition: background-color .3s ease-in-out;
-}
-.submenu__link:hover{
-    background-color: var(--primary-solid);
-}
-.width-submenu:hover .submenu{
-    display: block;
-}
-.navbar__custom-text{
-    display: inline-block;
-    font-size: var(--font-medium);
-    padding: var(--spacing-8) var(--spacing-12);
-}
-
-.navbar__custom-text:hover{
-    text-decoration: underline;
-    text-decoration-color: var(--primary-solid);
-}
-
-.navbar__custom-text--featured{
-    color: var(--primary-solid);
-}
-
-/*/---------header-----------*/
-
-/*---------footer-----------*/
-.footer{
-    background-color: var(--dark-bg-solid);
-    padding: var(--spacing-68);
-}
-
-.footer__copyright{
-    margin-top: var(--spacing-16);
-    text-align: center;
-}
-/*/---------footer-----------*/
+/* -------- Admin -------- */
 
 /* Admin */
 
@@ -202,10 +27,6 @@ header{
     border: 2px solid var(--dark-bg-solid);
     border-radius: 6px;
     padding: var(--spacing-8) var(--spacing-20);
-}
-
-::placeholder {
-    color: #B9B9B9;
 }
 
 .admin__top {
@@ -243,7 +64,7 @@ header{
     font-weight: 500;
     font-size: var(--font-large);
     text-align: left;
-    border-spacing: var(--spacing-28); 
+    border-spacing: var(--spacing-28);
 }
 
 .admin__table-head th {
@@ -270,10 +91,179 @@ div.dataTables_wrapper div.dataTables_filter {
     display: none;
 }
 
-/*/-------------MediaQuerys-------------*/
-/*Medium devices (tablets, 768px and up)*/
+/* Create y Edit */
+
+.crud__title {
+    font-family: var(--alternative-font);
+    font-weight: 700;
+    font-size: var(--font-jumbo);
+    padding-top: var(--spacing-36);
+}
+
+.crud__form {
+    font-family: var(--base-font);
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-36);
+    padding-top: var(--spacing-36);
+    padding-bottom: var(--spacing-36);
+}
+
+.crud__form-fila {
+    display: flex;
+    gap: var(--spacing-16);
+    align-items: center;
+}
+
+.crud__form-label {
+    font-size: var(--font-large);
+}
+
+.crud__form-select {
+    font-size: var(--font-medium);
+    font-weight: 500;
+    padding: var(--spacing-4);
+    margin-right: var(--spacing-20);
+    width: max-content;
+}
+
+.crud__form-input {
+    font-size: var(--font-medium);
+    font-weight: 400;
+    border: 0;
+    border-bottom: 2px solid var(--primary-solid);
+    margin-right: var(--spacing-20);
+}
+
+.crud__form-fila #sku, .crud__form-fila #price {
+    width: 12%;
+}
+
+.crud__form-fila #stock, .crud__form-fila #discount {
+    text-align: center;
+    width: 5.5%;
+}
+
+.crud__form-textarea {
+    font-size: var(--font-large);
+    font-weight: 400;
+    width: 80%;
+    height: 150px;
+    padding: var(--spacing-4);
+}
+
+.crud__form-carga {
+    font-size: var(--font-medium);
+    font-weight: 400;
+}
+
+.crud__form-imagenes {
+    display: flex;
+    gap: var(--spacing-36);
+    align-items: center;
+}
+
+.crud__form-imagen {
+    width: 12.5%;
+    height: auto;
+}
+
+.crud__form-imagen img {
+    border-bottom: 1px solid var(--primary-solid);
+    text-align: center;
+}
+
+.crud__form-caption {
+    font-family: var(--alternative-font);
+    font-weight: 500;
+    font-size: var(--font-medium);
+    text-align: center;
+    margin: 0 auto;
+    padding: var(--spacing-4) 0;
+}
+
+.crud__form-buttons {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-36);
+}
+
+.crud__form-button {
+    padding: var(--spacing-16) var(--spacing-36);
+    font-size: var(--font-xsmall);
+    font-weight: 600;
+    color: var(--light-font-solid);
+    background-color: var(--primary-solid);
+    border: 0;
+}
+
+.crud__form-button:nth-child(2) {
+    background-color: var(--dark-solid);
+}
+
+/* Delete */
+
+.delete__title {
+    font-size: var(--font-jumbo);
+    font-family: var(--alternative-font);
+    font-weight: 700;
+    text-align: center;
+    margin-top: var(--spacing-36);
+    margin-bottom: var(--spacing-36);
+}
+
+.delete__text {
+    font-size: var(--font-large);
+    font-family: var(--alternative-font);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: var(--spacing-36);
+}
+
+.delete__section {
+    font-family: var(--base-font);
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--spacing-36);
+}
+
+.delete__section-row {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-28);
+    margin-bottom: var(--spacing-36);
+}
+
+.delete__section-field {
+    font-size: var(--font-large);
+    font-weight: 600;
+}
+
+.delete__section-text {
+    font-size: var(--font-large);
+}
+
+.delete__section-button {
+    padding: var(--spacing-16) var(--spacing-36);
+    font-size: var(--font-xsmall);
+    font-weight: 600;
+    color: var(--light-font-solid);
+    background-color: var(--primary-solid);
+    border: 0;
+}
+
+.delete__section-button:nth-child(2) {
+    background-color: var(--dark-solid);
+}
+
+/* -------- Media Queries -------- */
+
+/* Medium devices (tablets, 768px and up) */
 @media only screen and (max-width: 1280px) {
-    .container {
+    .admin, .create, .edit, .delete {
         width: 90%;
     }
 }
@@ -282,6 +272,7 @@ div.dataTables_wrapper div.dataTables_filter {
     .admin__table-head {
         display: none;
     }
+
     .admin__table-body tr {
         display: block;
         margin-bottom: var(--spacing-36);
@@ -289,25 +280,91 @@ div.dataTables_wrapper div.dataTables_filter {
         border: 2px solid var(--dark-bg-solid);
         border-radius: 10px;
     }
+
     .admin__table-body td {
         display: block;
         padding: var(--spacing-4);
-        
+    }
+
+    .admin__table-body tr #id::before {
+        content: 'ID: ';
+        font-weight: 700;
+    }
+
+    .admin__table-body tr #codigo::before {
+        content: 'Código: ';
+        font-weight: 700;
+    }
+
+    .admin__table-body tr #nombre::before {
+        content: 'Nombre: ';
+        font-weight: 700;
+    }
+
+    .admin__table-body tr #categoria::before {
+        content: 'Categoría: ';
+        font-weight: 700;
     }
 }
 
-/* For mobile phones: */
+/* For mobile phones */
 @media only screen and (max-width: 768px) {
-    .admin__title {
+    .admin__title, .delete__title {
         font-size: var(--font-xlarge);
     }
-    .admin__add-text {
+
+    .admin__add-text, .admin__table, .delete__text, .delete__section-field, .delete__section-text {
         font-size: var(--font-medium);
     }
+
     .admin__add-icon {
         font-size: 42px;
     }
-    .admin__table {
-        font-size: var(--font-medium); 
+
+    .crud__title {
+        font-size: var(--font-xlarge);
+        text-align: center;
+    }
+
+    .crud__form-fila {
+        flex-direction: column;
+    }
+
+    .crud__form-label {
+        font-size: var(--font-medium);
+        text-align: center;
+    }
+
+    .crud__form-select, .crud__form-input {
+        font-size: var(--font-small);
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .crud__form-textarea {
+        font-size: var(--font-medium);
+        width: 100%;
+    }
+
+    .crud__form-fila #sku, .crud__form-fila #price {
+        width: 24%;
+    }
+
+    .crud__form-fila #stock, .crud__form-fila #discount {
+        width: 11%;
+    }
+
+    .crud__form-carga, .crud__form-caption {
+        font-size: var(--font-small);
+    }
+
+    .crud__form-imagenes {
+        justify-content: center;
+    }
+
+    .crud__form-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
