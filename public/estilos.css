@@ -119,7 +119,7 @@ button, input[type=submit], input[type=reset] {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    margin: -var(--spacing-20) 0 var(--spacing-20) 0;
+    margin: -2rem 0 2rem 0;
     padding: var(--spacing-4);
 }
 
@@ -225,8 +225,8 @@ header {
     .navbar__menu li {
         margin: 0;
         text-align: center;
-        padding: 10px;
-        border-bottom: 1px solid white;
+        padding: var(--spacing-8);
+        border-bottom: 1px solid var(--light-bg-solid);
     }
 
     .hamburger-menu {
@@ -325,7 +325,7 @@ header {
 .card-item__licence {
     font-size: var(--font-xsmall);
     font-weight: 500;
-    color: var(--dark-500);
+    color: var(--secondary-300);
 }
 
 .card-item__name {
@@ -335,7 +335,7 @@ header {
 
 .card-item__price {
     font-size: var(--font-small);
-    color: var(--dark-900);
+    color: var(--secondary-300);
 }
 
 .card-item__promo {

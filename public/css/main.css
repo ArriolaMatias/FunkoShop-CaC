@@ -110,7 +110,7 @@
     font-family: var(--alternative-font);
     font-weight: 700;
     font-size: var(--font-jumbo);
-    padding-top: var(--spacing-36);
+    margin-top: var(--spacing-36);
 }
 
 .contact__form {
@@ -120,8 +120,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-36);
-    padding-top: var(--spacing-36);
-    padding-bottom: var(--spacing-36);
+    margin: var(--spacing-36) 0;
 }
 
 .contact__form-fila {
@@ -163,9 +162,8 @@
 }
 
 .contact__form-button {
-    padding: var(--spacing-16) var(--spacing-36);
-    font-size: var(--font-xsmall);
-    font-weight: 600;
+    padding: var(--spacing-16) var(--spacing-28);
+    font-size: var(--font-xxsmall);
     color: var(--light-font-solid);
     background-color: var(--primary-solid);
     border: 0;
@@ -178,8 +176,8 @@
 /* About */
 
 .about {
-    padding-top: var(--spacing-68);
-    padding-bottom: var(--spacing-36);
+    margin-top: var(--spacing-68);
+    margin-bottom: var(--spacing-36);
 }
 
 .about__title {
@@ -228,7 +226,7 @@
     font-family: var(--alternative-font);
     font-weight: 700;
     font-size: var(--font-jumbo);
-    padding-top: var(--spacing-68);
+    margin-top: var(--spacing-68);
     text-align: center;
 }
 
@@ -241,8 +239,8 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-36);
-    padding-top: var(--spacing-36);
-    padding-bottom: var(--spacing-68);
+    margin-top: var(--spacing-36);
+    margin-bottom: var(--spacing-68);
 }
 
 .faqs__section-div {
@@ -319,6 +317,11 @@
     .contact__form-label, .contact__form-input {
         margin: 0 auto;
         text-align: center;
+    }
+
+    .contact__form-submit {
+        justify-content: center;
+        gap: var(--spacing-16);
     }
 
     .slider__title {

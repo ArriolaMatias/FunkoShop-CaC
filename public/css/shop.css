@@ -202,14 +202,14 @@ input[type=number] {
 .item__quantity-button {
     background-color: var(--dark-bg-solid);
     color: var(--light-bg-solid);
-    width: var(--font-medium);
+    padding: var(--spacing-4) var(--spacing-8);
     border: solid 1px var(--dark-bg-solid);
 }
 
 .item__product-submit {
     background-color: var(--primary-solid);
     color: var(--light-font-solid);
-    padding: var(--spacing-12) var(--spacing-8);
+    padding: var(--spacing-12);
     font-size: var(--font-medium);
     border: solid 1px var(--primary-solid);
 }
@@ -311,14 +311,14 @@ input[type=number] {
 
 .cart__table-quantity {
     display: flex;
-    gap: var(--spacing-4);
+    gap: var(--spacing-8);
     align-items: center;
     justify-content: center;
 }
 
 .cart__quantity-input {
-    width: 90px;
-    height: 40px;
+    width: var(--font-display);
+    height: var(--font-xlarge);
     text-align: center;
     font-size: var(--font-medium);
     font-weight: 700;
@@ -328,14 +328,13 @@ input[type=number] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: var(--spacing-4);
+    gap: var(--spacing-8);
 }
 
 .cart__quantity-quantity {
     background-color: var(--primary-solid);
     color: var(--light-bg-solid);
-    width: var(--font-medium);
-    height: var(--font-small);
+    padding: var(--spacing-4) var(--spacing-8);
     border: none;
 }
 
@@ -350,8 +349,7 @@ input[type=number] {
 .cart__table-icon {
     color: var(--primary-solid);
     font-size: 25px;
-    margin: 0 auto;
-    cursor: pointer;
+    margin: 0 50%;
 }
 
 .cart__table-empty {
@@ -399,7 +397,7 @@ input[type=number] {
 .cart__section-text {
     font-size: var(--font-small);
     font-weight: 700;
-    color: #747474;
+    color: var(--secondary-900);
 }
 
 .cart__row-last {
@@ -413,7 +411,7 @@ input[type=number] {
 
 .cart__section-button {
     width: 100%;
-    height: 60px;
+    padding: var(--spacing-12);
     font-size: var(--font-xlarge);
     font-weight: 700;
     color: var(--light-font-solid);

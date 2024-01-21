@@ -97,7 +97,7 @@ div.dataTables_wrapper div.dataTables_filter {
     font-family: var(--alternative-font);
     font-weight: 700;
     font-size: var(--font-jumbo);
-    padding-top: var(--spacing-36);
+    margin-top: var(--spacing-36);
 }
 
 .crud__form {
@@ -106,8 +106,7 @@ div.dataTables_wrapper div.dataTables_filter {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-36);
-    padding-top: var(--spacing-36);
-    padding-bottom: var(--spacing-36);
+    margin: var(--spacing-36) 0;
 }
 
 .crud__form-fila {
@@ -209,8 +208,7 @@ div.dataTables_wrapper div.dataTables_filter {
     font-family: var(--alternative-font);
     font-weight: 700;
     text-align: center;
-    margin-top: var(--spacing-36);
-    margin-bottom: var(--spacing-36);
+    margin: var(--spacing-36) 0;
 }
 
 .delete__text {

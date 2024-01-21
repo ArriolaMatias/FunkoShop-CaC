@@ -18,7 +18,7 @@
     align-self: center;
     background-color: lightgreen;
     width: 55%;
-    margin: 1rem;
+    margin: var(--spacing-12);
     border-radius: 5px;
 }
 
@@ -28,8 +28,7 @@
     font-weight: 400;
     text-align: center;
     color: var(--dark-solid);
-    margin: 1rem;
-    padding: 0.5rem;
+    padding: var(--spacing-16);
 }
 
 .account__title {
@@ -37,8 +36,7 @@
     font-family: var(--alternative-font);
     font-weight: 700;
     text-align: center;
-    margin-top: var(--spacing-36);
-    margin-bottom: var(--spacing-36);
+    margin: var(--spacing-36) 0;
 }
 
 .account__text {
@@ -76,8 +74,7 @@
 }
 
 .account__form-button {
-    width: 103px;
-    height: 39px;
+    padding: var(--spacing-16) var(--spacing-28);
     font-size: var(--font-xxsmall);
     color: var(--light-font-solid);
     background-color: var(--primary-solid);
@@ -100,6 +97,10 @@
     color: var(--secondary-solid);
     text-align: center;
     margin-top: var(--spacing-24);
+}
+
+.account__form-register .validation-error {
+    margin: 2rem 0 0 0;
 }
 
 /* -------- Media Queries -------- */
