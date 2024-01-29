@@ -1,5 +1,7 @@
 <header>
+
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
     <nav class="container navbar">
         <picture class="navbar__logo">
             <a href="/">
@@ -8,10 +10,16 @@
         </picture>
         <ul class="navbar__menu">
             <% if (loginAs != undefined) { %>
-                <li class="">
-                    <a class="navbar__custom-text" href="#">
-                        ¡Hola, <span class="navbar__custom-text--featured"> <%= loginAs %></span>!
-                    </a>
+                <li>
+                    <% if (loginAs == "Admin") { %>
+                    <p class="navbar__custom-text">
+                        ¡Hola, <a class="navbar__custom-link" href="/admin"><%= loginAs %></a>!
+                    </p>
+                    <% } else { %>
+                    <p class="navbar__custom-text">
+                        ¡Hola, <span class="navbar__custom-text--featured"><%= loginAs %></span>!
+                    </p>
+                    <% } %>
                 </li>
             <% } %>
             <li class="navbar__item width-submenu">
@@ -72,22 +80,5 @@
             <iconify-icon icon="mi:menu"></iconify-icon>
         </div>
     </nav>
-</header>
 
-<style>
-    .contador {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      background-color: red;
-      color: white;
-      border-radius: 50%;
-      padding: 4px 8px;
-      font-size: 12px;
-    }
-    
-    .navbar__cart{
-        position: relative;
-        cursor: pointer;
-    }
-    </style>
+</header>

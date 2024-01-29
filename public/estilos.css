@@ -187,13 +187,29 @@ header {
     padding: var(--spacing-8) var(--spacing-12);
 }
 
-.navbar__custom-text:hover {
+.navbar__custom-link, .navbar__custom-text--featured {
+    color: var(--primary-solid);
+}
+
+.navbar__custom-link:hover {
     text-decoration: underline;
     text-decoration-color: var(--primary-solid);
 }
 
-.navbar__custom-text--featured {
-    color: var(--primary-solid);
+.contador {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary-solid);
+    color: var(--light-font-solid);
+    border-radius: 50%;
+    padding: var(--spacing-4) var(--spacing-8);
+    font-size: var(--font-xxsmall);
+}
+
+.navbar__cart {
+    position: relative;
+    cursor: pointer;
 }
 
 .hamburger-menu {
