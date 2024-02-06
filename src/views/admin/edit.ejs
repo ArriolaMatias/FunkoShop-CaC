@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/css/estilos.css">
     <link rel="stylesheet" href="/css/admin.css">
     <link rel="icon" type="image/png" href="/img/branding/isotype.svg">
     <!-- Cargo el titulo del sitio de forma dinámica -->
@@ -15,7 +15,7 @@
     <%- include('../partial/header-admin'); -%>
     
     <!-- Agrego el contenido de la web -->
-    <main class="container edit">
+    <main class="main-container edit">
         <h1 class="crud__title">EDITAR ITEM</h1>  
         <form class="crud__form" action="/admin/edit/<%=funko.product_id%>" method="POST" enctype="multipart/form-data">
             <div class="crud__form-fila">
