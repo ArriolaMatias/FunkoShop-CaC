@@ -175,22 +175,22 @@
 
 /* About */
 
-.about {
-    margin-top: var(--spacing-68);
-    margin-bottom: var(--spacing-36);
-}
-
 .about__title {
     font-family: var(--alternative-font);
     font-weight: 700;
     font-size: var(--font-jumbo);
     text-align: center;
+    margin-top: var(--spacing-68);
 }
 
 .about__collection {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
+}
+
+.about__collection:last-child {
+    margin-bottom: var(--spacing-68);
 }
 
 .about__collection:nth-child(2) .about__collection-cover,

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navbarMenu = document.querySelector('.navbar__menu');
-    const mainContent = document.querySelector('.main-container');
+    const mainContent = document.querySelector('main');
     const submenu = document.querySelector('.submenu');
 
     const item_which_has_submenu = document.querySelector('.width-submenu')
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navbarMenu.classList.toggle('show');
 
         if (navbarMenu.classList.contains('show')) {
-            mainContent.style.marginTop = navbarMenu.offsetHeight - 67 + 'px'; //Corrigo bien el offset
+            mainContent.style.marginTop = navbarMenu.offsetHeight - 10 + 'px'; //Corrigo bien el offset
         } else {
             mainContent.style.marginTop = 0;
         }
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     item_which_has_submenu.addEventListener('mouseover', function (event){
 
         if(window.getComputedStyle(submenu).getPropertyValue('display') === 'block' && window.innerWidth < 768){
-            mainContent.style.marginTop = navbarMenu.offsetHeight - 67 + 'px';
+            mainContent.style.marginTop = navbarMenu.offsetHeight - 10 + 'px';
         }
     })
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if(window.getComputedStyle(submenu).getPropertyValue('display') === 'none' && window.innerWidth < 768){
             mainContent.style.marginTop = 0;
-            mainContent.style.marginTop = navbarMenu.offsetHeight - 67 + 'px';
+            mainContent.style.marginTop = navbarMenu.offsetHeight - 10 + 'px';
         }
     })
 
