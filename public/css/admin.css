@@ -225,7 +225,6 @@ div.dataTables_wrapper div.dataTables_filter {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: var(--spacing-36);
 }
 
 .delete__section-row {

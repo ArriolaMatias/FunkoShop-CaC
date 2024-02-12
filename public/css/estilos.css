@@ -123,11 +123,19 @@ button, input[type=submit], input[type=reset] {
     padding: var(--spacing-4);
 }
 
+main {
+    padding-top: 120px;
+}
+
 /* -------- Header -------- */
 
 header {
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-36);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 5;
 }
 
 .navbar {
@@ -351,7 +359,7 @@ header {
 
 .card-item__price {
     font-size: var(--font-small);
-    color: var(--secondary-300);
+    color: var(--dark-900);
 }
 
 .card-item__promo {
