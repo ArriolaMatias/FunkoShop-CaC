@@ -21,7 +21,7 @@
         </div>
     </td>
     <td>
-        <p id="totalPrice-item-<%= item.id %>" class="cart__table-price"><%= Math.round((item.quantity * item.funko.price + Number.EPSILON) * 100) / 100 %></p>
+        <p id="totalPrice-item-<%= item.id %>" class="cart__table-price"><%= +((item.quantity * item.funko.price).toFixed(2)) %></p>
     </td>
     <td>
         <iconify-icon class="cart__table-icon" icon="ph:x-circle" onclick="return popItem('<%= item.funko.product_id %>' )"></iconify-icon>

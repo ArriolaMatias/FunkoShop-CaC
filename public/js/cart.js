@@ -19,11 +19,11 @@ addButtons.forEach(function (incrementator) {
         let itemPrice = document.getElementById(`${itemPriceId}`);
 
         quantityAsociado.value = Number(quantityAsociado.value) + 1;
-        priceAsociado.innerText = Number(quantityAsociado.value) * parseFloat(itemPrice.innerText);
+        priceAsociado.innerText = +((Number(quantityAsociado.value) * parseFloat(itemPrice.innerText)).toFixed(2));
 
         cantItems.innerText = Number(cantItems.innerText) + 1;
-        subtotal.innerText = Number(subtotal.innerText) + parseFloat(itemPrice.innerText)
-        precioTotal.innerText = Number(subtotal.innerText) + Number(envio.innerText);
+        subtotal.innerText = +((Number(subtotal.innerText) + parseFloat(itemPrice.innerText)).toFixed(2));
+        precioTotal.innerText = +((Number(subtotal.innerText) + Number(envio.innerText)).toFixed(2));
     }); 
 })
 
@@ -40,11 +40,11 @@ substractButtons.forEach(function (decrementator) {
 
         if(quantityAsociado.value != 0) { //Para que no reste infinitamente
             quantityAsociado.value = Number(quantityAsociado.value) - 1;
-            priceAsociado.innerText = Number(quantityAsociado.value) * parseFloat(itemPrice.innerText);
+            priceAsociado.innerText = +((Number(quantityAsociado.value) * parseFloat(itemPrice.innerText)).toFixed(2));
             
             cantItems.innerText = Number(cantItems.innerText) - 1;
-            subtotal.innerText = Number(subtotal.innerText) - parseFloat(itemPrice.innerText)
-            precioTotal.innerText = Number(subtotal.innerText) + Number(envio.innerText);
+            subtotal.innerText = +((Number(subtotal.innerText) - parseFloat(itemPrice.innerText)).toFixed(2));
+            precioTotal.innerText = +((Number(subtotal.innerText) + Number(envio.innerText)).toFixed(2));
         }
     }); 
 })
