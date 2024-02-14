@@ -1,4 +1,3 @@
-const Utilities = require("../utilities/json-utilities.js");
 const { getAllFunkosFromDB, getAllFunkosPaginatedFromDB, getFunkosByLicence, getFunkoFromDB, getFunkosBy } = require("../models/model.js");
 const { getAllLicencesFromDB } = require("../models/licence.js");
 const {agregarItem, deleteItem, popItem} = require("../models/cart.js");
