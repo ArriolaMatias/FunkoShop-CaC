@@ -22,6 +22,7 @@
 
 - [Table Of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
+- [Características Principales](#características-principales)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -34,11 +35,33 @@
 
 ![Main-screenshot](public/img/screenshots/screenshot_home.png)
 
-[ Project Description ]
+---
+
+![Overview-gif](public/img/screenshots/overview.gif)
+
+**Proyecto web desarrollado para crear una tienda en línea de figuras Funko con una variedad de funcionalidades para usuarios y administradores.**
+
+## Características Principales
+- **_Diseño Responsive:_** 
+  La tienda está diseñada para adaptarse a diferentes dispositivos (computadoras de escritorio, tabletas y teléfonos móviles, garantizando una experiencia de usuario óptima en todos los tamaños de pantalla.
+- **_Filtros en el Shop:_**
+   Los usuarios pueden explorar el catálogo de productos utilizando filtros por categorías, precios, personajes, novedades o ultimas unidades, facilitando la búsqueda de figuras específicas.
+- **_Autenticación de Usuarios:_**
+    Sencillo sistema de autenticación que permite a los usuarios registrarse, iniciar y cerrar sesión de sus cuentas.
+- **_Panel de Administrador:_**
+   Los administradores tienen acceso a un panel especial con funciones básicas de gestion de de productos (ABM). Pueden agregar, editar y eliminar productos según sea necesario.
+- **_Carrito de Compras:_**
+   Los usuarios pueden agregar productos a su carrito de compras, ver su contenido y proceder al pago cuando estén listos.
+- **_Productos Relacionados:_** 
+  Se muestran productos relacionados en la página de detalles de cada figura, ayudando a los usuarios a descubrir y explorar más opciones.
+
 
 ## Built With
 
 ![Used Technologies](https://skillicons.dev/icons?i=html,css,js,figma,nodejs,express)
+
+**_ Frontend: _** Html, Css y Javascript 
+**_ Backend: _** Node.js con Express para el servidor web, y MySQL para la base de datos.
 
 ## Getting Started
 
