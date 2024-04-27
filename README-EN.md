@@ -9,7 +9,7 @@
   <h3 align="center">Funkoshop Store</h3>
 
   <p align="center">
-    E-commerce realizado como proyecto final del programa Codo a Codo.
+    E-commerce made as <a href="https://buenosaires.gob.ar/educacion/codo-codo-40"> Codo a Codo</a> program's final project
     <br/>
     <br/>
   </p>
@@ -22,7 +22,7 @@
 
 - [Table Of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
-- [Características Principales](#características-principales)
+- [Main Features](#main-features)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -37,35 +37,46 @@
 
 ---
 
+Funko e-commerce website developed with NodeJS with a variety of functionalities for users and administrators.
+
 ![Overview-gif](public/img/screenshots/overview.gif)
 
-**Proyecto web desarrollado para crear una tienda en línea de figuras Funko con una variedad de funcionalidades para usuarios y administradores.**
+## Main Features
+- **_<ins>Responsive Design<ins>_** 
+  
+  The store is designed to adapt to different devices (desktops, tablets and cell phones) ensuring an optimal user experience on all screen sizes.
 
-## Características Principales
-- **_Diseño Responsive:_** 
-  La tienda está diseñada para adaptarse a diferentes dispositivos (computadoras de escritorio, tabletas y teléfonos móviles, garantizando una experiencia de usuario óptima en todos los tamaños de pantalla.
-- **_Filtros en el Shop:_**
-   Los usuarios pueden explorar el catálogo de productos utilizando filtros por categorías, precios, personajes, novedades o ultimas unidades, facilitando la búsqueda de figuras específicas.
-- **_Autenticación de Usuarios:_**
-    Sencillo sistema de autenticación que permite a los usuarios registrarse, iniciar y cerrar sesión de sus cuentas.
-- **_Panel de Administrador:_**
-   Los administradores tienen acceso a un panel especial con funciones básicas de gestion de de productos (ABM). Pueden agregar, editar y eliminar productos según sea necesario.
-- **_Carrito de Compras:_**
-   Los usuarios pueden agregar productos a su carrito de compras, ver su contenido y proceder al pago cuando estén listos.
-- **_Productos Relacionados:_** 
-  Se muestran productos relacionados en la página de detalles de cada figura, ayudando a los usuarios a descubrir y explorar más opciones.
+- **_<ins>Filters in the Shop<ins>_**
+  
+   Users can browse the catalog of funkos using filters by categories, prices, characters, or last units, facilitating the search for specific figures.
+
+- **_<ins>User Authentication:<ins>_**
+  
+    Simple authentication system that allows users to register, log in and log out of their accounts.
+
+- **_<ins>Administrator Panel<ins>_**
+  
+   Administrators have access to a special panel with basic product management (ABM) functions. They can add, edit and delete products as needed.
+
+- **_<ins>Shopping Cart<ins>_**
+  
+   Users can add products to their shopping cart, view their contents and proceed to the checkout view when ready.
+
+- **_<ins>Related Products<ins>_** 
+  
+  On each product detail page, related product suggestions are displayed, helping users discover and explore more options.
 
 
 ## Built With
 
 ![Used Technologies](https://skillicons.dev/icons?i=html,css,js,figma,nodejs,express)
 
-**_ Frontend: _** Html, Css y Javascript 
-**_ Backend: _** Node.js con Express para el servidor web, y MySQL para la base de datos.
+**Frontend:_** Html, Css and Javascript and Figma
+ 
+**_Backend:_** Node.js with Express for the web server, and MySQL for the database.
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites

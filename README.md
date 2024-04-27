@@ -9,7 +9,7 @@
   <h3 align="center">Funkoshop Store</h3>
 
   <p align="center">
-    E-commerce realizado como proyecto final del programa Codo a Codo.
+    E-commerce realizado como proyecto final del programa <a href="https://buenosaires.gob.ar/educacion/codo-codo-40"> Codo a Codo</a>
     <br/>
     <br/>
   </p>
