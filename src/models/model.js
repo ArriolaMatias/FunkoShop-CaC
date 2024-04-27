@@ -118,7 +118,8 @@ const getFunkosBy = async (filtros) => {
         whereClause += 'stock <= 5 AND '
     }
     
-    if (filtros.licencia){
+    if (filtros.licencia & filtros.licencia != 'on'){
+        // if (filtros.licencia){
         whereClause += 'licence_id = ? AND '
         values.push(`${filtros.licencia}`)
     }
@@ -143,6 +144,7 @@ const getFunkosBy = async (filtros) => {
         console.log(query, values);
         const [rows] = await pool.query(query, values);
         const [count] = await pool.query(countQuery, values);
+        console.log("QUERY: "+pool.format(query, values));
         return { datos: rows, total: count[0].total };
         
     }catch (error){
