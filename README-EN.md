@@ -17,7 +17,7 @@
 
 ![Contributors](https://img.shields.io/github/contributors/ArriolaMatias/FunkoShop-CaC?color=green) 
 
-<a href="/README-ES.md"> Spanish </a>
+<a href="/README.md"> Spanish Doc </a>
 ## Table Of Contents
 
 - [Table Of Contents](#table-of-contents)
@@ -37,7 +37,7 @@
 
 ---
 
-Funko e-commerce website developed with NodeJS with a variety of functionalities for users and administrators.
+Funko e-commerce website developed with nodeJS and Express with a variety of functionalities for users and administrators.
 
 ![Overview-gif](public/img/screenshots/overview.gif)
 
@@ -71,7 +71,7 @@ Funko e-commerce website developed with NodeJS with a variety of functionalities
 
 ![Used Technologies](https://skillicons.dev/icons?i=html,css,js,figma,nodejs,express)
 
-**Frontend:_** Html, Css and Javascript and Figma
+**_Frontend:_** Html, Css and Javascript and Figma
  
 **_Backend:_** Node.js with Express for the web server, and MySQL for the database.
 

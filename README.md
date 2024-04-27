@@ -34,7 +34,7 @@
 
 ## Acerca del proyecto
 
-_Sitio web desarrollada con NodeJS de un e-commerce de figuras Funko con una variedad de funcionalidades para usuarios y administradores._
+_Sitio web desarrollado con nodeJs y express de un e-commerce de figuras Funko con una variedad de funcionalidades para usuarios y administradores._
 
 ![Overview-gif](public/img/screenshots/overview.gif)
 
