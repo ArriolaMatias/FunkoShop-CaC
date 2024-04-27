@@ -17,76 +17,92 @@
 
 ![Contributors](https://img.shields.io/github/contributors/ArriolaMatias/FunkoShop-CaC?color=green) 
 
-<a href="/README-ES.md"> Spanish </a>
-## Table Of Contents
+<a href="/README-EN.md"> Documentación en inglés </a>
 
-- [Table Of Contents](#table-of-contents)
-- [About The Project](#about-the-project)
+## Tabla de contenidos
+
+- [Tabla de contenidos](#tabla-de-contenidos)
+- [Acerca del proyecto](#acerca-del-proyecto)
 - [Características Principales](#características-principales)
 - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
+- [Primeros pasos](#primeros-pasos)
+  - [Prerequisitos](#prerequisitos)
   - [Node](#node)
-- [Install](#install)
-- [Usage](#usage)
-- [Authors](#authors)
+- [Instalacion](#instalacion)
+- [Uso](#uso)
+- [Autores](#autores)
 
-## About The Project
+## Acerca del proyecto
 
-![Main-screenshot](public/img/screenshots/screenshot_home.png)
-
----
+_Sitio web desarrollada con NodeJS de un e-commerce de figuras Funko con una variedad de funcionalidades para usuarios y administradores._
 
 ![Overview-gif](public/img/screenshots/overview.gif)
 
-**Proyecto web desarrollado para crear una tienda en línea de figuras Funko con una variedad de funcionalidades para usuarios y administradores.**
-
 ## Características Principales
-- **_Diseño Responsive:_** 
-  La tienda está diseñada para adaptarse a diferentes dispositivos (computadoras de escritorio, tabletas y teléfonos móviles, garantizando una experiencia de usuario óptima en todos los tamaños de pantalla.
-- **_Filtros en el Shop:_**
-   Los usuarios pueden explorar el catálogo de productos utilizando filtros por categorías, precios, personajes, novedades o ultimas unidades, facilitando la búsqueda de figuras específicas.
-- **_Autenticación de Usuarios:_**
+- **_<ins>Diseño Responsive<ins>_** 
+  
+  La tienda está diseñada para adaptarse a diferentes dispositivos (computadoras de escritorio, tabletas y teléfonos móviles) garantizando una experiencia de usuario óptima en todos los tamaños de pantalla.
+
+- **_<ins>Filtros en el Shop<ins>_**
+  
+   Los usuarios pueden explorar el catálogo de funkos utilizando filtros por categorías, precios, personajes, novedades o ultimas unidades, facilitando la búsqueda de figuras específicas.
+
+- **_<ins>Autenticación de Usuarios:<ins>_**
+  
     Sencillo sistema de autenticación que permite a los usuarios registrarse, iniciar y cerrar sesión de sus cuentas.
-- **_Panel de Administrador:_**
+
+- **_<ins>Panel de Administrador<ins>_**
+  
    Los administradores tienen acceso a un panel especial con funciones básicas de gestion de de productos (ABM). Pueden agregar, editar y eliminar productos según sea necesario.
-- **_Carrito de Compras:_**
-   Los usuarios pueden agregar productos a su carrito de compras, ver su contenido y proceder al pago cuando estén listos.
-- **_Productos Relacionados:_** 
-  Se muestran productos relacionados en la página de detalles de cada figura, ayudando a los usuarios a descubrir y explorar más opciones.
+
+- **_<ins>Carrito de Compras<ins>_**
+  
+   Los usuarios pueden agregar productos a su carrito de compras, ver su contenido y proceder a la vista de pago cuando estén listos.
+
+- **_<ins>Productos Relacionados<ins>_** 
+  
+  En la pagina de detalle de cada producto, se muestran sugerencias de productos relacionados, ayudando a los usuarios a descubrir y explorar más opciones.
 
 
 ## Built With
 
-![Used Technologies](https://skillicons.dev/icons?i=html,css,js,figma,nodejs,express)
+![Used Technologies](https://skillicons.dev/icons?i=html,css,js,figma,nodejs,express,mysql)
 
-**_ Frontend: _** Html, Css y Javascript 
-**_ Backend: _** Node.js con Express para el servidor web, y MySQL para la base de datos.
+**_Frontend:_** Html, Css y Javascript y Figma
+ 
+**_Backend:_** Node.js con Express para el servidor web, y MySQL para la base de datos.
 
-## Getting Started
+## Primeros pasos
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Para obtener el contenido de este repositorio, solamente debes ejecutar el comando: 
 
-### Prerequisites
+```
+    $ git clone https://github.com/ArriolaMatias/FunkoShop-CaC
+```
+
+### Prerequisitos
 
 ### Node
-- #### Node installation on Windows
+- #### Instalacion de Node en Windows
 
-  Just go on [official Node.js website](https://nodejs.org/) and download the installer.
-Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
+Simplemente ingresa al [sitio oficial de Node.js](https://nodejs.org/) y descargá el instalador.
+Además, asegurate de tener `git` correctamente instalado y configurado en el PATH de tu equipo, ya que es necesario para utilizar `npm` (Podes encontrarlo [acá](https://git-scm.com/))
 
-- #### Node installation on Ubuntu
+- #### Instalacion de Node en Ubuntu
 
-  You can install nodejs and npm easily with apt install, just run the following commands.
+  Podes instalar NodeJS y npm facilmente utilizando `apt install`. Simplemente deberías correr los siguientes comandos:
+
 ```
       $ sudo apt install nodejs
       $ sudo apt install npm
 ```
-- #### Other Operating Systems
-  You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
 
-If the installation was successful, you should be able to run the following command.
+- #### Otros sistemas operativos
+  Podes encontrar más información acerca de como instalar node y npm en sus sitios web oficiales: 
+  * [Sitio oficial de Node.js](https://nodejs.org/) 
+  * [Sitio ofical de npm](https://npmjs.org/).
+
+Si la instalación fue exitosa, deberías poder correr el siguiente comando:
 ```
     $ node --version
     v8.11.3
@@ -94,28 +110,32 @@ If the installation was successful, you should be able to run the following comm
     $ npm --version
     6.1.0
 ```
-If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
+
+Si necesitas actualizar `npm`, podes correr el comando `npm`. Luego, solo deberias cerrar y volver a abrir la linea de comandos para ver los resultados.
+
 ```
     $ npm install npm -g
 ```
 
-## Install
+## Instalacion
+
+Para instalar las dependencias del proyecto deberás ejecutar el comando ``npm install`` dentro del directorio del proyecto.
+
 ```
-    $ git clone https://github.com/ArriolaMatias/FunkoShop-CaC
     $ cd FunkoShop-CaC
     $ npm install
 ```
 
-## Usage
+## Uso
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this 
-space. You may also link to more resources.
+Para correr el proyecto de forma local, deberás ejecutar el comando ``npm start`` dentro del directorio del proyecto
 
 ```
+    $ cd FunkoShop-CaC
     $ npm start
 ```
 
-## Authors
+## Autores
 
 * **Victoria Demkoff** - [Victoria Demkoff](https://github.com/vickydemkoff)
 * **Matías Arriola** - [Matías Arriola](https://github.com/ArriolaMatias)
