@@ -321,6 +321,7 @@ header {
     padding: var(--spacing-8) var(--spacing-12);
     position: absolute;
     left: 0;
+    bottom: 0;
 }
 
 .card-item__cover img {
